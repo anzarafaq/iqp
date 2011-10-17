@@ -1,0 +1,189 @@
+{% extends "filterlayout.html" %}
+{% block title %}
+Overview
+{% endblock %}
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', file='css/layout.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', file='css/overview_layout.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', file='flexigrid/css/flexigrid.pack.css') }}">
+{% endblock %}
+{% block scripts %}
+{{ super() }}
+<script type="text/javascript" src="{{ url_for('static', file='charts/overview_main_chart.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', file='charts/overview_proportion_chart.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', file='charts/highChartTheme.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', file='charts/exporting.src.js') }}"></script>
+<script type="text/javascript" src="/static/flexigrid/js/flexigrid.js"></script>
+<script type="text/javascript" src="{{ url_for('static', file='dropdown/popup.js') }}"></script>
+<script language="javascript" type="text/javascript">
+  $(document).ready(function() { 
+  var highchartsOptions = Highcharts.setOptions(Highcharts.theme);	
+  createOverviewProportionChart({{ args }}, "overview-proportionchart-container"); 
+  // set the theme for main chart
+  createOverviewMainChart({{ args }}, "overview-mainchart-container");  
+  highlightTabs("Overview");
+  var flextable;
+  });
+</script>
+{% endblock %}
+{% block breadcrumbs %}
+<ul class = "breadcrumbs">
+<li class = "crumbs"><a href="{{ url_for('overview') }}"><img src = '/static/images/home.png'/></a></li>
+<li class = "right-arrow"><a><img src = '/static/images/right-arrow.gif'/></a></li>
+<li class = "crumbs"><a href="{{ url_for('overview') }}">Overview</a></li>
+</ul>
+{% endblock %}
+{% block topright %}
+	<div id="chart-buttons">
+        <div class = "chart-icons corner-left-menu" alt = "pie">
+                <img src = "/static/images/pie-icon.png" alt = "Pie Chart" width = "25px" height = "25px"/>
+        </div>
+        <div class = "chart-icons corner-right-menu" alt = "column">
+                   <img src = "/static/images/bar-icon.png" alt = "column Chart" width = "25px" height = "25px"/>
+           </div>
+    </div>
+<div id = 'email'>
+	<img src = "/static/images/email_icon.gif" alt = "Email Icon"/>
+</div>
+	<div id="popupContact">
+		<a id="popupContactClose">x</a>
+		<div id="email-form">
+			<label> Enter users email Address</label>
+			<input type = 'text' name = "user_email_address"></input>
+			<button id = "sendEmail">Send Email</button>
+		</div>
+		<div id = "email-data">
+			<div id = "email-chart">
+				
+			</div>
+			<div id = "email-table">
+				
+			</div>
+		</div>
+	</div>
+	<div id="backgroundPopup"></div>
+<script>
+$(document).ready(function() { 
+	function openEmail()
+	{
+			$('#email-chart').append(overviewMainChart.getSVG(overviewMainChartOptions));
+			$('#email-table').append($('#application-table'));
+			var headers = ['Application Family','No Of Scenarios','No Of Issues'];
+			var items = ['<tr style = "border : 1px solid #eee;background-color : grey;">'];
+			$.each(headers,function(key,value){
+				items.push('<th>');
+				items.push(value);
+				items.push('</th>')
+			});
+			items.push('</tr>')
+			$('#email-table').find('#application-table').find('thead').append(items.join('')).parent().css(
+				{
+					'border' : '2px solid #eee',
+					'width' : '670px',
+					'overflow-x' : 'hidden'
+				}
+			);
+		}
+	
+	function sendEmail()
+	{
+		$.ajax({
+		type : "POST",
+  		url : "http://localhost/exporting/mailData.php",
+  		//url : "/export/sendemail/",
+  		//processData : false,
+  		dataType : 'html',
+  		crossDomain : true,
+  		//contentType: "application/json; charset=utf-8",
+  		data:
+			//'data'
+			//"{'test','test'}"
+			{'svg' : overviewMainChart.getSVG(overviewMainChartOptions)
+			//'tableData' : JSON.stringify(overviewMainChartOptions.series[0].data)
+		}
+			,
+		success : function(data)
+		{
+			console.log(data);
+			console.log("success");
+		}
+		});
+		/*jQuery.post("/export/sendemail/?callback=?",
+		{
+			//mailAddress : address,
+			svg : overviewMainChart.getSVG(overviewMainChartOptions),
+			tableData : overviewMainChartOptions.series[0].data
+		},
+		function(data)
+		{
+			console.log(data);
+		}
+	,"jsonp"); */
+	}
+	jQuery("#sendEmail").click(function()
+	{
+		sendEmail( $('#email-form').find('input').val());
+	});
+	jQuery("#email").click(function()
+	{
+		//console.log(overviewMainChartOptions.series[0].data);
+		//console.log(overviewMainChart.getSVG(overviewMainChartOptions));
+		centerPopup();
+		//load popup
+		loadPopup();
+		openEmail();
+	});
+});
+</script>
+<div id="overview-mainchart-container" style="width: inherit; height: inherit">
+</div>
+<script>
+	$(document).ready(function() { 
+		$(".chart-icons").click(function()
+        {
+            var currentChartType = $(this).attr('alt');
+            if(overviewMainChartOptions.chart.defaultSeriesType != currentChartType)
+            {
+                changeChartType(currentChartType,overviewMainChartOptions,overviewMainChart);
+                $(this).addClass('chart-icon-inactive').removeClass('chart-icon-active').siblings().addClass('chart-icon-active').removeClass('chart-icon-inactive');
+            }
+        });
+	});
+</script>
+{% endblock %}
+{% block bottomright %}
+<div id = 'excel'>
+	<img src = "/static/images/excel-icon.png" alt = "Email Icon"/>
+</div>
+	<table id="application-table"> 
+		<thead> 
+		</thead> 
+		<tbody>	
+		</tbody>
+	</table>
+<script>
+	$(document).ready(function() {
+	jQuery("#excel").click(function()
+	{
+		var tableData;
+		if(typeof(JSON) != 'undefined')
+		{
+			tableData = JSON.stringify(window.tableData);
+		}
+		else
+		{
+			$.getScript('/static/jquery/json2.js',function(data,textStatus)
+			{
+				tableData = JSON.stringify(window.tableData);
+				
+			});
+		}
+		window.location = "/export/browser_data/?tableData="+tableData;
+	}); 
+});
+</script>
+{% endblock %}
+{% block bottomleft %}
+<div id="overview-proportionchart-container" style="width: 280px; height: 300px"></div>
+{% endblock %}

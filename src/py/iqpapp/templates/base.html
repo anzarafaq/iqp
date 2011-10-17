@@ -1,0 +1,23 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    {% block head %}
+    <title>{% block title %}{% endblock %} - IQP</title>
+    {% block styles %}
+    {% endblock %}
+    {% block scripts %}
+    {% endblock %}
+
+    {% endblock %}
+  </head>
+  <body>
+  	<!--[if lt IE 8]><style type="text/css">#infoarea,#subheader,#bottomleft{z-index : -1;}#topleft{width : 280px;}#groupbyoptions{width : 286px;z-index : 1;}#overview-mainchart-container, #category-chart-container ,{margin-top : 1px;height : 360px;}.breadcrumbs li{height : 30px;	}.breadcrumbs li.right-arrow a img{padding-top : 5px;padding-bottom : 5px;}#sb_up-and-down{top : 60px;}#sb_icon{top : 55px;}#sb_dropdown{top : 80px;}#bottomtable{z-index : -1;}</style><![endif]-->
+  	<div id="popupContact" style="display:none">
+		<a id="popupContactClose">x</a>
+		<div id="popup-trend-container" style="height: 500px; width : 700px;" ></div>
+	</div>
+	<div id="backgroundPopup"></div>
+    <div id="content">{% block content %}{% endblock %}</div>
+  </body>
+</html>

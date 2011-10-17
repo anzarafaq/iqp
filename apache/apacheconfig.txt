@@ -1,0 +1,10 @@
+<VirtualHost *>
+    ServerName localhost
+
+    WSGIScriptAlias / /home/iqp/iqp/iqp/src/py/iqpapp.wsgi
+
+    <Directory /home/iqp/iqp/iqp/src/py/>
+        Order deny,allow
+        Allow from all
+    </Directory>
+</VirtualHost>

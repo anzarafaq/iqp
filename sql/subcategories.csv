@@ -1,0 +1,224 @@
+"Projects","Other",275
+"CADView-3D","Other",430
+"Document Managment and Collaboration","Other",432
+"Controlled Availability Product","Other",516
+"Number Portability","Other",534
+"Lease Management","Other",540
+"Automotive","Other",663
+"Release Management Integration Kit","Other",710
+"Automotive Integration Kit","Other",711
+"Project Contracts","Other",777
+"iMeeting (obsolete)","Other",861
+"Citizen Interaction Center","Other",866
+"Complex Maintenance Repair and Overhaul","Other",867
+"Project Intelligence","Other",1292
+"Public Sector Budgeting","Other",8401
+"Grants Proposal","Other",8404
+"Student Systems","Other",8405
+"Financial Aid","Other",8406
+"Capital Resource Logistics - Projects","Other",8721
+"General Ledger","Financials",101
+"Assets","Financials",140
+"Payables","Financials",200
+"Legal Entity Configurator","Financials",204
+"iAssets","Financials",205
+"Loans","Financials",206
+"Enterprise Planning and Budgeting","Financials",210
+"Receivables","Financials",222
+"E-Business Tax","Financials",235
+"Cash Management","Financials",260
+"Global Consolidation System","Financials",266
+"SEM Exchange","Financials",270
+"Balanced Scorecard","Financials",271
+"Activity Based Management","Financials",272
+"Value Based Management","Financials",273
+"Strategic Enterprise Management","Financials",274
+"Enterprise Asset Management","Financials",426
+"Financials Common Modules","Financials",435
+"Portfolio Analyzer","Financials",440
+"Financial Intelligence","Financials",450
+"Financial Analyzer","Financials",505
+"Billing Connect","Financials",543
+"Global Accounting Engine","Financials",600
+"Subledger Accounting","Financials",602
+"iPayment","Financials",673
+"Bill Presentment & Payment","Financials",674
+"iClaims","Financials",683
+"eBusiness Billing","Financials",881
+"Public Sector Financials International","Financials",8400
+"Grants Accounting","Financials",8402
+"Public Sector Financials","Financials",8450
+"Capital Resource Logistics - Assets","Financials",8731
+"Federal Financials","Financials",8901
+"Treasury","Financials",185
+"Property Manager","Financials",240
+"Exchange","Financials",298
+"Banking Center","Financials",538
+"Process Manufacturing Financials","Financials",555
+"Collections","Financials",695
+"Capital Resource Logistics - Financials","Financials",8724
+"Human Resources","HR & Payroll",800
+"Payroll","HR & Payroll",801
+"FastFormula","HR & Payroll",802
+"DateTrack","HR & Payroll",803
+"Advanced Benefits","HR & Payroll",805
+"Time and Labor","HR & Payroll",808
+"Time and Labor Engine","HR & Payroll",809
+"Learning Management","HR & Payroll",810
+"US Federal Human Resources","HR & Payroll",8301
+"Public Sector HR","HR & Payroll",8302
+"Public Sector Payroll","HR & Payroll",8303
+"Labor Distribution","HR & Payroll",8403
+"Recruitment","HR & Payroll",6
+"People","HR & Payroll",7
+"Work Structure","HR & Payroll",8
+"Human Resources Intelligence","HR & Payroll",453
+"Sales Foundation","Order Management",279
+"Sales","Order Management",280
+"Incentive Compensation","Order Management",283
+"Order Entry","Order Management",300
+"Order Management","Order Management",660
+"Advanced Pricing","Order Management",661
+"Shipping Execution","Order Management",665
+"Customer Management","Order Management",9
+"Fulfillment Services","Order Management",882
+"iSupplier Portal","Procurement",177
+"Purchasing","Procurement",201
+"Internet Procurement Enterprise Connector","Procurement",230
+"Requisitions","Procurement",13
+"Receiving","Procurement",15
+"Supplier Management","Procurement",16
+"PO Approvals","Procurement",17
+"Purchasing Intelligence","Procurement",452
+"SSP","Procurement",804
+"Quality","Supply Chain",250
+"Warehouse Management","Supply Chain",385
+"Manufacturing Scheduling","Supply Chain",388
+"Transportation Planning","Supply Chain",390
+"Sourcing","Supply Chain",396
+"Inventory","Supply Chain",401
+"Shop Floor Management","Supply Chain",410
+"Product Development","Supply Chain",420
+"Master Scheduling/MRP","Supply Chain",704
+"Work in Process","Supply Chain",706
+"Cost","Supply Chain",19
+"Supplier Scheduling","Supply Chain",202
+"Advanced Product Catalog","Supply Chain",431
+"Operations Intelligence","Supply Chain",451
+"Supply Chain Intelligence","Supply Chain",454
+"Oracle Product Development Intelligence","Supply Chain",455
+"Process Manufacturing Systems","Supply Chain",550
+"Process Manufacturing Inventory","Supply Chain",551
+"Process Manufacturing Product Development","Supply Chain",552
+"Process Manufacturing Process Execution","Supply Chain",553
+"Process Manufacturing Process Planning","Supply Chain",554
+"Process Manufacturing Logistics","Supply Chain",556
+"Process Manufacturing Regulatory Management","Supply Chain",557
+"Process Manufacturing Intelligence","Supply Chain",558
+"Release Management","Supply Chain",662
+"Trade Planning","Supply Chain",681
+"Trade Management","Supply Chain",682
+"Scheduler","Supply Chain",698
+"Manufacturing","Supply Chain",700
+"Supply Chain Trading Connector for RosettaNet","Supply Chain",701
+"Bills of Material","Supply Chain",702
+"Engineering","Supply Chain",703
+"Capacity","Supply Chain",705
+"Configurator","Supply Chain",708
+"Project Manufacturing","Supply Chain",712
+"Flow Manufacturing","Supply Chain",714
+"Transportation Execution","Supply Chain",716
+"Demand Planning","Supply Chain",722
+"Constraint Based Optimization","Supply Chain",723
+"Advanced Supply Chain Planning","Supply Chain",724
+"Advanced Planning Foundation","Supply Chain",725
+"Inventory Optimization","Supply Chain",726
+"Network Logistics - Inventory","Supply Chain",8722
+"Network Logistics - Purchasing","Supply Chain",8723
+"Network Logistics","Supply Chain",8727
+"Network Logistics - NATS","Supply Chain",8729
+"Application Object Library","System Admin",0
+"System Administration","System Admin",1
+"Application Utilities","System Admin",3
+"Applications DBA","System Admin",50
+"Applications Shared Technology","System Admin",60
+"Alert","System Admin",160
+"Application Report Generator","System Admin",168
+"XML Gateway","System Admin",174
+"e-Commerce Gateway","System Admin",175
+"Application Implementation","System Admin",190
+"Web Applications Desktop Integrator","System Admin",231
+"Report Manager","System Admin",265
+"AME","System Admin",22
+"Concurrent programs","System Admin",23
+"User Accounts","System Admin",25
+"Workflows","System Admin",26
+"Self-Service Web Applications","System Admin",178
+"Applications BIS","System Admin",191
+"Mobile Applications","System Admin",405
+"Provisioning","System Admin",535
+"Common Modules-AK","System Admin",601
+"XML Publisher","System Admin",603
+"E-Records","System Admin",709
+"Hosting Manager","System Admin",864
+"Mobile Application Foundation","System Admin",874
+"Asia/Pacific Localizations","System Admin",7000
+"European Localizations","System Admin",7002
+"Regional Localizations","System Admin",7003
+"Latin America Localizations","System Admin",7004
+"Internal Controls Manager","SOX",242
+"Risk Management","SOX",186
+"Service","CRM",170
+"Telephony Manager","CRM",172
+"Sales Analyzer","CRM",506
+"Contracts Core","CRM",510
+"Customer Care","CRM",511
+"Depot Repair","CRM",512
+"Field Service","CRM",513
+"Support","CRM",514
+"Service Contracts","CRM",515
+"Marketing Intelligence","CRM",517
+"Customer Intelligence","CRM",518
+"Scripting","CRM",519
+"Marketing Encyclopedia System","CRM",520
+"TeleSales","CRM",521
+"Sales Online","CRM",522
+"Spares Management","CRM",523
+"Contracts Integration","CRM",524
+"Marketing","CRM",530
+"Marketing for Communications","CRM",531
+"Sales for Communications","CRM",532
+"Service for Communications","CRM",533
+"Interaction Center Technology","CRM",539
+"Contracts for Rights","CRM",541
+"Install Base","CRM",542
+"Sales Offline","CRM",544
+"Advanced Outbound Telephony","CRM",545
+"Content Manager","CRM",549
+"iMarketing","CRM",670
+"iStore","CRM",671
+"iSupport","CRM",672
+"Sales Intelligence","CRM",676
+"Interaction Center Intelligence","CRM",677
+"Email Center","CRM",680
+"CRM Gateway for Mobile Devices","CRM",689
+"CRM Foundation","CRM",690
+"Partner Management","CRM",691
+"Proposals","CRM",694
+"Universal Work Queue","CRM",696
+"Order Capture","CRM",697
+"Interaction Blending","CRM",699
+"Service Intelligence","CRM",862
+"Contracts for Subscriptions (obsolete)","CRM",865
+"Field Service/Laptop","CRM",868
+"Field Sales/Palm Devices","CRM",869
+"Contracts Intelligence","CRM",870
+"Contracts for Sales","CRM",871
+"Install Base Intelligence","CRM",872
+"Enterprise Install Base","CRM",873
+"CRM Self Service Administration","CRM",875
+"Customers Online","CRM",879
+"Quoting","CRM",880
+"Field Service/Palm","CRM",883
+"Contract Commitment","CRM",8407
+"Planning","Supply Chain",21

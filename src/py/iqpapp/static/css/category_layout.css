@@ -1,0 +1,55 @@
+#infoarea 
+{ 
+	height : 515px;
+}
+#bottomleft { position: relative;
+	      width: 100%;
+	      height: 300px;
+	    }
+
+#topright
+{ 
+	position: relative;
+	width: 100%;
+	height: 360px;
+	margin-top: 10px;
+	  }
+
+#bottomright { 
+		   position: relative;
+		   display:block; 	
+	       width: 100%;
+	       height: 140px;
+	     }
+#filteroptions
+{
+	position : relative;
+	display : block;
+	width : inherit;
+	height : 200px;
+	overflow: hidden;
+	margin-left: 5px;
+	margin-top: 10px;
+	margin-right: 5px;
+}
+
+#category-chart-container
+{
+	margin-top: 10px;
+}
+#category-proportionchart-container
+{
+	margin-left: 5px;	
+}
+.flexigrid
+{
+	height : 140px;
+}
+#excel
+{
+	position : absolute;
+	display: block;
+	z-index: 999;
+	left : 640px;
+	cursor:pointer;
+}

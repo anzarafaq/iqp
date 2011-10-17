@@ -1,0 +1,96 @@
+{% extends "filterlayout.html" %}
+{% block title %}
+Category: {{ category_name }}
+{% endblock %}
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', file='css/layout.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', file='css/category_layout.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', file='flexigrid/css/flexigrid.pack.css') }}">
+{% endblock %}
+{% block scripts %}
+{{ super() }}
+<script type="text/javascript" src="{{ url_for('static', file='charts/category_main_chart.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', file='charts/category_proportion_chart.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', file='charts/highChartTheme.js') }}"></script>
+<script type="text/javascript" src="/static/flexigrid/js/flexigrid.js"></script>
+<script language="javascript" type="text/javascript">
+  $(document).ready(function() { 
+  var highchartsOptions = Highcharts.setOptions(Highcharts.theme);
+  createCategoryProportionChart("{{ category_name }}", {{ args }}, "category-proportionchart-container");
+  createCategoryMainChart("{{ category_name }}", {{ args }}, "category-chart-container");  
+  highlightTabs("{{ category_name }}"); 
+  }); 
+</script>
+{% endblock %}
+{% block breadcrumbs %}
+<ul class = "breadcrumbs">
+<li class = "crumbs"><a href="{{ url_for('overview') }}"><img src = '../static/images/home.png'/></a></li>
+<li class = "right-arrow"><a><img src = '../static/images/right-arrow.gif'/></a></li>
+<li class = "crumbs"><a href="{{ url_for('overview') }}">Overview</a></li>
+<li class = "right-arrow"><a><img src = '../static/images/right-arrow.gif'/></a></li>
+<li class = "crumbs"><a href="{{ url_for('category', c_name=breadcrumbs.category_name) }}">{{ breadcrumbs.category_name }}</a></li>
+</ul>
+{% endblock %}
+{% block topright %}
+<div id="chart-buttons">
+        <div class = "chart-icons corner-left-menu" alt = "pie">
+                <img src = "/static/images/pie-icon.png" alt = "Pie Chart" width = "25px" height = "25px"/>
+        </div>
+        <div class = "chart-icons corner-right-menu" alt = "column">
+                   <img src = "/static/images/bar-icon.png" alt = "column Chart" width = "25px" height = "25px"/>
+           </div>
+    </div>
+    <div id = 'email'>
+	<img src = "/static/images/email_icon.gif" alt = "Email Icon"/>
+</div>
+<div id="category-chart-container" style="width: inherit; height: inherit"></div>
+<script>
+	$(document).ready(function() { 
+		/*$("#chart-buttons").buttonset();
+		var chartLabels = ["radio-pie","radio-column"];
+		jQuery(chartLabels).each(function(index,value)
+		{
+			jQuery("label[for="+value+"]").click(function()
+			{
+				if(!jQuery("#"+value).attr("checked"))
+				{
+					jQuery(this).attr("checked","checked")
+					changeChartType(value.split("-")[1],categoryMainChartOptions,categoryMainChart);
+				}
+			});
+		});*/
+		$(".chart-icons").click(function()
+        {
+            var currentChartType = $(this).attr('alt');
+            if(categoryMainChartOptions.chart.defaultSeriesType != currentChartType)
+            {
+                changeChartType(currentChartType,categoryMainChartOptions,categoryMainChart);
+                $(this).addClass('chart-icon-inactive').removeClass('chart-icon-active').siblings().addClass('chart-icon-active').removeClass('chart-icon-inactive');
+            }
+        });
+	});
+</script>
+{% endblock %}
+{% block bottomright %}
+<div id = 'excel'>
+	<img src = "/static/images/excel-icon.png" alt = "Email Icon"/>
+</div>
+	<table id="application-table">  
+		<tbody>
+			
+		</tbody>
+	</table>
+	<script>
+	$(document).ready(function() {
+	jQuery("#excel").click(function()
+	{
+		var tableData = JSON.stringify(window.tableData);
+		window.location = "/export/browser_data/?tableData="+String(tableData);
+	}); 
+});
+</script>
+{% endblock %}
+{% block bottomleft %}
+<div id="category-proportionchart-container" style="width: 280px; height: 300px"></div>
+{% endblock %}

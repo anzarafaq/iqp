@@ -1,0 +1,313 @@
+{% extends 'scenario-layout.html' %}
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', file='css/scenario_layout.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', file='flexigrid/css/flexigrid.pack.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', file='acc-button/css/cupertino/jquery-ui-1.8.14.custom.css') }}">
+{% endblock %}
+{% block scripts %}
+{{ super() }}
+<script type="text/javascript" src="{{ url_for('static', file='jquery/jquery-1.6.1.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', file='charts/highChartTheme.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', file='charts/scenario_main_chart.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', file='charts/scenario_trend_chart.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', file='tables/scenario_table.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', file='charts/popup_trend_chart.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', file='flexigrid/js/flexigrid.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', file='dropdown/popup.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', file='acc-button/js/jquery-ui-1.8.14.custom.min.js') }}"></script>
+<script language="javascript" type="text/javascript">
+var shortDes = "{{ scn_des }}"; //we need this for popup trendchart shortdes
+  $(document).ready(function() {
+  var scenhighchartsOptions = Highcharts.setOptions(Highcharts.theme);
+  //createScenarioMainChartOptions("{{ scenario_name }}", {{ args }}, "groupbyoptions"); 
+  createScenarioMainChart("{{ scenario_name }}", {{ args }}, "scenario-chart-container","{{ scn_des }}"); 
+   
+  //var t = setTimeout('createScenarioTableHeaders("{{ scenario_name }}", {{ args }}, "scenario_table")',1000); 
+  var lists = jQuery("#sb_dropdown>li");
+  jQuery.each(lists,function(key,value){ 
+  	//var temp = 
+  	jQuery(lists[key]).find('label').text(wordFormatting(String(jQuery(this).text())," "));
+  	//jQuery(lists[key]).find('label').text(wordFormatting(String(temp)," ")); 
+  	});
+
+  });
+</script>
+{% endblock %}
+{% block title %}
+Scenario: {{ scenario_name }}
+{% endblock %}
+{% block details %}
+<h2>Scenario: {{ scenario_name }}</h2>
+{% endblock %}
+{% block breadcrumbs %}
+<ul class = "breadcrumbs">
+<li class = "crumbs"><a href="{{ url_for('overview') }}"><img src = '/static/images/home.png'/></a></li>
+<li class = "right-arrow"><a><img src = '/static/images/right-arrow.gif'/></a></li>
+<li><a href="{{ url_for('overview') }}">Overview</a></li>
+<li class = "right-arrow"><a><img src = '/static/images/right-arrow.gif'/></a></li>
+<li><a href="{{ url_for('category', c_name=breadcrumbs[0].category_name) }}">{{ breadcrumbs[0].category_name }}</a></li>
+<li class = "right-arrow"><a><img src = '/static/images/right-arrow.gif'/></a></li>
+<li><a href="{{ url_for('sub_category', c_name=breadcrumbs[0].category_name, sc_name=breadcrumbs[1].subcategory_name) }}">{{ breadcrumbs[1].subcategory_name }}</a></li>
+<li class = "right-arrow"><a><img src = '/static/images/right-arrow.gif'/></a></li>
+<li><a href="{{ url_for('scenario', c_name=breadcrumbs[0].category_name, sc_name=breadcrumbs[1].subcategory_name, s_name=breadcrumbs[2].scn_name) }}">{{ breadcrumbs[2].scn_short_description}}</a></li>
+</ul>
+<script>
+$(document).ready(function() { 
+	highlightTabs("{{ breadcrumbs[0].category_name }}");
+	var item = jQuery(".breadcrumbs").find("li:last").find("a");
+	item.html(wordFormatting(String(item.text()),"&nbsp;"));
+});
+</script>
+{% endblock %}
+{% block topleft %}
+<div id="groupbyoptions">
+	<h3>Show By: </h3>
+	<input id="sb_input" type="text" placeholder = "Show by..." autocomplete = "off"/>
+	<span id = "sb_up-and-down"></span>
+	<span id="sb_icon">
+		<img src = "/static/images/search-logo.png" alt = "search logo"> </img>
+	</span> 
+	<ul id="sb_dropdown" style="display:none;"> 
+		{%- if scenario_data_column_names1 -%}
+		<li class = "list-tags"> <i>Most Commonly Used</i></li>
+		{% for column in scenario_data_column_names1%}
+			<li class = "default-filter"><label for = {{ column[0] }} > {{ column[0] }} </label></li>
+		{% endfor %}
+		<li class = "list-tags"> <i>Others</i></li>
+		{% endif %}
+		{% for column in scenario_data_column_names2%}
+			<li class = "default-filter"><label for = {{ column[0] }} > {{ column[0] }} </label></li>
+		{% endfor %}
+	</ul>
+</div>
+<script>
+$(document).ready(function() {
+	//$('#sb_input').attr('placeholder',wordFormatting(getParameterByName('groupby')," "));
+	
+	// custom mod function	
+	Number.prototype.mod = function(n) {
+		return ((this%n)+n)%n;
+	}
+	
+	function resetList()
+	{
+		$("#sb_dropdown li").not('.list-tags').removeClass("filter-selected").addClass("default-filter");
+		
+	}
+	
+	function unHighLight(number)
+	{
+		var number = window.currentFilter.mod(window.totalFilters);
+		$("#sb_dropdown li.searched:eq("+number+")").removeClass("filter-selected").addClass("default-filter");
+	}
+	
+	function highLightSelected()
+	{
+		//window.totalFilters = $("#sb_dropdown").find("li.searched").length;
+		var number = window.currentFilter.mod(window.totalFilters);
+		$("#sb_dropdown li.searched:eq("+number+")").removeClass("default-filter").addClass("filter-selected");
+	} 
+	
+	function filterSearchList(key)
+	{
+		$("#sb_dropdown li").not('.list-tags').each(function(index,value)
+		{
+			var regex = new RegExp(String(key),"i");
+			var val = String($(this).find("label").text());
+			if(!regex.test(val))
+			{
+				$(this).removeClass("searched").addClass("search-missed");
+			}
+			else
+			{
+				$(this).removeClass("search-missed").addClass("searched");
+			}
+		});
+	} 
+	// start filtering
+	$("#sb_input") 
+	.bind('focus',function(){
+		document.getElementById("sb_dropdown").style.display = "block";
+		//trigger key up at the beginning
+		if(!window.keyUpNeeded)
+		$("#sb_input").trigger("keyup");
+	})
+	.bind('blur',function(){ // if the clicked on one of the list items, redirect to url,else hide
+		if(!window.mouseAtDropDown)
+		{
+			$("#sb_dropdown").hide();
+			window.keyUpNeeded = false;
+		}
+		else
+		{
+			window.keyUpNeeded = true;
+			$(this).trigger('focus');
+		}
+		if(window.filterLink)
+		{
+			document.location.href = jQuery.param.querystring(document.location.href,"chartType="+scenarioMainChartOptions.chart.defaultSeriesType+"&groupby="+window.filterLink);
+		}
+	})
+	.keyup(function(event)
+	{
+		var searchKey = $("#sb_input").val();
+		if(searchKey)
+		{
+			// hide the tags
+		$("#sb_dropdown").find('li.list-tags').hide();
+		}
+		else
+		{
+			$("#sb_dropdown").find('li.list-tags').show();
+		}
+		filterSearchList(searchKey);
+		window.totalFilters = $("#sb_dropdown").find("li.searched").length;
+		switch(event.keyCode)
+		{
+			 case 40:
+            	unHighLight(window.currentFilter);
+            	window.currentFilter += 1;
+            	highLightSelected();
+            	break;
+        	case 38:
+            	unHighLight(window.currentFilter);
+            	window.currentFilter -= 1;
+            	highLightSelected();
+            	break;
+        	case 13:
+            	var link = $("#sb_dropdown").find("li.filter-selected").find("label").attr("for");
+            	if(link){
+            	document.location.href = "./?groupby="+link+"&chartType="+scenarioMainChartOptions.chart.defaultSeriesType;;
+            	}
+            	break;
+        	default:
+            	resetList();
+            	window.currentFilter= 0;
+            	highLightSelected();
+            	break;
+		}//end of key up
+			// mouseover and leave on the ul
+			$("#sb_dropdown li.searched").each(function(index,value){
+				$(this).click(
+					function()
+					{
+						document.location.href = jQuery.param.querystring(document.location.href,"chartType="+scenarioMainChartOptions.chart.defaultSeriesType+"&groupby="+window.filterLink);
+						
+					}
+				);
+				$(this).hover(function()
+				{
+					unHighLight(window.currentFilter);
+					window.currentFilter = index;
+					highLightSelected();
+					window.filterLink = $(this).find("label").attr("for");
+				},
+				function()
+				{
+					window.filterLink = null;
+				});
+			});
+	}); 
+ // load the image and trigger click
+	$("#sb_up-and-down").click(function()
+	{
+		/*if($("#sb_up-and-down").attr("clicked") != 0)
+		{
+		$("#sb_input").trigger("focus");
+		$(this).attr("clicked",1)
+		} */
+		if($('#sb_dropdown'))
+		{
+			$("#sb_input").trigger("focus");
+		}
+		else
+		{
+			$("#sb_dropdown").hide();
+		}
+	})
+	
+	// to avoid scroll bar when blur
+	$("#sb_dropdown").mousemove(function(e){
+		var pos  = $(this).position();
+		var off = $(this).offset();
+		var wid =  $(this).width();
+		var height = $(this).height();
+		window.off = off;
+		if(e.pageX <= (off.left + wid) && e.pageX > (off.left)
+		&& e.pageY <= (off.top + height) && e.pageY > (off.top))
+		{  //i know hard coding is bad but it not coming out perfectly 
+			window.mouseAtDropDown = true;
+		}
+		else
+			window.mouseAtDropDown = false;
+		});
+	
+}); 
+</script>
+{% endblock %}
+{% block bottomleft %}
+<div id="scenario-trend-chart-container" style="width: 280px; height: 225px"></div>
+<h4 id = 'popup-link'>Click here for more trending details…</h4>
+<script>
+$(document).ready(function() {
+	jQuery("#popup-link").click(function()
+	{
+		centerPopup();
+		//load popup
+		loadPopup();
+		if(!scenarioPopUpTrendChart)
+		{
+			scenarioPopUpTrendChartOptions.title.text = scenarioPopUpTrendChartOptions.title.text + ' for ' + shortDes;
+			scenarioPopUpTrendChartOptions.series[0].data = popUpTrendData;
+			scenarioPopUpTrendChart = new Highcharts.Chart(scenarioPopUpTrendChartOptions);
+		}
+	});
+});
+</script>
+{% endblock %}
+{% block topright %}
+	<div id="chart-buttons">
+        <div class = "chart-icons corner-left-menu" alt = "pie">
+                <img src = "/static/images/pie-icon.png" alt = "Pie Chart" width = "25px" height = "25px"/>
+        </div>
+        <div class = "chart-icons corner-right-menu" alt = "column">
+                   <img src = "/static/images/bar-icon.png" alt = "column Chart" width = "25px" height = "25px"/>
+           </div>
+    </div>
+<div id = 'email'>
+	<img src = "/static/images/email_icon.gif" alt = "Email Icon"/>
+</div>
+<div id="scenario-chart-container" style="width: 95%; height: 92%"></div>
+<script>
+	$(document).ready(function() { 
+		$(".chart-icons").click(function()
+        {
+            var currentChartType = $(this).attr('alt');
+            if(scenarioMainChartOptions.chart.defaultSeriesType != currentChartType)
+            {
+                changeChartType(currentChartType,scenarioMainChartOptions,scenarioMainChart);
+                $(this).addClass('chart-icon-inactive').removeClass('chart-icon-active').siblings().addClass('chart-icon-active').removeClass('chart-icon-inactive');
+            }
+        });
+	});
+</script>
+{% endblock %}
+{% block bottomtable %}
+<div id = 'excel'>
+	<img src = "/static/images/excel-icon.png" alt = "Email Icon"/>
+</div>
+<table id="scenario_tables">
+</table>
+
+<script>
+	$(document).ready(function() {
+	jQuery("#excel").click(function()
+	{
+		window.location = "/export/scenario/"+String(window.scenarioName)+"?&headers="+columnNames;
+	}); 
+});
+</script>
+<div id = "tooltip">
+</div>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}
+Set Permissions
+{% endblock %}
+{% block content %}
+<h2>Set Permissions</h2>
+<form method="post" action=" {{ url_for('setpermissions3') }} "> 
+  {% for category in categories %}
+  <p>{{ category.category_name }}</p>
+  {% for subcategory in subcategories if subcategory[1].category_id==category.category_id %}
+  <input type="checkbox" name="subcategory" value="{{ subcategory[0].subcategory_id }}" checked="yes">{{ subcategory[0].subcategory_name }}<br>
+  {% endfor %}
+  {% endfor %}
+  <input type="submit" value="Submit"> 
+</form> 
+{% endblock %}

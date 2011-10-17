@@ -1,0 +1,122 @@
+{% extends "base.html" %}
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', file='dropdown/dropdown.css') }}">
+{% endblock %}
+{% block scripts %}
+{{ super() }}
+<script type="text/javascript" src="{{ url_for('static', file='jquery/jquery-1.6.1.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', file='charts/highcharts.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', file='dropdown/dropdown.js') }}"></script>
+{% endblock %}
+{% block content %}
+{% block header %}
+<div id = "header">
+	<div id = "logo">
+		<img src = "/static/images/iqp-temp-logo.png" alt = "IQP"/>
+	</div>
+	<div id = "user-bar">
+		<ul id = "user-bar-list">
+			<li><a> User Name</a></li>
+			<li><a> Profile</a></li>
+			<li><a> Help</a></li>
+			<li><a href="{{ url_for('logout') }}"> Log Off</a></li>
+		</ul>
+	</div>
+	<div id = "menu-left-slider" class = "menu-sliders corner-left-menu">
+		<
+	</div>
+	<div id = "menu-right-slider" class = "menu-sliders corner-right-menu">
+		>
+	</div>
+  <div id = "topbar">
+    {% block topbar %}
+    <ul id="cssdropdown">
+      <li class="headlink non-mouseover"><a href="{{ url_for('overview') }}">Overview</a></li>
+      {% for category in categories %}
+      <li class="headlink non-mouseover"><a href="{{ url_for('category', c_name=category.category_name) }}">{{ category.category_name }}</a>
+	<ul>
+	  {% for sub_category in sub_categories if sub_category.category_id==category.category_id %}<!--
+	  --><li class = "non-mouseover"><span><a href="{{ url_for('sub_category', c_name=category.category_name, sc_name=sub_category.subcategory_name) }}">{{ sub_category.subcategory_name }}</a></span></li>
+	  {% endfor %}
+	</ul>
+	{% endfor %}
+      </li>
+    </ul>
+    {% endblock %}
+  </div>
+</div>
+<div id = "menutooltip">
+	<p></p>
+		<img src = "/static/images/dn.png" alt = ""/>
+</div>
+<script language="javascript" type="text/javascript">
+	//script to show the full words in dropdown list if they are hidden
+	$(document).ready(function() { 
+	$('.headlink').
+	each(function()
+			{ 
+				$(this).find('ul li').
+				each(function()
+					{ 
+						var liData = $(this).find('span a').text();
+						if(liData.length > 14)
+						{
+							$(this).hover(function(e){
+							var divSize = liData.length * 7;
+							var offset = jQuery(this).offset();
+							$('#menutooltip').show().find('p').html(liData).parent().offset(
+								{
+									left : offset.left-( (divSize - $(this).width()) / 2),
+									top : offset.top - 32
+								}
+							).width(divSize);
+							},function(e)
+							{
+								$('#menutooltip').find('p').parent().hide();
+							}
+							);
+						}
+					}
+				);
+			}
+		);
+	});
+</script>
+<div id = "subheader">
+  <div id = "breadcrumbs">
+    {% block breadcrumbs %}
+    {% endblock %}
+  </div>
+</div>
+{% endblock %}
+{% block infoarea %}
+<div id="infoarea">
+  <div id="left">
+    <div id="topleft">
+      {% block topleft %}
+      {% endblock %}
+    </div>
+    <div id="bottomleft">
+      {% block bottomleft %}
+      {% endblock %}
+    </div>
+  </div>
+  <div id="right">
+    <div id="topright">
+      {% block topright %}
+      {% endblock %}
+    </div>
+    <div id="bottomright">
+      {% block bottomright %}
+      {% endblock %}
+    </div>
+  </div>
+</div>
+{% endblock %}
+<div id="footer">
+  {% block footer %}
+  <p>&copy; IQP 2011</p>
+  {% endblock %}
+</div>
+{% endblock %}

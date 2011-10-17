@@ -1,0 +1,65 @@
+{% extends "filterlayout.html" %}
+{% block title %}
+Subcategory: {{ subcategory_name }}
+{% endblock %}
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', file='css/layout.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', file='css/sub_category_layout.css') }}"> 
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', file='flexigrid/css/flexigrid.pack.css') }}">
+{% endblock %}
+{% block scripts %}
+{{ super() }}
+<script type="text/javascript" src="{{ url_for('static', file='tables/sub_category_table.js') }}"></script> 
+<script type="text/javascript" src="{{ url_for('static', file='charts/sub_category_proportion_chart.js') }}"></script> 
+<script type="text/javascript" src="/static/flexigrid/js/flexigrid.js"></script>
+<script type="text/javascript" src="{{ url_for('static', file='charts/highChartTheme.js') }}"></script>
+<script language="javascript" type="text/javascript"> 
+  $(document).ready(function() { 
+	var highchartsOptions = Highcharts.setOptions(Highcharts.theme);
+  createSubcategoryTable("{{ subcategory_name }}", {{ args }}, "subcategory_table"); 
+  createSubcategoryProportionChart("{{ subcategory_name }}", {{ args }}, "subcategory-proportionchart-container");
+  }); 
+</script> 
+{% endblock %}
+{% block breadcrumbs %}
+<ul class = "breadcrumbs">
+<li class = "crumbs"><a href="{{ url_for('overview') }}"><img src = '/static/images/home.png'/></a></li>
+<li class = "right-arrow"><a><img src = '/static/images/right-arrow.gif'/></a></li>
+<li class = "crumbs"><a href="{{ url_for('overview') }}">Overview</a></li>
+<li class = "right-arrow"><a><img src = '/static/images/right-arrow.gif'/></a></li>
+<li class = "crumbs"><a href="{{ url_for('category', c_name=breadcrumbs[0].category_name) }}">{{ breadcrumbs[0].category_name }}</a></li>
+<li class = "right-arrow"><a><img src = '/static/images/right-arrow.gif'/></a></li>
+<li class = "crumbs"><a href="{{ url_for('sub_category', c_name=breadcrumbs[0].category_name, sc_name=breadcrumbs[1].subcategory_name) }}">{{ breadcrumbs[1].subcategory_name }}</a></li>
+</ul> 
+<script>
+$(document).ready(function() { 
+	highlightTabs("{{ breadcrumbs[0].category_name }}");
+});
+</script>
+{% endblock %}
+{% block bottomleft %}
+<div id="subcategory-proportionchart-container" style="width: 280px; height: 300px"></div> 
+
+{% endblock %}
+{% block topright %}
+<div id = 'excel'>
+	<img src = "/static/images/excel-icon.png" alt = "Email Icon"/>
+</div>
+<table id="subcategory_table">  
+</table>
+<script>
+	$(document).ready(function() {
+	jQuery("#excel").click(function()
+	{
+		window.location = "/export/subcategory/"+String(window.subCategoryName);
+	}); 
+	jQuery("#tooltip").mouseleave(function(e)
+	{
+		jQuery(this).hide();
+	});
+});
+</script>
+<div id = "tooltip">
+</div>
+{% endblock %}

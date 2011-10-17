@@ -1,0 +1,97 @@
+{% extends "layout.html" %}
+{% block topleft %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', file='acc-button/css/cupertino/jquery-ui-1.8.14.custom.css') }}">
+<script type="text/javascript" src="{{ url_for('static', file='acc-button/js/jquery-ui-1.8.14.custom.min.js') }}"></script>
+<div id="filteroptions">
+	<div>
+		<h3><a href="#">Data Quality Issues</a></h3>
+		<ul class = "radio-buttons">
+			<li>
+   			<input type="radio" id="radio-Heal" name="radio" />	
+   					<label for="radio-Heal">
+   						Health
+   					</label>
+   		</li>
+   		<li>
+   			<input type="radio" id="radio-Stal" name="radio" />
+   				
+   					<label for="radio-Stal">
+   						Stale
+   					</label>
+   		</li>
+   		<li>
+   			<input type="radio" id="radio-Inte" name="radio" />
+   				
+   					<label for="radio-Inte">
+   						Interface
+   					</label>
+   		</li>
+   		</ul>
+	</div>
+	<div>
+		<h3><a href="#">Stats & Features</a></h3>
+		<ul class = "radio-buttons">
+			<li>
+   			<input type="radio" id="radio-Stat" name="radio" />
+   					<label for="radio-Stat">
+   						Stats
+   					</label>
+   		</li>
+   		<li>
+			<input type="radio" id="radio-Feat" name="radio" />
+   					<label for="radio-Feat">
+   						Features
+   					</label> 		
+   		</li>
+   	</ul>
+	</div>
+</div>
+<script> 
+$(document).ready(function() { 
+	$("#filteroptions").accordion({ header: "h3" },{ autoHeight: false });
+	$(".radio-buttons").buttonset();
+	$(".ui-button").width(200).each(function()
+	{
+		if(!$(this).hasClass("ui-corner-left"))
+		{
+			$(this).addClass("ui-corner-left");
+		}
+		
+		if(!$(this).hasClass("ui-corner-right"))
+		{
+			$(this).addClass("ui-corner-right");
+		}
+		
+		$(this).click(function()
+		{
+			var radioId = jQuery(this).attr("for");
+			if(jQuery("#"+radioId).attr("checked")=="checked")
+			{
+				document.location.href = "./";
+			}
+			else
+			{
+				document.location.href = "./?filter=" + jQuery.trim(String($(this).find(".ui-button-text").html()));
+
+			}
+		})
+	});
+	var filter = getParameterByName("filter");
+	if(filter)
+	{
+		if (filter == "Features" || filter == "Stats")
+		{
+			
+				divHeader  = jQuery("#filteroptions").find("div").eq(1).find(".ui-accordion-header");
+				if(divHeader.attr("tabindex") == -1)
+				{
+					divHeader.trigger("click");
+				}
+		}
+		var labelFor = "radio-"+filter.substring(0,4);
+		jQuery("label[for="+labelFor+"]").addClass("ui-state-active");
+		jQuery("#"+labelFor).attr("checked","checked");
+	}
+});
+</script> 
+{% endblock %}

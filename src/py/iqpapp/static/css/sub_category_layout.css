@@ -1,0 +1,69 @@
+#infoarea 
+{ 
+	height : 515px;
+}
+#bottomleft { position: relative;
+	      width: 100%;
+	      height: 300px;
+	    }
+
+#topright
+{ 
+	position: relative;
+	width: 100%;
+	height: inherit;
+	margin-top: 10px;
+	  }
+
+#bottomright { 
+		   position: relative;
+		   display:block; 	
+	       width: 100%;
+	       height: 0px;
+	     }
+#filteroptions
+{
+	position : relative;
+	display : block;
+	width : inherit;
+	height : 200px;
+	overflow: hidden;
+	margin-left: 5px;
+	margin-top: 10px;
+	margin-right: 5px;
+}
+#subcategory-proportionchart-container
+{
+	margin-left: 5px;	
+}
+#excel
+{
+	position : absolute;
+	display: block;
+	z-index: 999;
+	left : 640px;
+	cursor:pointer;
+}
+#tooltip
+{
+	position: absolute;
+	display : none;
+	line-height : 34px;
+	font-size : 12px;
+	height : 34px;
+	border: 1px solid #ADD8E6;
+	background-color: #ffffff;
+	text-align: center;
+	-moz-border-radius: 4px; 
+	-webkit-border-radius: 4px;
+	border-radius : 4px;
+	-moz-box-shadow:-1px 1px 1px #ccc;
+	    -webkit-box-shadow:0 1px 5px #ccc;
+	    box-shadow:0 1px 5px #ccc;
+	    color : #333;
+	    cursor : pointer;
+}
+#tooltip:hover
+{
+	color : #0070A3;
+}

@@ -1,0 +1,2183 @@
+232,"QDP_SCENARIO_COUNT_HISTORY","Scenario Counts History","Scenario Counts History",0,"N",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+234,"QDP_DEBUG_PROFILES","Debug Profiles turned on","All Debug Profiles Turned on",0,"N",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+192,"QDP_STAT_APPLICATIONS","NULL","NULL",1,"Stats","select fa.APPLICATION_ID, fa.APPLICATION_SHORT_NAME, fa.APPLICATION_NAME,  fa.PRODUCT_CODE,
+fa.BASEPATH, ai.PRODUCT_VERSION, decode(ai.STATUS,'I','Installed','N','Not Installed','S','Shared Install')Status,
+ ai.PATCH_LEVEL
+from FND_application_VL@XXX fa,
+FND_PRODUCT_INSTALLATIONS@XXX ai
+Where fa.application_id = ai.application_id","NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+801,"HZ_CREDIT_SETUP_ISSUES","Credit check issues at customer level","Credit check issues at customer or address",9,"Health",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+802,"HZ_CREDIT_AMOUNTS_STATS","All credit amounts at Customer level","All Credit Amounts at Customer Level",9,"Stats",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+803,"HZ_CUSTOMER_STATS","ALL CUSTOMERS MAIN RECORDS","All Customers Main records",9,"Stats",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+804,"HZ_CUSTOMER_ADDRESS_STATS","All Customer Address ","All Customer Address ",9,"Stats",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+805,"HZ_CUST_ADDRESS_USAGE_STATS","All Customers Address Usage","All Customers Address Usage",9,"Stats",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+806,"HZ_CUSTOMER_CONTACTS","All Customer Contacts","All Customer Contacts",9,"Stats",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+807,"HZ_CUSTOMER_MERGE_STATS","All Customer Merges","All Customer Merges",9,"Stats",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+808,"HZ_CUSTOMER_ACTIVITY","Summary of Customer Activity on sales orders","Summary of Customer Activity on Sales Orders",9,"Stats",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+809,"HZ_CUSTOMER_FEATURES","HZ: FEATURES","Customer Features not Being Used",9,"Feature"," select  'Customer Data Quality Managment' Feature_function, decode(max(i.created_by), null,0,1)Implemented
+from HZ_DQM_STAGE_LOG@xxx i ","NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+811,"HZ_INTERFACE_COUNT_STAT","Customer  Interface Tables","Customer  Interface Tables",9,"Interface",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+812,"HZ_SITE_CONTACTS","All Customer contacts at the address level","All Customer Contacts at the Address Level",9,"Stats",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+813,"HZ_SITE_CREDIT_SETUP_ISSUES","Credit check issues at site level","Credit Check Issues at Site Level",9,"Stats",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+814,"HZ_SITE_CREDIT_AMOUNTS_STATS","All credit amounts at Address level","All Credit Amounts at Address Level",9,"Stats",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+904,"PO_REQ_SETUP_TEMPLATES","Requisition_templates","Requisition_templates",13,"Stats",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+915,"PO_REQ_HEADERS","All requisition Headers","All requisition Headers",13,"Stats",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+916,"PO_REQ_LINES_DETAILS","All requisition line details","All requisition line details",13,"Stats",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+931,"REQ_WORKFLOW_ERRORS","Requisition Workflow Errors in Procurement","Requisition Workflow Errors in Procurement",13,"Health",,235,"Dependent",,235,"SUBCATEGORY in ('Requisition')","SUBCATEGORY in ('Requisition')","NULL","NULL"
+903,"PO_RECEIVING_SETUP_OPTIONS","Recieving Setup Options","Recieving Setup Options",15,"Stats",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+933,"RCV_WORKFLOW_ERRORS","Receiving Workflow Errors","Receiving Workflow Errors",15,"Health",,235,"Dependent",,235,"SUBCATEGORY in ('Receiving')","SUBCATEGORY in ('Receiving')","NULL","NULL"
+917,"PO_SUPPLIER_HEADERS","All Suplier heders","All Suplier heders",16,"Stats",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+918,"PO_SUPPLIER_SITES","All Supplier Sites","All Supplier Sites",16,"Stats",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+919,"PO_SUPPLIER_CONTACTS","All Supplier Contacts","All Supplier Contacts",16,"Stats",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+921,"PO_ASL_MISSING","Items that require Aproved supplier items to be setup and none are currently defined","Items that require Aproved supplier items to be setup and no",16,"Health",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+929,"PO_ASL_DISABLED_SUPPLIER","Active  ASL Items for a Disabled Supplier","Active  ASL Items for a Disabled Supplier",16,"Health",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+935,"SUP_WORKFLOW_ERRORS","Supplier related Workflow Errors","Supplier related Workflow Errors",16,"Health",,235,"Dependent",,235,"SUBCATEGORY in ('Supplier','iSupplier Portal')","SUBCATEGORY in ('Supplier','iSupplier Portal')","NULL","NULL"
+601,"CST_INTERFACE_COUNT_STAT","CST: Cost Interface Table Check","CST: Cost Interface Table Check",19,"Stats",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+602,"CST_COMP_SNAP_INTERFACE","Items in the CST_COMP_SNAP_INTERFACE  table can be deleted if cost method is standard otherwise follow fix method described","Items in the CST_COMP_SNAP_INTERFACE  table can be deleted i",19,"Interface",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+603,"CST_DEPT_OVERHEADS_INTERFACE","Items in the CST_DEPT_OVERHEADS_INTERFACE  table ","Items in the CST_DEPT_OVERHEADS_INTERFACE  table ",19,"Interface",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+604,"CST_ITEM_COST_INTERFACE","Items in the CST_ITEM_COSTS_INTERFACE","Interface Issues on CST_ITEM_COSTS_INTERFACE",19,"Interface",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+605,"CST_ITEM_CST_DTLS_INTERFACE","CST_ITEM_CST_DTLS_INTERFACE is the interface table for
+CST_ITEM_COST_DETAILS. This table is populated when a Copy Cost
+request is submitted.","Interface Issues on CST_ITEM_CST_DTLS_INTERFACE ",19,"Interface",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+606,"CST_PL_COST_DET_INTERFACE","CST_PL_COST_DET_INTERFACE is an open interface table used for importing periodic cost details.","Interface Issues on CST_PL_COST_DET_INTERFACE ",19,"Interface",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+607,"CST_PC_ITEM_COST_INTERFACE","CST_PC_ITEM_COST_INTERFACE is an open interface table used for importing periodic costs.","Interface Issues on CST_PC_ITEM_COST_INTERFACE",19,"Interface",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+608,"CST_RESOURCE_COSTS_INTERFACE","CST_RESOURCE_COSTS_INTERFACE","Interface Issues on CST_RESOURCE_COSTS_INTERFACE",19,"Interface",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+609,"CST_RES_OVERHEADS_INTERFACE"," CST_RES_OVERHEADS_INTERFACE","Interface Issues on CST_RES_OVERHEADS_INTERFACE",19,"Interface",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+610,"CST_ITEMS_NO_COST","Items with no Standard Frozen Cost","Items with no Standard Frozen Cost",19,"Health",,616,"Original",,"NULL","NULL","NULL","NULL","NULL"
+611,"CST_RESOURCE_COSTS_NOT_DEFINED","CST: Resources with Standard rate checked and no standard cost defined","CST: Resources with Standard rate checked and no standard co",19,"Health",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+612,"CST_TRANSACTION_COST_ISSUE","CST: TRANSACTION ERROR COSTED FLAG","CST: TRANSACTION ERROR COSTED FLAG",19,"Health",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+613,"CST_BAD_JOBNAME_INTERFACE","CST: Update Bad Job Names in Resource Interface","CST: Update Bad Job Names in Resource Interface",19,"Stale",,542,"Original",,"NULL","NULL","NULL","NULL","NULL"
+615,"CST_STD_COST_DIFF_IN_ORGS","CST: Frozen Item Cost does not match in all org","CST: Frozen Item Cost does not match in all org",19,"Health",,616,"Original",,"NULL","NULL","NULL","NULL","NULL"
+616,"CST_STATS_COST_ITEMS","All Items all cost types","All Items all cost types",19,"Stats",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+617,"CST_RES_COST_NOT_DEF_SUM","Resources with no standard costs defined","Resources with no standard costs defined",19,"Health",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+618,"CST_CONC_PGM_ERROR","Cost or BOM Concurrent Programs with Error or warning","Cost or BOM Concurrent Programs with Error or warning",19,"Health",,190,"Dependent",,190,"Status in ('Error', 'Warning') and Program_Application_Id in (702)","Status in ('Error', 'Warning') and Program_Application_Id in (702)","Program_Application_Id in (702)","Program_Application_Id in (702)"
+619,"CST_WORKFLOW_ERRORS","All Workflow Errors in Cost","All Workflow Errors in Cost",19,"Health",,235,"Dependent",,235,"upper(SUBCATEGORY) in ('COST', 'BOM')","upper(SUBCATEGORY) in ('COST', 'BOM')","NULL","NULL"
+620,"CST_CONC_PGM_HOLD","Cost and BOM Concurrent Programs with a Hold applied ","Cost and BOM Concurrent Programs with a Hold applied",19,"Stale",,190,"Dependent",,190,"Hold_Flag = 'Y' and Program_Application_Id in (702)","Hold_Flag = 'Y' and Program_Application_Id in (702)","NULL","NULL"
+621,"CST_CONC_PGM_LONG_RUN","Top 5 Longest running Cost and BOM Programs over 60 seconds","Top 5 Longest running Cost and BOM Programs over 60 seconds",19,"Health",,190,"Dependent",,190,"Status in ('Normal', 'Warning') and Program_Application_Id in (702) and (Actual_Completion_Date- Actual_Start_Date)*24*60*60  >= 60","Status in ('Normal', 'Warning') and Program_Application_Id in (702) and (Actual_Completion_Date- Actual_Start_Date)*24*60*60  >= 60","Status in ('Normal', 'Warning') and Program_Application_Id in (702) ","Status in ('Normal', 'Warning') and Program_Application_Id in (702) "
+622,"CST_CONC_PGM_DEBUG","Cost Concurrent Programs with Trace debug turned on","Cost Concurrent Programs with Trace debug turned on",19,"Stale",,191,"Dependent",,191,"Application_Id in (702) and Enabled_Flag = 'Y' AND Enable_Trace = 'Y'and Status in ('Installed', 'Shared Install')","Application_Id in (702) and Enabled_Flag = 'Y' AND Enable_Trace = 'Y'and Status in ('Installed', 'Shared Install')","Application_Id in (702) and Enabled_Flag = 'Y'","Application_Id in (702) and Enabled_Flag = 'Y'"
+623,"CST_DEBUG_PROFILES","Cost Debug Profiles turned on","Cost Debug Profiles turned on",19,"Stale",,234,"Dependent",,234,"Application_Id in (702) and Profile_Option_Value ='Yes'","Application_Id in (702) and Profile_Option_Value ='Yes'","Application_Id in (702)","Application_Id in (702)"
+301,"PLN_STATS_FORECAST_SETS","Active forecast sets ","Forecast Sets Statistics",21,"Stats",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+302,"PLN_STATS_FORECAST","Active forecast ","Forecast Statistics",21,"Stats",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+303,"PLN_FORECAST_SETS_NO_FORECAST","Active Forecast sets that have no active forcast assigned","Forecast Sets with no Forecasts",21,"Stale",,301,"Original",,"NULL","NULL","NULL","NULL","NULL"
+304,"PLN_FORECAST_NO_ITEMS","Active Forecast that have no active Items  assigned","Foreacsts with no Items",21,"Stale",,302,"Original",,"NULL","NULL","NULL","NULL","NULL"
+305,"PLN_FORECAST_DISABLED","Forecast or forecast sets that are disabled with a days old flag to help identify ones to purge","Disabled Forecasts",21,"Stale",,302,"Original",,"NULL","NULL","NULL","NULL","NULL"
+306,"PLN_STATS_FORECAST_ITEM_COUNTS","Number of items in each forecast","Forecast Items Statistics",21,"Stats",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+307,"PLN_STATS_MDS_NAMES","MDS names","MDS Names",21,"Stats",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+308,"PLN_STATS_MPS_NAMES","MPS Names","MPS Names",21,"Stats",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+309,"PLN_STATS_MRP_NAMES","MRP Names Stats","MRP Names",21,"Stats",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+310,"PLN_STATS_ASP_NAME","Advanced Planning Stats","ASP Names",21,"Stats",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+311,"PLN_ASP_EXCEPTIONS","Advanced planning Exceptions","ASP Exceptions",21,"Stats",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+312,"PLN_ASP_EXCEPTION_SUMMARY","Summary count of the advanced planning exception ","ASP Exceptions Summary",21,"Stats",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+313,"PLN_MRP_MPS_EXCEPTIONS","MRP and MPS planning Exceptions","MRP and MPS Exceptions",21,"Stats",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+314,"PLN_STATS_ASP_ITEMS_PLANNED","Total number of items in a ASP plan","ASP Items Planned",21,"Stats",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+315,"PLN_STATS_MRP_ITEMS_PLANNED","Total number of items in a MRP plan","MRP Items Planned",21,"Stats",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+316,"PLN_STATS_ASP_COUNTS","Total counts from multible Advanced planning tables","ASP Count Statistics",21,"Stats",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+317,"PLN_NONPLANNED_ITEMS_WITH_DEMA","Non Planned Items having Demand this will effect both ASCP and MRP","Nonplanned Items with Demand",21,"Health",,336,"Original",,"NULL","NULL","NULL","NULL","NULL"
+318,"PLN_MRP_FORECAST_INTERFACE","MRP_FORECAST_INTERFACE - details","Interface Issues on MRP_FORECAST_INTERFACE ",21,"Interface",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+319,"PLN_MRP_RELIEF_INTERFACE","MRP_RELIEF_INTERFACE","Interface Issues on MRP_RELIEF_INTERFACE",21,"Interface",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+320,"PLN_MRP_SCHEDULE_INTERFACE","MRP_SCHEDULE_INTERFACE","Interface Issues on MRP_SCHEDULE_INTERFACE",21,"Interface",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+321,"PLN_MSC_ERRORS","MSC_ERRORS","Interface Issues on MSC_ERRORS",21,"Interface",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+322,"PLN_MSC_PO_REQ_INTERFACE","MSC_PO_REQUISITIONS_INTERFACE","Interface Issues on MSC_PO_REQUISITIONS_INTERFACE",21,"Interface",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+323,"PLN_MSC_PO_RESCH_INTERFACE","MSC_PO_RESCHEDULE_INTERFACE","Interface Issues on MSC_PO_RESCHEDULE_INTERFACE",21,"Interface",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+324,"PLN_ATP_RULES","ATP Rules for active stockable items","ATP Rules for active stockable items",21,"Stats",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+325,"PLN_BACKLOG_NOT_IN_FORECAST","backlog not in forcast","Backlog not in Forecast",21,"Health",,326,"Original",,"NULL","NULL","NULL","NULL","NULL"
+326,"PLN_Forecast_current_Original","Forecast current vs original","Current vs. Original Forecast",21,"Stats",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+327,"PLN_STATS_PLANNERS","All planners (details)","Planners Statistics",21,"Stats",,327,"Original",,"NULL","NULL","NULL","NULL","NULL"
+328,"PLN_MSC_BOM_BOD_INTERFACE","MSC_BOM_BOD_INTERFACE stages the BOM and sourcing rules 
+uploaded on supply chain  exchange prior to","Interface Issues on MSC_BOM_BOD_INTERFACE 
+uploaded on supply chain  exchange prior to",21,"Interface",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+329,"PLN_MSC_PO_INTERFACE","MSC_PURCHASE_ORDER_INTERFACE","Interface Issues on MSC_PURCHASE_ORDER_INTERFACE",21,"Interface",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+330,"PLN_MSC_SO_INTERFACE","MSC_SALES_ORDER_INTERFACE","Interface Issues on MSC_SALES_ORDER_INTERFACE",21,"Interface",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+331,"PLN_MSC_SO_RELEASE_INTERFACE","MSC_SO_RELEASE_INTERFACE","Interface Issues on MSC_SO_RELEASE_INTERFACE",21,"Interface",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+332,"PLN_MSC_SUP_HEADERS_INTERFACE","MSC_SUP_HEADERS_INTERFACE","Interface Issues on MSC_SUP_HEADERS_INTERFACE",21,"Interface",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+333,"PLN_MSC_SUP_LINES_INTERFACE","MSC_SUP_LINES_INTERFACE","Interface Issues on MSC_SUP_LINES_INTERFACE",21,"Interface",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+334,"PLN_WIP_JOB_SCHEDULE_INTERFACE","WIP_JOB_SCHEDULE_INTERFACE contains requests to add/delete/modify material and/or resource requirement","Interface Issues on WIP_JOB_SCHEDULE_INTERFACE ",21,"Interface",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+335,"PLN_MSC_WIP_DTLS_INTERFACE","MSC_JOB_DTLS_INTERFACE contains requests to add/delete/modify material and/or resource requiremen","MSC_JOB_DTLS_INTERFACE contains requests to add/delete/modify material and/or resource requiremen",21,"Interface",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+336,"PLN_MDS_ITEMS","MDS Items Statistics","MDS Items Statistics",21,"Stats",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+337,"PLN_MPS_ITEMS","MPS Items Statistics","MPS Items Statistics",21,"Stats",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+338,"PLN_FORECAST_ITEMS_NONPLANNED","Non-Planned Items being Forecasted","Non-Planned Items being Forecasted",21,"Health",,326,"Original",,"NULL","NULL","NULL","NULL","NULL"
+339,"PLN_FCST_ITEMS_NOT_ORDERABLE","Forecasted Items that are not Order Enabled","Forecasted Items that are not Order Enabled",21,"Health",,326,"Original",,"NULL","NULL","NULL","NULL","NULL"
+340,"PLN_FORECAST_ITEM_DATES","Forecast Item details with dates","Forecast Item details with dates",21,"Stats",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+341,"PLN_STALE_PLANS","Stale Plans","Stale Plans",21,"Stale",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+342,"PLN_FEATURES","Planning Features","Planning Features",21,"Feature",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+343,"PLN_INTERFACE_COUNT_STAT","Planning Interface Tables with Current Counts","Planning Interface Tables with Current Counts",21,"Interface",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+344,"PLN_STATS_PLANNERS_TERMINATED","Active Planners has been terminated","Active Planners has been terminated",21,"Health",,327,"Dependent",,327,"Planner_Disable_Date = 'NA' and 
+Current_Employee = 'No'","Planner_Disable_Date = 'NA' and 
+Current_Employee = 'No'","NULL","NULL"
+345,"PLN_STATS_PLANNERS_DISABLED","Disabled Planners that have Items still assigned","Disabled Planners that have Items still assigned",21,"Health",,327,"Dependent",,327,"Planner_Disable_Date <> 'NA' and Count_Items_Per_Planner >0","Planner_Disable_Date <> 'NA' and Count_Items_Per_Planner >0","NULL","NULL"
+346,"PLN_STATS_PLANNERS_ACTIVE","Active Planners ","Active Planners ",21,"Stats",,"NULL","Dependent",,327,"Planner_Disable_Date = 'NA' and 
+Current_Employee = 'Yes'","Planner_Disable_Date = 'NA' and 
+Current_Employee = 'Yes'","NULL","NULL"
+347,"PLN_STATS_PLANNERS_NO_ITEMS","Active planners with no Items assigned","Active planners with no Items assigned",21,"Stale",,327,"Dependent",,327,"NULL","NULL","NULL","NULL"
+348,"PLN_WORKFLOW_ERRORS","All Workflow Errors in Planning","All Workflow Errors in Planning",21,"Health",,235,"Dependent",,235,"SUBCATEGORY = 'Planning'","SUBCATEGORY = 'Planning'","NULL","NULL"
+401,"PLN_ASP_NAMES_DISABLED","ASP Plans that are disabled","ASP Plans that are Disabled",21,"Stale",,310,"Dependent",,310,"disable_date <= sysdate","disable_date <= sysdate","NULL","NULL"
+402,"PLN_ASP_NAMES_ANCHOR_DATE","ASP Plans where Plan End Date is in the past or within next 90 days","ASP Plans with Plan End Date in the past or next 90 days",21,"Health",,310,"Dependent",,310,"PLAN_END_DATE <= SYSDATE + 90","PLAN_END_DATE <= SYSDATE + 90","NULL","NULL"
+403,"PLN_FORECAST_CONSUME_NO_DATES","Active Forecast sets with consume on and either backward or forward date is not defined","Active Forecast sets with consume on and either backward or ",21,"Health",,301,"Dependent",,301,"Upper(Consume_Forecast)= 'YES' and 
+(NVL(Foreward_Update_Time_Fence, 0)=0 or  
+nvl(Backward_Update_Time_Fence, 0)=0)","Upper(Consume_Forecast)= 'YES' and 
+(NVL(Foreward_Update_Time_Fence, 0)=0 or  
+nvl(Backward_Update_Time_Fence, 0)=0)","NULL","NULL"
+404,"PLN_MDS_ACTIVE_ONLY","All Active MDS names","Active Master Demand Schedules (MDS)",21,"Stats",,"NULL","Dependent",,307,"DISABLE_DATE is null","DISABLE_DATE is null","NULL","NULL"
+405,"PLN_MDS_DISABLED_ONLY","All Disabled MDS names","All Disabled MDS names",21,"Stats",,"NULL","Dependent",,307,"DISABLE_DATE is not null","DISABLE_DATE is not null","NULL","NULL"
+406,"PLN_MRP_EXCEPTIONS_ONLY","MRP Exceptions","MRP Exceptions",21,"Stats",,"NULL","Dependent",,313,"Plan_Type = 'MRP'","Plan_Type = 'MRP'","NULL","NULL"
+407,"PLN_MPS_EXCEPTIONS_ONLY","MPS Exceptions","MPS Exceptions",21,"Stats",,"NULL","Dependent",,313,"Plan_Type = 'MPS'","Plan_Type = 'MPS'","NULL","NULL"
+408,"PLN_MDS_NAMES_DISABLED","MDS schedules that are disabled","MDS Schdules that are Disabled",21,"Stale",,"NULL","Dependent",,307,"disable_date <= sysdate","disable_date <= sysdate","NULL","NULL"
+409,"PLN_MPS_NAMES_DISABLED","MPS names that are disabled","MPS Names that are Disabled",21,"Stale",,"NULL","Dependent",,308,"disable_date <= sysdate","disable_date <= sysdate","NULL","NULL"
+410,"PLN_MRP_NAMES_DISABLED","MRP Plans with Upcoming Anchor date or disabled","MRP Plans with Upcoming Anchor date or Disabled",21,"Stale",,"NULL","Dependent",,309,"disable_date <= sysdate","disable_date <= sysdate","NULL","NULL"
+411,"PLN_MDS_NAMES_NO_RELIEF","MDS Plans with No Relief","MDS Plans with No Relief",21,"Health",,"NULL","Dependent",,307,"Relief_Flag = 'No'","Relief_Flag = 'No'","NULL","NULL"
+412,"PLN_MPS_NAMES_NO_RELIEF","MPS Plans with No Relief","MPS Plans with No Relief",21,"Health",,"NULL","Dependent",,308,"Relief_Flag = 'No'","Relief_Flag = 'No'","NULL","NULL"
+414,"PLN_CONC_PGM_LONG_RUN","Top 5 Longest running Planning Programs over 60 seconds","Top 5 Longest running Planning Programs over 60 seconds",21,"Health",,190,"Dependent",,190,"Status in ('Normal', 'Warning') and Program_Application_Id in (388,700,704,722,723,724) and (Actual_Completion_Date- Actual_Start_Date)*24*60*60  >= 60","Status in ('Normal', 'Warning') and Program_Application_Id in (388,700,704,722,723,724) and (Actual_Completion_Date- Actual_Start_Date)*24*60*60  >= 60","Status in ('Normal', 'Warning') and Program_Application_Id in (388,700,704,722,723,724) ","Status in ('Normal', 'Warning') and Program_Application_Id in (388,700,704,722,723,724) "
+415,"PLN_DEBUG_PROFILES","Planning Debug Profiles turned on","Planning Debug Profiles turned on",21,"Stale",,234,"Dependent",,234,"Application_Id in (388,700,704,722,723,724) and Profile_Option_Value ='Yes'","Application_Id in (388,700,704,722,723,724) and Profile_Option_Value ='Yes'","Application_Id in (388,700,704,722,723,724)","Application_Id in (388,700,704,722,723,724)"
+416,"PLN_CONC_PGM_DEBUG","Planning Concurrent Programs with Trace debug turned on","Planning Concurrent Programs with Trace debug turned on",21,"Stale",,191,"Dependent",,191,"Application_Id in (388,700,704,722,723,724) and Enabled_Flag = 'Y' AND Enable_Trace = 'Y'and Status in ('Installed', 'Shared Install')","Application_Id in (388,700,704,722,723,724) and Enabled_Flag = 'Y' AND Enable_Trace = 'Y'and Status in ('Installed', 'Shared Install')","Application_Id in (388,700,704,722,723,724) and Enabled_Flag = 'Y'","Application_Id in (388,700,704,722,723,724) and Enabled_Flag = 'Y'"
+525,"PLN_CONC_PGM_ERROR","Planning Concurrent Programs with Error or warning","Error or Warning in Concurrent programs for Planning modules",21,"Health",,190,"Dependent",,190,"Status in ('Error', 'Warning') and Program_Application_Id in (388,700,704,722,723,724)","Status in ('Error', 'Warning') and Program_Application_Id in (388,700,704,722,723,724)","Program_Application_Id in (388,700,704,722,723,724)","Program_Application_Id in (388,700,704,722,723,724)"
+526,"PLN_CONC_PGM_HOLD","Planning Concurrent Programs with a Hold applied ","Planning Concurrent Programs with a Hold applied ",21,"Stale",,190,"Dependent",,190,"Hold_Flag = 'Y' and Program_Application_Id in (388,700,704,722,723,724)","Hold_Flag = 'Y' and Program_Application_Id in (388,700,704,722,723,724)","NULL","NULL"
+906,"SYS_AME_APPROVALS_RESOURCE","All Active AME approvel group resources","All Active AME approvel group resources",22,"NULL",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+190,"QDP_CONC_PGM_ERRORS","Concurrent Program Errors","Concurrent Program Errors",23,"Stats","select fnd.request_id , fnd.Requested_start_date, fnd.Actual_start_date,
+fnd.CONCURRENT_PROGRAM_ID, fnd.PROGRAM_APPLICATION_ID, decode(fnd.phase_code, 'P', 'Pending requests',
+'R', 'Running requests','C', 'Completed requests',phase_code) phase, fnd.STATUS_CODE, nvl(meaning, 'UNKNOWN') status, 
+fnd.hold_flag ,
+fnd.NUMBER_OF_COPIES, fnd.PRINTER, fnd.COMPLETION_TEXT, fnd.RESUBMITTED, fu.user_id, fu.user_name, fu.EMAIL_ADDRESS,
+actual_completion_date
+from fnd_concurrent_requests@xxx fnd,
+fnd_user@xxx fu,
+fnd_lookups@xxx l
+where fnd.REQUESTED_BY = fu.user_id
+AND l.LOOKUP_TYPE = 'CP_STATUS_CODE'
+AND l.lookup_code = fnd.status_code","NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+191,"QDP_STAT_CONC_PGMS","NULL","Concurrent Program Statistics",23,"Stats","select CONCURRENT_PROGRAM_NAME Program_short_name, 
+ nvl(USER_CONCURRENT_PROGRAM_NAME,cp.DESCRIPTION)Program_name,
+ CONCURRENT_PROGRAM_ID, APPLICATION_ID,
+ CREATION_DATE, CREATED_BY, ENABLED_FLAG, RUN_ALONE_FLAG, enable_trace
+ from  fnd_concurrent_programs_Vl@XXX cp
+ where ENABLED_FLAG = 'Y'","NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+193,"QDP_STAT_USER_ACCOUNTS","NULL","NULL",25,"Stats","SELECT FU.USER_ID, FU.USER_NAME, PP.Employee_full_name, PP.CURRENT_EMPLOYEE_FLAG,PP.EMPLOYEE_NUMBER, PP.PERSON_ID HR_PERSON_ID,
+PP.HR_PERSON_TYPE, FU.DESCRIPTION User_description, FU.START_DATE Account_start_date , FU.END_DATE account_end_date,FU.LAST_LOGON_DATE,
+FU.EMPLOYEE_ID Account_employee_id, FU.EMAIL_ADDRESS account_email, FU.PASSWORD_LIFESPAN_DAYS,
+FU.CUSTOMER_ID, FU.SUPPLIER_ID, FU2.USER_NAME USER_CREATED_BY, FU4.USER_NAME USER_LAST_UPDATED_BY, 
+decode(SIGN(TRUNC(SYSDATE)-trunc(FU.END_DATE)),1,'Not Active','Active') Acount_Status,
+pp.EFFECTIVE_start_DATE HR_START_DATE, Pp.EFFECTIVE_END_DATE HR_END_DATE
+FROM fnd_USER@XXX FU,
+FND_USER@XXX FU2,
+FND_USER@XXX FU4,
+(SELECT DISTINCT PP1.PERSON_ID, PP1.EMPLOYEE_NUMBER, DECODE(PP1.CURRENT_EMPLOYEE_FLAG,'Y','Yes','No') CURRENT_EMPLOYEE_FLAG,
+PP1.FULL_NAME Employee_full_name, PF.PERSON_TYPE_ID, PPT.USER_PERSON_TYPE HR_PERSON_TYPE ,PF.EFFECTIVE_start_DATE, PF.EFFECTIVE_END_DATE,
+pf.LAST_UPDATE_DATE, pf.creation_date 
+FROM per_people_X@XXX pp1, 
+PER_PERSON_TYPE_USAGES_f@XXX PF,
+per_person_types@XXX ppt
+WHERE PP1.PERSON_ID = PF.PERSON_ID
+AND PF.PERSON_TYPE_ID = PPT.PERSON_TYPE_ID
+and Pf.EFFECTIVE_END_DATE = '31-DEC-4712' and Pf.EFFECTIVE_START_DATE = (select Max(Ppx.EFFECTIVE_start_DATE)
+from PER_PERSON_TYPE_USAGES_f@XXX ppx where Pf.PERSON_ID = ppx.PERSON_ID) and pf.last_update_date = (select Max(Ppx1.last_update_date)
+from PER_PERSON_TYPE_USAGES_f@XXX ppx1 where Pf.PERSON_ID = ppx1.PERSON_ID) and pf.creation_date = (select Max(Ppx2.creation_date)
+from PER_PERSON_TYPE_USAGES_f@XXX ppx2 where Pf.PERSON_ID = ppx2.PERSON_ID)) PP
+WHERE 
+fu.CREATED_BY = FU2.USER_ID  
+AND FU.EMPLOYEE_ID = pp.PERSON_ID(+)
+AND fu.LAST_UPDATED_BY = FU4.USER_ID","NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+914,"SYS_APPROVAL_NO_ACCOUNT","Managers that do not have an Oracle account for iProcurment and iExpense","Managers that do not have an Oracle account for iProcurment ",25,"NULL",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+188,"QDP_WORKFLOW_ERRORS","NULL","NULL",26,"N","SELECT distinct ias.item_type, it.display_name, it.description, ias.item_key,
+          i.user_key, i.begin_date, i.end_date, ias.process_activity,
+          pa.instance_label, a.NAME, a.TYPE,
+           ias.execution_time, 
+          ias.activity_status, ias.activity_result_code,
+          ias.assigned_user,
+          ias.notification_id, ias.outbound_queue_id, ias.error_name,
+          ias.error_message, ias.error_stack, i.PARENT_ITEM_TYPE, i.PARENT_ITEM_KEY, 
+          i.PARENT_CONTEXT
+    FROM wf_activities_vl@xxx a,
+         wf_process_activities@xxx pa,
+         wf_item_types_vl@xxx it,
+         wf_items@xxx i,
+         wf_item_activity_statuses@xxx ias
+   WHERE ias.item_type = i.item_type
+     AND ias.item_key = i.item_key
+     AND ias.activity_status = 'ERROR'
+     AND i.begin_date BETWEEN a.begin_date AND NVL (a.end_date, i.begin_date)
+     AND i.item_type = it.NAME
+     AND ias.process_activity = pa.instance_id
+     AND pa.activity_name = a.NAME
+     AND pa.activity_item_type = a.item_type","NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+189,"QDP_WORKFLOW_TYPES","NULL","NULL",26,"N","Select Count(*) Count_types ,it.Name ITEM_TYPE, wf.ACTIVITY_STATUS, it.DISPLAY_NAME, it.DESCRIPTION
+from wf_item_activity_statuses@xxx wf,
+wf_item_types_vl@xxx it
+Where wf.ITEM_TYPE(+) = it.name
+Group by it.Name, wf.ACTIVITY_STATUS,
+ it.DISPLAY_NAME, it.DESCRIPTION","NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+194,"QDP_WORKFLOW_STATUS","Workflow Status","Workflow Status",26,"Stats","SELECT notification_id,FND.email_address, fnd.user_name, FND.EMPLOYEE_ID,wnv.status, wnv.begin_date,wnv.end_date,wnv.DUE_DATE,
+   WNV.message_name, WNV.MESSAGE_TYPE, wnv.subject, qdp.CATEGORY,qdp.SUBCATEGORY,
+   case when fnd.end_date is null then 'Active' 
+   when fnd.end_date < sysdate then 'Disabled' 
+   when fnd.end_date > sysdate then 'Active' end User_account_status
+    FROM wf_notifications@xxx wnv,   
+    fnd_user@xxx fnd,
+    QDP_WORKFLOW_TYPE_MATCH QDP
+   WHERE 1=1
+         AND wnv.recipient_role = fnd.user_name
+         AND wnv.status NOT IN ('CANCELED')
+         AND WNV.MESSAGE_TYPE = qdp.ITEM_TYPE
+         AND qdp.SUBCATEGORY IS NOT NULL 
+         AND qdp.CATEGORY IS NOT NULL
+        and (wnv.status <> 'CLOSED' OR wnv.END_DATE is not null)","NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+235,"QDP_WORKFLOW_ERRORS_V","All workflow Error in Oracle ","All workflow Errors in Oracle",26,"Health","select wm.CATEGORY,wm.SUBCATEGORY,wm.ITEM_TYPE ITEM_TYPE_MAIN,we.ITEM_TYPE ITEM_TYPE_ERRORS,wm.DISPLAY_NAME,we.ITEM_KEY,we.USER_KEY,
+we.PARENT_ITEM_KEY,we.INSTANCE_LABEL,we.NAME,we.ACTIVITY_RESULT_CODE,
+we.ERROR_NAME,we.ASSIGNED_USER,we.ERROR_STACK,we.TYPE,we.ACTIVITY_STATUS,we.PARENT_ITEM_TYPE
+from QDP_WORKFLOW_TYPE_MATCH wm,
+QDP_WORKFLOW_ERRORS we
+where wm.ITEM_TYPE = we.ITEM_TYPE",235,"Original",,"NULL","NULL","NULL","NULL","NULL"
+923,"AP_APPROVAL_NO_ACCOUNT","Managers that do not have approval access in Oracle","Managers that do not have approval access in Oracle",200,"Health",,"NULL","Dependent",,914,"1=1","1=1","NULL","NULL"
+68,"QDP_ASL_DISABLED_SUPPLIER","INV: Update ASL Items On Disabled Supplier","INV: Update ASL Items On Disabled Supplier",201,"N",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+901,"PO_APPROVAL_SETUP","List all approval types and limits","List all approval types and limits",201,"Stats",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+902,"PO_PURCHASING_SETUP_OPTIONS","Purchasing Setup Options","Purchasing Setup Options",201,"Stats",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+905,"PO_FINANCIAL_SETUP_OPTIONS","PO Financial Setup Options","PO Financial Setup Options",201,"Stats",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+907,"PO_LIST_DIFFERENCE","PO List Prices difference from standard cost","PO List Prices difference from standard cost",201,"Health",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+908,"PO_COST_DIFF_REQ","PO line amount is different from the associated requisition line amount","PO line amount is different from the associated requisition ",201,"Health",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+909,"PO_HEADERS","All PO headers","All PO headers",201,"Stats",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+910,"PO_LINES_DETAILS","All PO lines details","All PO lines details",201,"Stats",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+911,"PO_BUYERS","All Buyers","All Buyers",201,"Stats",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+913,"PO_DOCUMENT_TYPES","Active Document Types for Document types that are actually in use","Active Document Types for Document types that are actually i",201,"Stats",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+920,"PO_STDCOST_DIFF_PO","Frozen Standard Cost Different from PO unit Cost","Frozen Standard Cost Different from PO unit Cost",201,"Health",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+922,"PO_APPROVAL_NO_ACCESS","Managers that do not have approval access in Oracle","Managers that do not have approval access in Oracle",201,"Health",,"NULL","Dependent",,914,"1=1","1=1","NULL","NULL"
+924,"PO_CONC_PGM_ERROR","Procure to Pay Concurrent Programs with Error or warning","Procure to Pay Concurrent Programs with Error or warning",201,"Health",,190,"Dependent",,190,"Status in ('Error', 'Warning') and Program_Application_Id in (201,230,452,177,8723,200)","Status in ('Error', 'Warning') and Program_Application_Id in (201,230,452,177,8723,200)","Program_Application_Id in (201,230,452,177,8723,200)","Program_Application_Id in (201,230,452,177,8723,200)"
+925,"PO_CONC_PGM_HOLD","Procurement Concurrent Programs with a Hold applied","Procurement Concurrent Programs with a Hold applied",201,"Stale",,190,"Dependent",,190,"Hold_Flag = 'Y' and Program_Application_Id in (201,452,177,8723,200,230)","Hold_Flag = 'Y' and Program_Application_Id in (201,452,177,8723,200,230)","Hold_Flag = 'Y' ","Hold_Flag = 'Y' "
+926,"PO_DEBUG_PROFILE","Procure to Pay Debug Profiles turned on","Procure to Pay Debug Profiles turned on",201,"Stale",,234,"Dependent",,234,"Application_Id in (200,201,452,177,8723,230)and Profile_Option_Value ='Yes'","Application_Id in (200,201,452,177,8723,230)and Profile_Option_Value ='Yes'","Application_Id in (200,201,452,177,8723)","Application_Id in (200,201,452,177,8723)"
+927,"PO_CONC_PGM_DEBUG","Procure to Pay Concurrent Programs with Trace debug turned on","Procure to Pay Concurrent Programs with Trace debug turned o",201,"Stale",,"NULL","Dependent",,191,"Application_Id in (200,201,452,177,8723,230) and Enabled_Flag = 'Y' AND Enable_Trace = 'Y'and Status in ('Installed', 'Shared Install')","Application_Id in (200,201,452,177,8723,230) and Enabled_Flag = 'Y' AND Enable_Trace = 'Y'and Status in ('Installed', 'Shared Install')","NULL","NULL"
+928,"PROCURE_WORKFLOW_ERRORS","All Workflow Errors in Procurement","All Workflow Errors in Procurement",201,"Health",,235,"Dependent",,235,"CATEGORY in ('Procurement')","CATEGORY in ('Procurement')","NULL","NULL"
+930,"PO_ITEMS_IN_REC_INSPECTION","PO Items in receiving inspection","PO Items in receiving inspection",201,"Stats",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+932,"PO_WORKFLOW_ERRORS","Purchasing Workflow Errors","Purchasing Workflow Errors",201,"Health",,235,"Dependent",,235,"SUBCATEGORY in ('Purchasing')","SUBCATEGORY in ('Purchasing')","NULL","NULL"
+810,"HZ_CUST_CREDIT_SAME_PERSON","HZ: Customer and Credit Memos created by same User","Customer and Credit Memos Created by Same User",242,"Health",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+51,"QDP_ITEMS_NO_ABC","Items with no ABC Class assigned","Items with no ABC Class Code Assigned",401,"Health"," SELECT MSI.PADDED_CONCATENATED_SEGMENTS item, msi.INVENTORY_ITEM_ID, msi.ORGANIZATION_ID,
+msi.description item_description,mp.organization_code, ou.name Inventory_org,
+trunc(msi.creation_date) CREATION_DATE, fu.user_name Created_by, msi.CYCLE_COUNT_ENABLED_FLAG,
+msi.inventory_item_status_code, nvl(msi.planner_code,'NO PLANNER') PLANNER_CODE,
+decode(msi.planning_make_buy_code ,1, 'Make' , 2 ,'Buy') Make_buy_code,
+msi.PRIMARY_UNIT_OF_MEASURE,msi.ITEM_TYPE,FLV1.MEANING,  msi.INVENTORY_ITEM_FLAG, msi.STOCK_ENABLED_FLAG,
+msi.MTL_TRANSACTIONS_ENABLED_FLAG, decode(msi.MRP_PLANNING_CODE, 6,'Not Planned', 3, 'MRP Planning',
+4, 'MPS Planning', 7,'MRP/MPP Planned', 8, 'MPS/MPP Planned', 9, 'MPP Planned') Planning_code,
+demand1.demand
+FROM MTL_SYSTEM_ITEMS_KFV@XXX msi,
+ mtl_parameters@XXX mp,fnd_user@XXX fu,
+hr_all_organization_units@XXX ou,
+(select FLV.meaning, FLV.lookup_code from FND_LOOKUP_VALUES_VL@XXX FLV where FLV.lookup_type = 'ITEM_TYPE') FLV1,
+    (select sum(mdh.LINE_ITEM_QUANTITY )demand, mdh.INVENTORY_ITEM_ID, mdh.organization_id
+    from MTL_DEMAND@XXX mdh
+    group by mdh.INVENTORY_ITEM_ID, mdh.organization_id) demand1  
+WHERE msi.ORGANIZATION_ID = ou.ORGANIZATION_ID 
+and msi.stock_enabled_flag = 'Y' and  msi.CREATED_BY = fu.USER_ID
+and msi.INVENTORY_ITEM_ID = demand1.INVENTORY_ITEM_ID (+)
+and msi.organization_id = demand1.organization_id  (+)  AND MSI.INVENTORY_ASSET_FLAG = 'Y'
+and msi.CYCLE_COUNT_ENABLED_FLAG = 'Y' 
+AND MSI.ITEM_TYPE = FLV1.LOOKUP_CODE (+)
+AND msi.INVENTORY_ITEM_STATUS_CODE not in ( 'Inactive', 'Obsolete') 
+and NOT EXISTS  ( SELECT 1 FROM MTL_ABC_ASSIGNMENTS@XXX
+                        WHERE inventory_item_id = msi.inventory_item_id )
+                        AND msi.organization_id = mp.organization_id 
+                        and mp.MASTER_ORGANIZATION_ID <> mp.ORGANIZATION_ID ",64,"Original",,"NULL","Err:502","NULL","Err:502","NULL"
+52,"QDP_ITEMS_NO_LEADTIME","Make Items with no fixed lead time","Make Items with no Fixed Lead Time",401,"Health"," select MSI.PADDED_CONCATENATED_SEGMENTS Item, msi.INVENTORY_ITEM_ID, msi.ORGANIZATION_ID,
+msi.description item_description,mp.organization_code, ou.name Inventory_org,
+trunc(msi.creation_date) CREATION_DATE, fu.user_name Created_by,
+msi.inventory_item_status_code ,
+nvl(msi.planner_code,'NO PLANNER') PLANNER_CODE,
+decode(msi.planning_make_buy_code ,1, 'Make' , 2 ,'Buy')Make_buy_code,
+msi.PRIMARY_UNIT_OF_MEASURE,msi.ITEM_TYPE,FLV1.MEANING, msi.INVENTORY_ITEM_FLAG, msi.STOCK_ENABLED_FLAG,
+msi.MTL_TRANSACTIONS_ENABLED_FLAG, decode(msi.MRP_PLANNING_CODE, 6,'Not Planned', 3, 'MRP Planning',
+4, 'MPS Planning', 7,'MRP/MPP Planned', 8, 'MPS/MPP Planned', 9, 'MPP Planned') Planning_code,
+demand1.demand
+from MTL_SYSTEM_ITEMS_KFV@XXX msi,
+mtl_parameters@XXX mp,
+fnd_user@XXX fu, 
+hr_all_organization_units@XXX ou,
+(select FLV.meaning, FLV.lookup_code from FND_LOOKUP_VALUES_VL@XXX FLV where FLV.lookup_type = 'ITEM_TYPE') FLV1,
+    (select sum(mdh.LINE_ITEM_QUANTITY )demand, mdh.INVENTORY_ITEM_ID, mdh.organization_id
+    from MTL_DEMAND@XXX mdh
+    group by mdh.INVENTORY_ITEM_ID, mdh.organization_id) demand1  
+where msi.ORGANIZATION_ID = ou.ORGANIZATION_ID
+AND MSI.ITEM_TYPE = FLV1.LOOKUP_CODE (+)
+and msi.CREATED_BY = fu.USER_ID
+and msi.planning_make_buy_code = 1 
+and msi.organization_id = mp.organization_id  AND MSI.INVENTORY_ASSET_FLAG = 'Y'
+and NVL(msi.fixed_lead_time,0) = 0
+and msi.INVENTORY_ITEM_STATUS_CODE not in ( 'Inactive', 'Obsolete') 
+and mp.MASTER_ORGANIZATION_ID <> mp.ORGANIZATION_ID
+and  msi.MRP_PLANNING_CODE <> 6
+and msi.INVENTORY_ITEM_ID = demand1.INVENTORY_ITEM_ID (+)
+and msi.organization_id = demand1.organization_id  (+)
+and FLV1.MEANING not in ('Phantom Item')
+and msi.inventory_item_id in 
+(select distinct assembly_item_id 
+from bom_bill_of_materials@XXX)  ",64,"Original",,"NULL","Err:502","NULL","Err:502","upper(MAKE_BUY_CODE) = 'MAKE'"
+53,"QDP_ITEM_NO_FULL_LEADTIME","Buy Items with no full lead time","Buy Items with no Full Lead Time",401,"Health"," select MSI.PADDED_CONCATENATED_SEGMENTS Item, msi.INVENTORY_ITEM_ID, msi.ORGANIZATION_ID,
+msi.description item_description,mp.organization_code, ou.name Inventory_org,
+trunc(msi.creation_date)Creation_date, fu.user_name Created_by,
+msi.inventory_item_status_code ,
+nvl(planner_code,'NO PLANNER') planner_code ,
+decode(msi.planning_make_buy_code ,1, 'Make' , 2 ,'Buy')Make_buy_code,
+msi.PRIMARY_UNIT_OF_MEASURE,msi.ITEM_TYPE,FLV1.MEANING, msi.INVENTORY_ITEM_FLAG, msi.STOCK_ENABLED_FLAG,
+msi.MTL_TRANSACTIONS_ENABLED_FLAG, decode(msi.MRP_PLANNING_CODE, 6,'Not Planned', 3, 'MRP Planning',
+4, 'MPS Planning', 7,'MRP/MPP Planned', 8, 'MPS/MPP Planned', 9, 'MPP Planned') Planning_code,
+msi.PURCHASING_ENABLED_FLAG, msi.PURCHASING_ITEM_FLAG, demand1.demand
+    from MTL_SYSTEM_ITEMS_KFV@XXX msi, mtl_parameters@XXX mp,
+    fnd_user@XXX fu, 
+    hr_all_organization_units@XXX ou,
+    (select FLV.meaning, FLV.lookup_code from FND_LOOKUP_VALUES_VL@XXX FLV where FLV.lookup_type = 'ITEM_TYPE') FLV1,
+     (select sum(mdh.LINE_ITEM_QUANTITY )demand, mdh.INVENTORY_ITEM_ID, mdh.organization_id
+    from MTL_DEMAND@XXX mdh
+    group by mdh.INVENTORY_ITEM_ID, mdh.organization_id) demand1  
+            where msi.ORGANIZATION_ID = ou.ORGANIZATION_ID
+            and msi.CREATED_BY = fu.USER_ID
+             AND MSI.ITEM_TYPE = FLV1.LOOKUP_CODE (+)
+            and msi.planning_make_buy_code = 2
+             and (full_lead_time is null or 
+            full_lead_time = 0) 
+            and msi.INVENTORY_ITEM_ID = demand1.INVENTORY_ITEM_ID (+) AND MSI.INVENTORY_ASSET_FLAG = 'Y'
+            and msi.organization_id = demand1.organization_id  (+)
+            and msi.PURCHASING_ENABLED_FLAG = 'Y' and msi.PURCHASING_ITEM_FLAG = 'Y'
+            and msi.organization_id = mp.organization_id  
+            and msi.MRP_PLANNING_CODE <> 6
+            and msi.INVENTORY_ITEM_STATUS_CODE not in ( 'Inactive', 'Obsolete') 
+            and mp.MASTER_ORGANIZATION_ID <> mp.ORGANIZATION_ID",64,"Original",,"NULL","Err:502","NULL","Err:502","upper(MAKE_BUY_CODE) = 'BUY'"
+54,"QDP_ITEM_NO_PLANNER","Items with no Planner assigned","Items with no Planner Assigned",401,"Health"," select MSI.PADDED_CONCATENATED_SEGMENTS item, msi.INVENTORY_ITEM_ID,
+msi.description item_description,msi.organization_id, mp.organization_code, ou.name Inventory_org,
+trunc(msi.creation_date)Creation_date, fu.user_name Created_by,
+msi.inventory_item_status_code ,
+nvl(planner_code,'NO PLANNER') planner_code ,
+decode(msi.planning_make_buy_code ,1, 'Make' , 2 ,'Buy')Make_buy_code,
+msi.PRIMARY_UNIT_OF_MEASURE,msi.ITEM_TYPE, FLV1.MEANING, msi.INVENTORY_ITEM_FLAG, msi.STOCK_ENABLED_FLAG,
+msi.MTL_TRANSACTIONS_ENABLED_FLAG, decode(msi.MRP_PLANNING_CODE, 6,'Not Planned', 3, 'MRP Planning',
+4, 'MPS Planning', 7,'MRP/MPP Planned', 8, 'MPS/MPP Planned', 9, 'MPP Planned') Planning_code,
+msi.PURCHASING_ENABLED_FLAG, msi.PURCHASING_ITEM_FLAG, demand1.demand
+    from MTL_SYSTEM_ITEMS_KFV@XXX msi, 
+    mtl_parameters@XXX mp,
+    fnd_user@XXX fu, 
+    hr_all_organization_units@XXX ou,
+      (select FLV.meaning, FLV.lookup_code from FND_LOOKUP_VALUES_VL@XXX FLV where FLV.lookup_type = 'ITEM_TYPE') FLV1,
+     (select sum(mdh.LINE_ITEM_QUANTITY )demand, mdh.INVENTORY_ITEM_ID, mdh.organization_id
+    from MTL_DEMAND@XXX mdh
+    group by mdh.INVENTORY_ITEM_ID, mdh.organization_id) demand1 
+            where msi.ORGANIZATION_ID = ou.ORGANIZATION_ID
+             AND MSI.ITEM_TYPE = FLV1.LOOKUP_CODE (+)
+            and msi.CREATED_BY = fu.USER_ID
+            and msi.INVENTORY_ITEM_ID = demand1.INVENTORY_ITEM_ID (+)
+            and msi.organization_id = demand1.organization_id  (+)
+            and msi.organization_id = mp.organization_id  
+            and msi.MRP_PLANNING_CODE <> 6
+            and planner_code is null 
+            and msi.STOCK_ENABLED_FLAG = 'Y'
+            and msi.INVENTORY_ITEM_STATUS_CODE not in ( 'Inactive', 'Obsolete') 
+            and mp.MASTER_ORGANIZATION_ID <> mp.ORGANIZATION_ID",64,"Original",,"NULL","Err:502","NULL","Err:502","NULL"
+55,"QDP_ITEM_PLANNER_NOT_ACTIVE","Item with a planner assigned that is inactive or assigned to terminated employee","Items with a Planner that is not Active",401,"Stale"," select mp1.DISABLE_DATE, mp1.EMPLOYEE_ID,
+MSI.PADDED_CONCATENATED_SEGMENTS item, msi.INVENTORY_ITEM_ID,
+msi.description item_description,msi.organization_id, mp.organization_code, ou.name Inventory_org,
+trunc(msi.creation_date)Creation_date, fu.user_name Created_by,
+msi.inventory_item_status_code ,
+nvl(msi.planner_code,'NO PLANNER') planner_code ,
+decode(msi.planning_make_buy_code ,1, 'Make' , 2 ,'Buy')Make_buy_code,
+msi.PRIMARY_UNIT_OF_MEASURE,msi.ITEM_TYPE, FLV1.MEANING, msi.INVENTORY_ITEM_FLAG, msi.STOCK_ENABLED_FLAG,
+msi.MTL_TRANSACTIONS_ENABLED_FLAG, decode(msi.MRP_PLANNING_CODE, 6,'Not Planned', 3, 'MRP Planning',
+4, 'MPS Planning', 7,'MRP/MPP Planned', 8, 'MPS/MPP Planned', 9, 'MPP Planned') Planning_code,
+msi.PURCHASING_ENABLED_FLAG, msi.PURCHASING_ITEM_FLAG, demand1.demand
+    from MTL_SYSTEM_ITEMS_KFV@XXX msi, 
+    mtl_parameters@XXX mp,
+    fnd_user@XXX fu, 
+    hr_all_organization_units@XXX ou,
+      (select FLV.meaning, FLV.lookup_code from FND_LOOKUP_VALUES_VL@XXX FLV where FLV.lookup_type = 'ITEM_TYPE') FLV1,
+     (select sum(mdh.LINE_ITEM_QUANTITY )demand, mdh.INVENTORY_ITEM_ID, mdh.organization_id
+    from MTL_DEMAND@XXX mdh
+    group by mdh.INVENTORY_ITEM_ID, mdh.organization_id) demand1,
+    mtl_planners@XXX mp1 
+            where  
+         ( mp1.EMPLOYEE_ID in (select  
+                                  pp.PERSON_ID From per_people_x@XXX pp,  per_periods_of_service@XXX ps
+                                    where  pp.person_id = ps.person_id 
+                                      and ps.actual_termination_date is not null)
+                      and mp1.EMPLOYEE_ID not in (Select ps1.person_id from 
+                                        per_periods_of_service@XXX ps1 where  ps1.actual_termination_date is null ) or
+                 mp1.disable_date is not null)     
+            and msi.ORGANIZATION_ID = ou.ORGANIZATION_ID
+             AND MSI.ITEM_TYPE = FLV1.LOOKUP_CODE (+)
+            and msi.CREATED_BY = fu.USER_ID (+)
+            and msi.INVENTORY_ITEM_ID = demand1.INVENTORY_ITEM_ID (+)
+            and msi.planner_code = mp1.PLANNER_CODE
+            and  msi.organization_id = mp1.organization_id
+            and msi.organization_id = demand1.organization_id (+)
+            and msi.organization_id = mp.organization_id  
+           and msi.MRP_PLANNING_CODE <> 6 
+            and msi.INVENTORY_ITEM_STATUS_CODE not in ( 'Inactive', 'Obsolete') ",64,"Original",,"NULL","Err:502","NULL","Err:502","NULL"
+57,"QDP_ITEM_NOT_PLANNED","Items that are not planned","Items that are not set to be Planned",401,"Health"," select MSI.PADDED_CONCATENATED_SEGMENTS Item, msi.INVENTORY_ITEM_ID,
+msi.description item_description,msi.organization_id, mp.organization_code, ou.name Inventory_org,
+DECODE(MSI.BOM_ITEM_TYPE,1, 'Model', 2, 'Option class', 3, 'Planning', 4, 'Standard',5, 'Product family') BOM_ITEM_TYPE, 
+trunc(msi.creation_date)Creation_date, fu.user_name Created_by,
+msi.inventory_item_status_code ,
+nvl(planner_code,'NO PLANNER') planner_code ,
+decode(msi.planning_make_buy_code ,1, 'Make' , 2 ,'Buy')Make_buy_code,
+msi.PRIMARY_UNIT_OF_MEASURE,msi.ITEM_TYPE, FLV.MEANING, msi.INVENTORY_ITEM_FLAG, msi.STOCK_ENABLED_FLAG,
+msi.MTL_TRANSACTIONS_ENABLED_FLAG, decode(msi.MRP_PLANNING_CODE, 6,'Not Planned', 3, 'MRP Planning',
+4, 'MPS Planning', 7,'MRP/MPP Planned', 8, 'MPS/MPP Planned', 9, 'MPP Planned') Planning_code,
+ demand1.demand
+    from MTL_SYSTEM_ITEMS_KFV@XXX msi,
+         mtl_parameters@XXX mp,
+         fnd_user@XXX fu,
+         hr_all_organization_units@XXX ou,
+         FND_LOOKUP_VALUES_VL@XXX FLV,
+    (select sum(mdh.LINE_ITEM_QUANTITY )demand, mdh.INVENTORY_ITEM_ID, mdh.organization_id
+    from MTL_DEMAND@XXX mdh
+    group by mdh.INVENTORY_ITEM_ID, mdh.organization_id) demand1 
+            where msi.ORGANIZATION_ID = ou.ORGANIZATION_ID
+            and msi.CREATED_BY = fu.USER_ID
+            and msi.STOCK_ENABLED_FLAG = 'Y'
+            and msi.INVENTORY_ITEM_ID = demand1.INVENTORY_ITEM_ID (+)
+            and msi.organization_id = demand1.organization_id  (+) 
+            and msi.organization_id = mp.organization_id  
+            and msi.MRP_PLANNING_CODE = 6
+            AND FLV.lookup_type = 'ITEM_TYPE'
+            AND MSI.ITEM_TYPE = FLV.LOOKUP_CODE
+            and msi.INVENTORY_ITEM_STATUS_CODE not in ( 'Inactive', 'Obsolete') 
+            and mp.MASTER_ORGANIZATION_ID <> mp.ORGANIZATION_ID
+            
+            
+        ",64,"Original",,"NULL","Err:502","NULL","Err:502","NULL"
+58,"QDP_ITEM_NO_ATP_RULE","Items with No ATP rule assigned that have been on sales orders","Items with no ATP Rule Assigned",401,"Health","  SELECT  MSI.ATP_FLAG, MSI.PADDED_CONCATENATED_SEGMENTS Item, msi.INVENTORY_ITEM_ID, msi.ORGANIZATION_ID,
+msi.description item_description,mp.organization_code, ou.name Inventory_org,
+trunc(msi.creation_date), fu.user_name Created_by,
+msi.inventory_item_status_code, nvl(planner_code,'NO PLANNER') planner_code,
+decode(msi.planning_make_buy_code ,1, 'Make' , 2 ,'Buy')Make_buy_code,
+msi.PRIMARY_UNIT_OF_MEASURE,msi.ITEM_TYPE,FLV1.MEANING,  msi.INVENTORY_ITEM_FLAG, msi.STOCK_ENABLED_FLAG,
+msi.MTL_TRANSACTIONS_ENABLED_FLAG, decode(msi.MRP_PLANNING_CODE, 6,'Not Planned', 3, 'MRP Planning',
+4, 'MPS Planning', 7,'MRP/MPP Planned', 8, 'MPS/MPP Planned', 9, 'MPP Planned') Planning_code,
+demand1.demand
+FROM mtl_system_items_kfv@XXX msi, mtl_parameters@XXX mp,fnd_user@XXX fu,
+hr_all_organization_units@XXX ou,
+(select FLV.meaning, FLV.lookup_code from FND_LOOKUP_VALUES_VL@XXX FLV where FLV.lookup_type = 'ITEM_TYPE') FLV1,
+    (select sum(mdh.LINE_ITEM_QUANTITY )demand, mdh.INVENTORY_ITEM_ID, mdh.organization_id
+    from MTL_DEMAND@XXX mdh
+    group by mdh.INVENTORY_ITEM_ID, mdh.organization_id) demand1 
+WHERE msi.ORGANIZATION_ID = ou.ORGANIZATION_ID 
+and  msi.CREATED_BY = fu.USER_ID
+and msi.INVENTORY_ITEM_ID = demand1.INVENTORY_ITEM_ID (+)
+and msi.organization_id = demand1.organization_id  (+)
+AND MSI.ITEM_TYPE = FLV1.LOOKUP_CODE (+)
+AND msi.INVENTORY_ITEM_STATUS_CODE not in ( 'Inactive', 'Obsolete') 
+AND msi.organization_id = mp.organization_id 
+and mp.MASTER_ORGANIZATION_ID <> mp.ORGANIZATION_ID
+and msi.atp_rule_id is null
+AND MSI.ATP_FLAG = 'Y'
+AND MSI.INVENTORY_ASSET_FLAG = 'Y'
+and msi.STOCK_ENABLED_FLAG = 'Y'
+and msi.INVENTORY_ITEM_ID in (select oola.INVENTORY_ITEM_ID  from oe_order_lines_all@XXX oola
+            Where oola.SHIP_FROM_ORG_ID = msi.ORGANIZATION_ID)",64,"Original",,"NULL","Err:502","NULL","Err:502","NULL"
+59,"QDP_ITEM_CAT_MISSING_ORDER","INV: ITEM CATEGORY MISSING ON BOOKED ORDER","Items Missing Category that have been Booked on an Order",401,"Health","SELECT Distinct msi.inventory_item_id                              ,
+  msi.organization_id                                
+   FROM oe_order_lines_all@XXX oola,
+  mtl_system_items_kfv@XXX msi
+  WHERE oola.inventory_item_id  = msi.inventory_item_id
+AND oola.ship_from_org_id       = msi.organization_id
+AND oola.inventory_item_id NOT IN
+  (SELECT ic.inventory_item_id
+     FROM mtl_item_categories_v@XXX ic
+    WHERE ic.enabled_flag = 'Y'
+  AND ic.organization_id  = oola.ship_from_org_id
+  AND EXISTS
+    (SELECT NULL
+       FROM mtl_item_categories_v@XXX ic1
+      WHERE ic1.category_set_name = installscript.getprefvalue('ITEM_CATEGORY_OM')
+    )
+  )",64,"Original",,"NULL","Err:502","NULL","Err:502","NULL"
+60,"QDP_STATS_ITEM_CATEGORY","Item Category","Item Category Statistics",401,"Stats","select ic.inventory_item_id, ic.Organization_id, category_set_name, Control_level_disp,
+ Category_concat_segs, ic.Segment1, ic.segment2, ic.segment3, ic.segment4,
+ ic.MULT_ITEM_CAT_ASSIGN_FLAG, IC.enabled_flag
+from MTL_ITEM_CATEGORIES_V@XXX ic","NULL","Original",,"NULL","Err:502","NULL","Err:502","NULL"
+61,"QDP_NO_CALENDAR_EXCEPTIONS","No calendars exceptions defined in the next 6 months","No Calendars Exceptions defined in the next 6 Months",401,"Health","Select bc.CALENDAR_CODE, bc.CALENDAR_END_DATE
+From BOM_CALENDARS@XXX bc
+where bc.CALENDAR_CODE not in (select bce.CALENDAR_CODE 
+from BOM_CALENDAR_EXCEPTIONS@XXX bce 
+where trunc(bce.EXCEPTION_DATE) between trunc(sysdate) and trunc(sysdate) + 180 )",231,"Original",,"NULL","Err:502","NULL","Err:502","NULL"
+62,"QDP_CALENDARS_ENDING","Calendars ending already or in the next 6 months","Calendars ending already or in the next 6 months",401,"Stale","Select bc.CALENDAR_CODE, bc.CALENDAR_END_DATE
+From BOM_CALENDARS@XXX bc
+where bc.CALENDAR_END_DATE < trunc(sysdate) + 180 ",231,"Original",,"NULL","Err:502","NULL","Err:502","NULL"
+63,"QDP_SUBINVENTORY_AGING","INV: ITEMS IN A SUB FOR MORE THAN X DAYS - Detail","INV: ITEMS IN A SUB FOR MORE THAN X DAYS - Detail",401,"Stale","SELECT a.subinventory_code onhand_subinventory,
+       DECODE (f.transaction_action_id,
+               2, f.subinventory_code,
+               'NA'
+              ) from_subinventory,
+       DECODE (f.transaction_action_id, 2, f.LOCATOR, 'NA') from_location,
+       b.concatenated_segments item, a.lot_number,
+       a.subinventory_code to_subinventory,
+       mil.concatenated_segments to_locator,
+       TRUNC (a.last_update_date) last_transaction_date,
+       TRUNC (SYSDATE) - TRUNC (a.last_update_date) days_old,
+       a.created_by,
+       a.primary_transaction_quantity transaction_qty, a.inventory_item_id,
+       a.organization_id
+  FROM mtl_onhand_quantities_detail@xxx a,
+       mtl_system_items_kfv@xxx b,
+       mtl_parameters@xxx c,
+       mtl_lot_numbers@xxx d,
+       mtl_item_locations_kfv@xxx mil,
+       hr_organization_units@xxx e,
+       (SELECT a.transaction_id, b.concatenated_segments LOCATOR,
+               a.transaction_type_id, b.subinventory_code,
+               a.transaction_action_id
+          FROM mtl_material_transactions@xxx a,
+               mtl_item_locations_kfv@xxx b
+         WHERE a.locator_id = b.inventory_location_id(+)
+               AND a.primary_quantity > 0) f
+ WHERE a.inventory_item_id = b.inventory_item_id(+)
+   AND a.lot_number = d.lot_number(+)
+   AND a.inventory_item_id = d.inventory_item_id(+)
+   AND a.organization_id = b.organization_id
+   AND a.organization_id = c.organization_id
+   AND a.organization_id = d.organization_id(+)
+   AND a.organization_id = e.organization_id
+   AND a.locator_id = mil.inventory_location_id(+)
+   AND f.transaction_id(+) = a.update_transaction_id","NULL","Original",,"NULL","Err:502","NULL","Err:502","NULL"
+64,"QDP_STATS_ITEMS","All Items","Item Statistics",401,"Stats","SELECT  trim(msi.padded_concatenated_segments) item, msi.inventory_item_id,
+              msi.description item_description, msi.organization_id,
+              TRUNC (msi.creation_date) creation_date,
+              TRUNC (msi.last_update_date) last_update_date, fu.User_name created_by,
+              msi.created_by Created_by_id, 
+              fu2.user_name Last_updated_by,
+              msi.last_updated_by last_updated_by_id, msi.inventory_item_status_code,
+              NVL (mp1.planner_code, 'No Planner') planner_code,
+              NVL (mp1.planner_status, 'No Planner') planner_status,
+              mp1.planner_email, mp1.planner_employee_id,
+              lx8.meaning make_buy_code, msi.primary_unit_of_measure,
+              NVL (msi.item_type, 'Not Defined') item_type,
+              NVL (flv1.meaning, 'Not Defined') item_type_name,
+              msi.inventory_item_flag, msi.stock_enabled_flag,
+              msi.mtl_transactions_enabled_flag, l.meaning planning_code,
+              msi.purchasing_enabled_flag, msi.purchasing_item_flag,
+              msi.bom_enabled_flag, lx.meaning bom_item_type,
+              msi.build_in_wip_flag,
+              NVL (pa.agent_name, 'No Buyer') buyer_name,
+              NVL (pa.buyer_status, 'No Buyer') buyer_status,
+              msi.costing_enabled_flag, msi.cum_manufacturing_lead_time,
+              msi.cumulative_total_lead_time,
+              msi.customer_order_enabled_flag, msi.cycle_count_enabled_flag,
+              lx1.meaning demand_time_fence_rule,
+              msi.demand_time_fence_days, msi.eng_item_flag,
+              msi.forecast_horizon, msi.fixed_lead_time,
+              msi.fixed_lot_multiplier, msi.full_lead_time,
+              msi.fixed_order_quantity, msi.fixed_days_supply,
+              NVL (msi.inspection_required_flag,
+                   'Not Defined'
+                  ) inspection_required_flag,
+              msi.internal_order_flag, msi.internal_order_enabled_flag,
+              msi.invoiceable_item_flag, msi.invoice_enabled_flag,
+              lx2.meaning lot_control_rule, msi.minimum_order_quantity,
+              msi.min_minmax_quantity, lx3.meaning mrp_safety_stock_rule,
+              msi.mrp_safety_stock_percent,
+              msi.must_use_approved_vendor_flag,
+              NVL (msi.orderable_on_web_flag,
+                   'Not Defined'
+                  ) orderable_on_web_flag,
+              msi.outside_operation_flag,
+              lx4.meaning planning_time_fence_rule,
+              msi.planning_time_fence_days, msi.postprocessing_lead_time,
+              msi.preprocessing_lead_time, msi.receipt_required_flag,
+              NVL (msi.returnable_flag, 'Not Defined'        ) returnable_flag, 
+              lx5.meaning return_inspection_requirement,
+              msi.serial_status_enabled,
+              lx6.meaning serial_number_control_rule,
+              msi.serv_billing_enabled_flag, msi.serv_importance_level,
+              msi.service_item_flag, msi.service_starting_delay,
+              msi.serviceable_component_flag, msi.serviceable_product_flag,
+              msi.service_duration, lx7.meaning shelf_life_rule,
+              msi.shelf_life_days, msi.shippable_item_flag,
+              msi.so_authorization_flag, msi.so_transactions_flag,
+              demand1.DEMAND, msi.row_id
+         FROM mtl_system_items_kfv@xxx msi,
+               fnd_user@XXX fu,fnd_user@XXX fu2,
+              (SELECT agent_id, agent_name,
+                      DECODE (end_date_active,
+                              NULL, 'Active',
+                              'Disabled'
+                             ) buyer_status
+                 FROM apps.po_agents_v@xxx) pa,
+(SELECT DISTINCT NVL (DECODE (mp1.disable_date, NULL, 'Disabled'),
+                   'Disabled'
+                  ) Planner_status,
+              mp1.employee_id planner_employee_id, msi.inventory_item_id,
+              msi.organization_id, msi.planner_code,
+              mp1.electronic_mail_address planner_email
+         FROM mtl_system_items_kfv@xxx msi, mtl_planners@xxx mp1
+        WHERE mp1.disable_date IS NOT NULL
+          AND msi.planner_code = mp1.planner_code
+          AND msi.organization_id = mp1.organization_id
+UNION ALL
+SELECT DISTINCT DECODE (mp11.disable_date, NULL, 'Terminated') Planner_status,
+              mp11.employee_id planner_employee_id, msi.inventory_item_id,
+              msi.organization_id, NVL (msi.planner_code, 'NO PLANNER'),
+              mp11.electronic_mail_address planner_email
+         FROM mtl_system_items_kfv@xxx msi,
+              (SELECT mp1.planner_code, mp1.organization_id,
+                      mp1.disable_date, mp1.employee_id,
+                      mp1.electronic_mail_address
+                 FROM mtl_planners@xxx mp1
+                WHERE mp1.employee_id IN (
+                         SELECT pp.person_id
+                           FROM per_people_x@xxx pp, per_periods_of_service@xxx ps
+                          WHERE pp.person_id = ps.person_id
+                            AND ps.actual_termination_date IS NOT NULL)
+                  AND mp1.employee_id NOT IN (
+                                   SELECT ps1.person_id
+                                     FROM per_periods_of_service@xxx ps1
+                                    WHERE ps1.actual_termination_date IS NULL)) mp11
+        WHERE msi.planner_code = mp11.planner_code
+          AND msi.organization_id = mp11.organization_id
+UNION ALL
+SELECT 'No Planner' Planner_status, NULL planner_employee_id, msi.inventory_item_id,
+     msi.organization_id, NVL (msi.planner_code, 'NO PLANNER'),
+     NULL planner_email
+FROM mtl_system_items_kfv@xxx msi
+WHERE msi.planner_code IS NULL
+UNION ALL
+SELECT DECODE (mp1.disable_date, NULL, 'Active') Planner_status,
+     mp1.employee_id planner_employee_id, msi.inventory_item_id,
+     msi.organization_id, msi.planner_code,
+     mp1.electronic_mail_address planner_email
+FROM mtl_system_items_kfv@xxx msi, mtl_planners@xxx mp1
+WHERE mp1.disable_date IS NULL
+ AND msi.planner_code = mp1.planner_code
+ AND msi.organization_id = mp1.organization_id
+ AND mp1.employee_id NOT IN (
+        SELECT pp.person_id
+          FROM per_people_x@xxx pp, per_periods_of_service@xxx ps
+         WHERE pp.person_id = ps.person_id
+           AND ps.actual_termination_date IS NOT NULL
+           AND mp1.employee_id NOT IN (
+                                   SELECT ps1.person_id
+                                     FROM per_periods_of_service@xxx ps1
+                                    WHERE ps1.actual_termination_date IS NULL)))MP1,
+(SELECT lookup_code, meaning
+                 FROM mfg_lookups@xxx ll
+                WHERE lookup_type = 'MRP_PLANNING_CODE') l,
+              (SELECT lookup_code, meaning
+                 FROM mfg_lookups@xxx ll
+                WHERE lookup_type = 'BOM_ITEM_TYPE') lx,
+              (SELECT lookup_code, meaning
+                 FROM mfg_lookups@xxx ll
+                WHERE lookup_type = 'MTL_LOT_CONTROL') lx2,
+              (SELECT lookup_code, meaning
+                 FROM mfg_lookups@xxx ll
+                WHERE lookup_type = 'MRP_SAFETY_STOCK') lx3,
+              (SELECT lookup_code, meaning
+                 FROM mfg_lookups@xxx ll
+                WHERE lookup_type = 'MTL_TIME_FENCE') lx4,
+              (SELECT lookup_code, meaning
+                 FROM mfg_lookups@xxx ll
+                WHERE lookup_type = 'MTL_RETURN_INSPECTION') lx5,
+              (SELECT lookup_code, meaning
+                 FROM mfg_lookups@xxx ll
+                WHERE lookup_type = 'MTL_SERIAL_NUMBER') lx6,
+              (SELECT lookup_code, meaning
+                 FROM mfg_lookups@xxx ll
+                WHERE lookup_type = 'MTL_SHELF_LIFE') lx7,
+              (SELECT lookup_code, meaning
+                 FROM mfg_lookups@xxx ll
+                WHERE lookup_type = 'MTL_PLANNING_MAKE_BUY') lx8,
+              (SELECT lookup_code, meaning
+                 FROM mfg_lookups@xxx ll
+                WHERE lookup_type = 'MRP_DEMAND_TIME_FENCE_OPTIONS') lx1,
+              (SELECT flv.meaning, flv.lookup_code
+                 FROM fnd_lookup_values_vl@xxx flv
+                WHERE flv.lookup_type = 'ITEM_TYPE') flv1,
+              (SELECT   SUM (mdh.line_item_quantity) DEMAND,
+                        mdh.inventory_item_id, mdh.organization_id
+                   FROM mtl_demand@xxx mdh
+               GROUP BY mdh.inventory_item_id, mdh.organization_id) demand1
+        WHERE msi.item_type = flv1.lookup_code(+)
+          AND msi.inventory_item_id = demand1.inventory_item_id(+)
+          AND msi.organization_id = demand1.organization_id(+)
+          AND msi.buyer_id = pa.agent_id(+)
+          and msi.created_by = fu.user_id 
+          and  msi.last_updated_by = fu2.user_id 
+          AND l.lookup_code(+) = msi.mrp_planning_code
+          AND lx.lookup_code(+) = msi.bom_item_type
+          AND lx1.lookup_code(+) = msi.demand_time_fence_code
+          AND lx2.lookup_code(+) = msi.lot_control_code
+          AND lx3.lookup_code(+) = msi.mrp_safety_stock_code
+          AND lx4.lookup_code(+) = msi.planning_time_fence_code
+          AND lx5.lookup_code(+) = msi.return_inspection_requirement
+          AND lx6.lookup_code(+) = msi.serial_number_control_code
+          AND lx7.lookup_code(+) = msi.shelf_life_code
+          AND lx8.lookup_code(+) = msi.planning_make_buy_code
+          AND msi.planner_code = mp1.planner_code(+)
+          AND msi.organization_id = mp1.organization_id(+)
+          and msi.inventory_item_id = mp1.inventory_item_id (+)","NULL","Original",,"NULL","Err:502","NULL","Err:502","NULL"
+65,"QDP_LOT_TRANS_ORPHANS","INT: Lot Transaction Temp Table Problems - orphans","Orphan Lot Transactions",401,"Stale"," select  msi.SUPPLIER_LOT_NUMBER,msi.VENDOR_NAME,msi.DESCRIPTION,msi.PROCESS_FLAG, msi.ERROR_CODE,
+msi.TRANSACTION_QUANTITY,msi.LOT_NUMBER,msi.CREATION_DATE,msi.SOURCE_CODE,msi.TRANSACTION_INTERFACE_ID,
+ fu.user_name Created_by
+from MTL_TRANSACTION_LOTS_INTERFACE@XXX msi,
+fnd_user@XXX fu
+where msi.TRANSACTION_INTERFACE_ID not in ( select  mti.TRANSACTION_INTERFACE_ID@XXX from 
+                        MTL_TRANSACTIONS_INTERFACE@XXX mti)
+and msi.created_by = fu.user_id (+)","NULL","Original",,"NULL","Err:502","NULL","Err:502","NULL"
+66,"QDP_INTERFACE_MTL_PENDING","INV: PENDING TRANSACTIONS IN ERROR","INV: PENDING TRANSACTIONS IN ERROR",401,"Interface"," SELECT msi.PADDED_CONCATENATED_SEGMENTS, mt.ITEM_DESC,mt.TRANSACTION_DATE, mt.TRANSACTION_HEADER_ID, mt.ERROR_CODE,mt.ERROR_EXPLANATION, tRANSACTION_TYPE_NAME,
+mt.TRANSACTION_MODE_M,  mt.INVENTORY_ITEM_ID, mt.PRIMARY_UOM_CODE, mt.TRANSACTION_QUANTITY,
+mt.ORGANIZATION_ID, mt.TRANSACTION_ACTION_NAME, mt.TRANSACTION_SOURCE_TYPE_NAME,
+mt.PROCESS_FLAG, DECODED_PROCESS_FLAG, mt.TRANSACTION_STATUS, mt.TRANSACTION_STATUS_M,
+mt.ORGANIZATION_NAME, mt.ORGANIZATION_CODE, mt.SUBINVENTORY_CODE
+FROM mtl_transactions_temp_all_V@XXX mt,
+MTL_SYSTEM_ITEMS_KFV@XXX msi
+    WHERE mt.inventory_item_id = msi.inventory_item_id 
+    and mt.organization_id = msi.organization_id
+    and  mt.transaction_type_name <> 'Sales Order Pick' ","NULL","Original",,"NULL","Err:502","NULL","Err:502","NULL"
+67,"QDP_SAFTY_STOCK_VS_DEMAND","All safty stock vs supply/demand and onhand","Safety Stock vs. Demand",401,"Stats"," select mss.EFFECTIVITY_DATE Safty_stock_effective, 
+ moi.TOTAL_QOH, demand1.DEMAND, nvl(demand_history.DEMAND_IN_LAST_YEAR, 'N') DEMAND_IN_LAST_YEAR, mss.SAFETY_STOCK_QUANTITY, mss.SAFETY_STOCK_PERCENT,
+ supply1.supply,
+ MSI.PADDED_CONCATENATED_SEGMENTS Item, msi.INVENTORY_ITEM_ID,
+ msi.description item_description,msi.organization_id, mp.organization_code, ou.name Inventory_org,
+ trunc(msi.creation_date)Creation_date, fu.user_name Created_by,
+ msi.inventory_item_status_code ,
+ nvl(planner_code,'NO PLANNER') planner_code ,
+ decode(msi.planning_make_buy_code ,1, 'Make' , 2 ,'Buy')Make_buy_code,
+ msi.PRIMARY_UNIT_OF_MEASURE,msi.ITEM_TYPE, FLV.MEANING, msi.INVENTORY_ITEM_FLAG, msi.STOCK_ENABLED_FLAG,
+ msi.MTL_TRANSACTIONS_ENABLED_FLAG, decode(msi.MRP_PLANNING_CODE, 6,'Not Planned', 3, 'MRP Planning',
+ 4, 'MPS Planning', 7,'MRP/MPP Planned', 8, 'MPS/MPP Planned', 9, 'MPP Planned') Planning_code
+     from MTL_SYSTEM_ITEMS_KFV@XXX msi,
+          mtl_parameters@XXX mp,
+          fnd_user@XXX fu,
+          hr_all_organization_units@XXX ou,
+          FND_LOOKUP_VALUES_VL@XXX FLV,
+     (select sum(mdh.LINE_ITEM_QUANTITY )demand, mdh.INVENTORY_ITEM_ID, mdh.organization_id
+     from MTL_DEMAND@XXX mdh
+     group by mdh.INVENTORY_ITEM_ID, mdh.organization_id) demand1 ,
+      (select sum(ms.QUANTITY )supply, ms.ITEM_ID, ms.to_organization_id
+     from MTL_supply@XXX ms
+     group by ms.ITEM_ID, ms.to_organization_id) supply1 ,
+     mtl_safety_stocks@XXX mss,
+     mtl_onhand_items_v@XXX moi,
+     (select distinct dh.INVENTORY_ITEM_ID, dh.organization_id, 'Y' DEMAND_IN_LAST_YEAR 
+     from MTL_DEMAND_HISTORIES@XXX dh where PERIOD_START_DATE > sysdate-365) demand_history
+     where msi.INVENTORY_ITEM_ID = mss.INVENTORY_ITEM_ID
+             and msi.organization_id = mss.organization_id
+             and msi.INVENTORY_ITEM_ID = moi.INVENTORY_ITEM_ID(+)
+             and msi.organization_id = moi.organization_id (+) 
+             and msi.ORGANIZATION_ID = ou.ORGANIZATION_ID
+             and msi.CREATED_BY = fu.USER_ID (+)
+             and msi.STOCK_ENABLED_FLAG = 'Y'
+             and msi.INVENTORY_ITEM_ID = demand1.INVENTORY_ITEM_ID (+)
+             and msi.organization_id = demand1.organization_id  (+)
+             and msi.INVENTORY_ITEM_ID = demand_history.INVENTORY_ITEM_ID (+)
+             and msi.organization_id = demand_history.organization_id  (+)
+             and msi.INVENTORY_ITEM_ID = supply1.ITEM_ID (+)
+             and msi.organization_id = supply1.to_organization_id  (+)
+             and msi.organization_id = mp.organization_id 
+             AND FLV.lookup_type = 'ITEM_TYPE'
+             AND MSI.ITEM_TYPE = FLV.LOOKUP_CODE
+             and msi.INVENTORY_ITEM_STATUS_CODE not in ( 'Inactive', 'Obsolete') 
+             and mp.MASTER_ORGANIZATION_ID <> mp.ORGANIZATION_ID 
+    ","NULL","Original",,"NULL","Err:502","NULL","Err:502","NULL"
+69,"QDP_ITEM_NOT_CYCLE_ENABELED","Items that are not cycle count enabeled but are stockable","Items that are not Cycle Count Enabled",401,"Health"," select MSI.PADDED_CONCATENATED_SEGMENTS item, msi.INVENTORY_ITEM_ID,
+msi.description item_description,msi.organization_id, mp.organization_code, ou.name Inventory_org,
+DECODE(MSI.BOM_ITEM_TYPE,1, 'Model', 2, 'Option class', 3, 'Planning', 4, 'Standard',5, 'Product family') BOM_ITEM_TYPE, 
+cic.item_cost,trunc(msi.creation_date)Creation_date, fu.user_name Created_by,
+msi.SERVICE_ITEM_FLAG,msi.inventory_item_status_code ,
+nvl(planner_code,'NO PLANNER') planner_code ,
+decode(msi.planning_make_buy_code ,1, 'Make' , 2 ,'Buy')Make_buy_code,
+msi.PRIMARY_UNIT_OF_MEASURE,msi.ITEM_TYPE, FLV1.MEANING, msi.INVENTORY_ITEM_FLAG, msi.STOCK_ENABLED_FLAG,
+msi.MTL_TRANSACTIONS_ENABLED_FLAG, decode(msi.MRP_PLANNING_CODE, 6,'Not Planned', 3, 'MRP Planning',
+4, 'MPS Planning', 7,'MRP/MPP Planned', 8, 'MPS/MPP Planned', 9, 'MPP Planned') Planning_code,
+msi.PURCHASING_ENABLED_FLAG, msi.PURCHASING_ITEM_FLAG, demand1.demand
+    from MTL_SYSTEM_ITEMS_KFV@XXX msi, 
+    cst_item_costs@XXX cic,
+    mtl_parameters@XXX mp,
+    fnd_user@XXX fu, 
+    hr_all_organization_units@XXX ou,
+      (select FLV.meaning, FLV.lookup_code from FND_LOOKUP_VALUES_VL@XXX FLV where FLV.lookup_type = 'ITEM_TYPE') FLV1,
+     (select sum(mdh.LINE_ITEM_QUANTITY )demand, mdh.INVENTORY_ITEM_ID, mdh.organization_id
+    from MTL_DEMAND@XXX mdh
+    group by mdh.INVENTORY_ITEM_ID, mdh.organization_id) demand1 
+            where msi.ORGANIZATION_ID = ou.ORGANIZATION_ID
+             AND MSI.ITEM_TYPE = FLV1.LOOKUP_CODE (+)
+             AND cic.cost_type_id = 1 
+             and msi.organization_id in  (select mcch.organization_id from MTL_CYCLE_COUNT_HEADERS@XXX mcch)
+             and cic.organization_id = msi.organization_id 
+             and CIC.INVENTORY_ITEM_ID = MSI.INVENTORY_ITEM_ID  
+             AND MSI.INVENTORY_ASSET_FLAG = 'Y'
+             AND NVL(cic.item_cost,0) >0
+             AND MSI.BOM_ITEM_TYPE <> 2
+            and msi.CREATED_BY = fu.USER_ID
+            and msi.INVENTORY_ITEM_ID = demand1.INVENTORY_ITEM_ID (+)
+            and msi.organization_id = demand1.organization_id  (+)
+            and msi.organization_id = mp.organization_id
+            and msi.STOCK_ENABLED_FLAG = 'Y'
+            and nvl(msi.CYCLE_COUNT_ENABLED_FLAG,'N' )= 'N'
+            and msi.INVENTORY_ITEM_STATUS_CODE not in ( 'Inactive', 'Obsolete') 
+            and mp.MASTER_ORGANIZATION_ID <> mp.ORGANIZATION_ID",64,"Original",,"NULL","Err:502","NULL","Err:502","NULL"
+70,"QDP_NEGATIVE_ONHAND","negative Onhand Quantities","Nagative Onhand Quantities",401,"Health","Select moi.ORGANIZATION_ID, moi.INVENTORY_ITEM_ID, moi.PADDED_CONCATENATED_SEGMENTS, moi.TOTAL_QOH,
+ moi.ITEM_DESCRIPTION, moi.PRIMARY_UOM_CODE, moi.ORGANIZATION_CODE, moi.ORGANIZATION_NAME,
+ decode(mp.NEGATIVE_INV_RECEIPT_CODE, 1, 'Yes', 2,'No') Organization_allows_negatives
+from MTL_ONHAND_ITEMS_V@XXX moi,
+  mtl_parameters@XXX mp
+where moi.TOTAL_QOH <0
+and MOI.ORGANIZATION_ID = mp.organization_id ",233,"Original",,"NULL","Err:502","NULL","Err:502","NULL"
+71,"QDP_STATS_CYCLE_COUNTS","Active cycle count HEADERS","Cycle Count Statistics",401,"Stats","Select  mp.organization_code, ou.name Inventory_org, mcc.CYCLE_COUNT_HEADER_NAME, mcc.ORIENTATION,
+ mcc.HEADER_LAST_SCHEDULE_DATE, mcc.HEADER_NEXT_SCHEDULE_DATE
+FROM (select mcc1.CYCLE_COUNT_HEADER_NAME, mcc1.ORIENTATION,
+ mcc1.HEADER_LAST_SCHEDULE_DATE, mcc1.HEADER_NEXT_SCHEDULE_DATE, 
+ mcc1.ORGANIZATION_ID from MTL_CYCLE_COUNT_HEADERS_V@XXX mcc1
+    where mcc1.DISABLe_date is null)mcc,
+     mtl_parameters@XXX mp,
+     hr_all_organization_units@XXX  ou
+Where ou.ORGANIZATION_ID = mcc.ORGANIZATION_ID (+)
+      and mp.organization_id  = ou.organization_id 
+      and ou.date_to is null","NULL","Original",,"NULL","Err:502","NULL","Err:502","NULL"
+73,"QDP_INV_INVALID_CCID","Invalid Code Combination ID","Invalid Code Combinations",401,"Health","SELECT 'account aliases - MTL_GENERIC_DISPOSITIONS' ccid_setup_table,
+      TO_CHAR (NVL (mgd.description, mgd.disposition_id || 'This is a ID')
+              ) NAME,
+      mgd.organization_id, mp.organization_code, ou.NAME inventory_org,
+      gcc.padded_concatenated_segments code_combination_id
+ FROM mtl_generic_dispositions@xxx mgd,
+      gl_code_combinations_kfv@xxx gcc,
+      mtl_parameters@xxx mp,
+      hr_all_organization_units@xxx ou
+WHERE mgd.distribution_account = gcc.code_combination_id
+  AND mgd.disable_date IS NULL
+  AND gcc.enabled_flag = 'N'
+  AND mgd.organization_id = ou.organization_id
+  AND mgd.organization_id = mp.organization_id
+UNION ALL
+SELECT 'cycle count name - MTL_CYCLE_COUNT_HEADERS_V' ccid_setup_table,
+      TO_CHAR (m.cycle_count_header_name) NAME, m.organization_id,
+      mp.organization_code, ou.NAME inventory_org,
+      gcc.padded_concatenated_segments code_combination_id
+ FROM mtl_cycle_count_headers_v@xxx m,
+      gl_code_combinations_kfv@xxx gcc,
+      mtl_parameters@xxx mp,
+      hr_all_organization_units@xxx ou
+WHERE m.inventory_adjustment_account = gcc.code_combination_id
+  AND m.disable_date IS NULL
+  AND gcc.enabled_flag = 'N'
+  AND m.organization_id = ou.organization_id
+  AND m.organization_id = mp.organization_id
+UNION ALL
+SELECT 'COST_OF_SALES_ACCOUNT - MTL_SYSTEM_ITEMS' ccid_setup_table,
+      TO_CHAR (msi.padded_concatenated_segments) NAME, msi.organization_id,
+      mp.organization_code, ou.NAME inventory_org,
+      gcc.padded_concatenated_segments code_combination_id
+ FROM mtl_system_items_kfv@xxx msi,
+      gl_code_combinations_kfv@xxx gcc,
+      mtl_parameters@xxx mp,
+      hr_all_organization_units@xxx ou
+WHERE msi.cost_of_sales_account = gcc.code_combination_id
+  AND msi.inventory_item_status_code NOT IN ('Inactive', 'Obsolete')
+  AND msi.mtl_transactions_enabled_flag = 'Y'
+  AND msi.enabled_flag = 'Y'
+  AND gcc.enabled_flag = 'N'
+  AND msi.organization_id = ou.organization_id
+  AND msi.organization_id = mp.organization_id
+UNION ALL
+SELECT 'EXPENSE_ACCOUNT - MTL_SYSTEM_ITEMS' ccid_setup_table,
+      TO_CHAR (msi.padded_concatenated_segments) NAME, msi.organization_id,
+      mp.organization_code, ou.NAME inventory_org,
+      gcc.padded_concatenated_segments code_combination_id
+ FROM mtl_system_items_kfv@xxx msi,
+      gl_code_combinations_kfv@xxx gcc,
+      mtl_parameters@xxx mp,
+      hr_all_organization_units@xxx ou
+WHERE msi.expense_account = gcc.code_combination_id
+  AND msi.inventory_item_status_code NOT IN ('Inactive', 'Obsolete')
+  AND msi.purchasing_enabled_flag = 'Y'
+  AND msi.enabled_flag = 'Y'
+  AND gcc.enabled_flag = 'N'
+  AND msi.organization_id = ou.organization_id
+  AND msi.organization_id = mp.organization_id
+UNION ALL
+SELECT 'SALES_ACCOUNT - MTL_SYSTEM_ITEMS' ccid_setup_table,
+      TO_CHAR (msi.padded_concatenated_segments) NAME, msi.organization_id,
+      mp.organization_code, ou.NAME inventory_org,
+      gcc.padded_concatenated_segments code_combination_id
+ FROM mtl_system_items_kfv@xxx msi,
+      gl_code_combinations_kfv@xxx gcc,
+      mtl_parameters@xxx mp,
+      hr_all_organization_units@xxx ou
+WHERE msi.sales_account = gcc.code_combination_id
+  AND msi.inventory_item_status_code NOT IN ('Inactive', 'Obsolete')
+  AND msi.customer_order_enabled_flag = 'Y'
+  AND msi.enabled_flag = 'Y'
+  AND gcc.enabled_flag = 'N'
+  AND msi.organization_id = ou.organization_id
+  AND msi.organization_id = mp.organization_id
+UNION ALL
+SELECT 'COST_OF_SALES_ACCOUNT - MTL_ITEM_TEMPLATES_ALL' ccid_setup_table,
+      TO_CHAR (msi1.template_name) NAME, NULL, NULL, NULL,
+      gcc.padded_concatenated_segments code_combination_id
+ FROM mtl_item_templ_attributes_v@xxx msi,
+      mtl_item_templates_all_v@xxx msi1,
+      gl_code_combinations_kfv@xxx gcc
+WHERE msi.template_id = msi1.template_id
+  AND attribute_name = 'MTL_SYSTEM_ITEMS.COST_OF_SALES_ACCOUNT'
+  AND msi.attribute_value = gcc.code_combination_id
+  AND msi.enabled_flag = 'Y'
+  AND gcc.enabled_flag = 'N'
+UNION ALL
+SELECT 'EXPENSE_ACCOUNT - MTL_ITEM_TEMPLATES_ALL' ccid_setup_table,
+      TO_CHAR (msi1.template_name) NAME, NULL, NULL, NULL,
+      gcc.padded_concatenated_segments code_combination_id
+ FROM mtl_item_templ_attributes_v@xxx msi,
+      mtl_item_templates_all_v@xxx msi1,
+      gl_code_combinations_kfv@xxx gcc
+WHERE msi.template_id = msi1.template_id
+  AND attribute_name = 'MTL_SYSTEM_ITEMS.EXPENSE_ACCOUNT'
+  AND msi.attribute_value = gcc.code_combination_id
+  AND msi.enabled_flag = 'Y'
+  AND gcc.enabled_flag = 'N'
+UNION ALL
+SELECT 'SALES_ACCOUNT - MTL_ITEM_TEMPLATES_ALL' ccid_setup_table,
+      TO_CHAR (msi1.template_name) NAME, NULL, NULL, NULL,
+      gcc.padded_concatenated_segments code_combination_id
+ FROM mtl_item_templ_attributes_v@xxx msi,
+      mtl_item_templates_all_v@xxx msi1,
+      gl_code_combinations_kfv@xxx gcc
+WHERE msi.template_id = msi1.template_id
+  AND attribute_name = 'MTL_SYSTEM_ITEMS.SALES_ACCOUNT'
+  AND msi.attribute_value = gcc.code_combination_id
+  AND msi.enabled_flag = 'Y'
+  AND gcc.enabled_flag = 'N'
+UNION ALL
+SELECT 'MATERIAL_ACCOUNT - MTL_PARAMETERS' ccid_setup_table,
+      TO_CHAR (msi.organization_id) NAME, msi.organization_id,
+      msi.organization_code, ou.NAME inventory_org,
+      gcc.padded_concatenated_segments code_combination_id
+ FROM gl_code_combinations_kfv@xxx gcc,
+      mtl_parameters@xxx msi,
+      hr_all_organization_units@xxx ou
+WHERE msi.material_account = gcc.code_combination_id
+  AND ou.date_to IS NULL
+  AND gcc.enabled_flag = 'N'
+  AND msi.organization_id = ou.organization_id
+UNION ALL
+SELECT 'OUTSIDE_PROCESSING_ACCOUNT - MTL_PARAMETERS' ccid_setup_table,
+      TO_CHAR (msi.organization_id) NAME, msi.organization_id,
+      msi.organization_code, ou.NAME inventory_org,
+      gcc.padded_concatenated_segments code_combination_id
+ FROM gl_code_combinations_kfv@xxx gcc,
+      mtl_parameters@xxx msi,
+      hr_all_organization_units@xxx ou
+WHERE msi.outside_processing_account = gcc.code_combination_id
+  AND ou.date_to IS NULL
+  AND gcc.enabled_flag = 'N'
+  AND msi.organization_id = ou.organization_id
+UNION ALL
+SELECT 'MATERIAL_OVERHEAD_ACCOUNT - MTL_PARAMETERS' ccid_setup_table,
+      TO_CHAR (msi.organization_id) NAME, msi.organization_id,
+      msi.organization_code, ou.NAME inventory_org,
+      gcc.padded_concatenated_segments code_combination_id
+ FROM gl_code_combinations_kfv@xxx gcc,
+      mtl_parameters@xxx msi,
+      hr_all_organization_units@xxx ou
+WHERE msi.material_overhead_account = gcc.code_combination_id
+  AND ou.date_to IS NULL
+  AND gcc.enabled_flag = 'N'
+  AND msi.organization_id = ou.organization_id
+UNION ALL
+SELECT 'OVERHEAD_ACCOUNT - MTL_PARAMETERS' ccid_setup_table,
+      TO_CHAR (msi.organization_id) NAME, msi.organization_id,
+      msi.organization_code, ou.NAME inventory_org,
+      gcc.padded_concatenated_segments code_combination_id
+ FROM gl_code_combinations_kfv@xxx gcc,
+      mtl_parameters@xxx msi,
+      hr_all_organization_units@xxx ou
+WHERE msi.overhead_account = gcc.code_combination_id
+  AND ou.date_to IS NULL
+  AND gcc.enabled_flag = 'N'
+  AND msi.organization_id = ou.organization_id
+UNION ALL
+SELECT 'RESOURCE_ACCOUNT - MTL_PARAMETERS' ccid_setup_table,
+      TO_CHAR (msi.organization_id) NAME, msi.organization_id,
+      msi.organization_code, ou.NAME inventory_org,
+      gcc.padded_concatenated_segments code_combination_id
+ FROM gl_code_combinations_kfv@xxx gcc,
+      mtl_parameters@xxx msi,
+      hr_all_organization_units@xxx ou
+WHERE msi.resource_account = gcc.code_combination_id
+  AND ou.date_to IS NULL
+  AND gcc.enabled_flag = 'N'
+  AND msi.organization_id = ou.organization_id
+UNION ALL
+SELECT 'EXPENSE_ACCOUNT - MTL_PARAMETERS' ccid_setup_table,
+      TO_CHAR (msi.organization_id) NAME, msi.organization_id,
+      msi.organization_code, ou.NAME inventory_org,
+      gcc.padded_concatenated_segments code_combination_id
+ FROM gl_code_combinations_kfv@xxx gcc,
+      mtl_parameters@xxx msi,
+      hr_all_organization_units@xxx ou
+WHERE msi.expense_account = gcc.code_combination_id
+  AND ou.date_to IS NULL
+  AND gcc.enabled_flag = 'N'
+  AND msi.organization_id = ou.organization_id
+UNION ALL
+SELECT 'INTERORG_TRANSFER_CR_ACCOUNT - MTL_PARAMETERS' ccid_setup_table,
+      TO_CHAR (msi.organization_id) NAME, msi.organization_id,
+      msi.organization_code, ou.NAME inventory_org,
+      gcc.padded_concatenated_segments code_combination_id
+ FROM gl_code_combinations_kfv@xxx gcc,
+      mtl_parameters@xxx msi,
+      hr_all_organization_units@xxx ou
+WHERE msi.interorg_transfer_cr_account = gcc.code_combination_id
+  AND ou.date_to IS NULL
+  AND gcc.enabled_flag = 'N'
+  AND msi.organization_id = ou.organization_id
+UNION ALL
+SELECT 'INTERORG_RECEIVABLES_ACCOUNT - MTL_PARAMETERS' ccid_setup_table,
+      TO_CHAR (msi.organization_id) NAME, msi.organization_id,
+      msi.organization_code, ou.NAME inventory_org,
+      gcc.padded_concatenated_segments code_combination_id
+ FROM gl_code_combinations_kfv@xxx gcc,
+      mtl_parameters@xxx msi,
+      hr_all_organization_units@xxx ou
+WHERE msi.interorg_receivables_account = gcc.code_combination_id
+  AND ou.date_to IS NULL
+  AND gcc.enabled_flag = 'N'
+  AND msi.organization_id = ou.organization_id
+UNION ALL
+SELECT 'INTERORG_PRICE_VAR_ACCOUNT - MTL_PARAMETERS' ccid_setup_table,
+      TO_CHAR (msi.organization_id) NAME, msi.organization_id,
+      msi.organization_code, ou.NAME inventory_org,
+      gcc.padded_concatenated_segments code_combination_id
+ FROM gl_code_combinations_kfv@xxx gcc,
+      mtl_parameters@xxx msi,
+      hr_all_organization_units@xxx ou
+WHERE msi.interorg_price_var_account = gcc.code_combination_id
+  AND ou.date_to IS NULL
+  AND gcc.enabled_flag = 'N'
+  AND msi.organization_id = ou.organization_id
+UNION ALL
+SELECT 'INTERORG_PAYABLES_ACCOUNT - MTL_PARAMETERS' ccid_setup_table,
+      TO_CHAR (msi.organization_id) NAME, msi.organization_id,
+      msi.organization_code, ou.NAME inventory_org,
+      gcc.padded_concatenated_segments code_combination_id
+ FROM gl_code_combinations_kfv@xxx gcc,
+      mtl_parameters@xxx msi,
+      hr_all_organization_units@xxx ou
+WHERE msi.interorg_payables_account = gcc.code_combination_id
+  AND ou.date_to IS NULL
+  AND gcc.enabled_flag = 'N'
+  AND msi.organization_id = ou.organization_id
+UNION ALL
+SELECT 'PURCHASE_PRICE_VAR_ACCOUNT - MTL_PARAMETERS' ccid_setup_table,
+      TO_CHAR (msi.organization_id) NAME, msi.organization_id,
+      msi.organization_code, ou.NAME inventory_org,
+      gcc.padded_concatenated_segments code_combination_id
+ FROM gl_code_combinations_kfv@xxx gcc,
+      mtl_parameters@xxx msi,
+      hr_all_organization_units@xxx ou
+WHERE msi.purchase_price_var_account = gcc.code_combination_id
+  AND ou.date_to IS NULL
+  AND gcc.enabled_flag = 'N'
+  AND msi.organization_id = ou.organization_id
+UNION ALL
+SELECT 'INVOICE_PRICE_VAR_ACCOUNT- MTL_PARAMETERS' ccid_setup_table,
+      TO_CHAR (msi.organization_id) NAME, msi.organization_id,
+      msi.organization_code, ou.NAME inventory_org,
+      gcc.padded_concatenated_segments code_combination_id
+ FROM gl_code_combinations_kfv@xxx gcc,
+      mtl_parameters@xxx msi,
+      hr_all_organization_units@xxx ou
+WHERE msi.invoice_price_var_account = gcc.code_combination_id
+  AND ou.date_to IS NULL
+  AND gcc.enabled_flag = 'N'
+  AND msi.organization_id = ou.organization_id
+UNION ALL
+SELECT 'ENCUMBRANCE_ACCOUNT- MTL_PARAMETERS' ccid_setup_table,
+      TO_CHAR (msi.organization_id) NAME, msi.organization_id,
+      msi.organization_code, ou.NAME inventory_org,
+      gcc.padded_concatenated_segments code_combination_id
+ FROM gl_code_combinations_kfv@xxx gcc,
+      mtl_parameters@xxx msi,
+      hr_all_organization_units@xxx ou
+WHERE msi.encumbrance_account = gcc.code_combination_id
+  AND ou.date_to IS NULL
+  AND gcc.enabled_flag = 'N'
+  AND msi.organization_id = ou.organization_id
+UNION ALL
+SELECT 'SALES_ACCOUNT- MTL_PARAMETERS' ccid_setup_table,
+      TO_CHAR (msi.organization_id) NAME, msi.organization_id,
+      msi.organization_code, ou.NAME inventory_org,
+      gcc.padded_concatenated_segments code_combination_id
+ FROM gl_code_combinations_kfv@xxx gcc,
+      mtl_parameters@xxx msi,
+      hr_all_organization_units@xxx ou
+WHERE msi.sales_account = gcc.code_combination_id
+  AND ou.date_to IS NULL
+  AND gcc.enabled_flag = 'N'
+  AND msi.organization_id = ou.organization_id
+UNION ALL
+SELECT 'COST_OF_SALES_ACCOUNT- MTL_PARAMETERS' ccid_setup_table,
+      TO_CHAR (msi.organization_id) NAME, msi.organization_id,
+      msi.organization_code, ou.NAME inventory_org,
+      gcc.padded_concatenated_segments code_combination_id
+ FROM gl_code_combinations_kfv@xxx gcc,
+      mtl_parameters@xxx msi,
+      hr_all_organization_units@xxx ou
+WHERE msi.cost_of_sales_account = gcc.code_combination_id
+  AND ou.date_to IS NULL
+  AND gcc.enabled_flag = 'N'
+  AND msi.organization_id = ou.organization_id
+UNION ALL
+SELECT 'PROJECT_COST_ACCOUNT- MTL_PARAMETERS' ccid_setup_table,
+      TO_CHAR (msi.organization_id) NAME, msi.organization_id,
+      msi.organization_code, ou.NAME inventory_org,
+      gcc.padded_concatenated_segments code_combination_id
+ FROM gl_code_combinations_kfv@xxx gcc,
+      mtl_parameters@xxx msi,
+      hr_all_organization_units@xxx ou
+WHERE msi.project_cost_account = gcc.code_combination_id
+  AND ou.date_to IS NULL
+  AND gcc.enabled_flag = 'N'
+  AND msi.organization_id = ou.organization_id
+UNION ALL
+SELECT 'DISTRIBUTION_ACCOUNT_ID- MTL_PARAMETERS' ccid_setup_table,
+      TO_CHAR (msi.organization_id) NAME, msi.organization_id,
+      msi.organization_code, ou.NAME inventory_org,
+      gcc.padded_concatenated_segments code_combination_id
+ FROM gl_code_combinations_kfv@xxx gcc,
+      mtl_parameters@xxx msi,
+      hr_all_organization_units@xxx ou
+WHERE msi.distribution_account_id = gcc.code_combination_id
+  AND ou.date_to IS NULL
+  AND gcc.enabled_flag = 'N'
+  AND msi.organization_id = msi.organization_id
+  union all
+  SELECT 'MATERIAL_ACCOUNT- MTL_SECONDARY_INVENTORIES' ccid_setup_table,
+      TO_CHAR (sub.SECONDARY_INVENTORY_NAME) NAME, msi.organization_id,
+      msi.organization_code, ou.NAME inventory_org,
+      gcc.padded_concatenated_segments code_combination_id
+ FROM MTL_SECONDARY_INVENTORIES_FK_V@xxx sub,
+      gl_code_combinations_kfv@xxx gcc,
+      mtl_parameters@xxx msi,
+      hr_all_organization_units@xxx ou
+WHERE sub.ORGANIZATION_ID = ou.organization_id
+  and sub.MATERIAL_ACCOUNT = gcc.code_combination_id
+  AND ou.date_to IS NULL
+  and sub.DISABLE_DATE is null
+  AND gcc.enabled_flag = 'N'
+  AND sub.organization_id = msi.organization_id
+  union all
+  SELECT 'OUTSIDE_PROCESSING_ACCOUNT- MTL_SECONDARY_INVENTORIES' ccid_setup_table,
+      TO_CHAR (sub.SECONDARY_INVENTORY_NAME) NAME, msi.organization_id,
+      msi.organization_code, ou.NAME inventory_org,
+      gcc.padded_concatenated_segments code_combination_id
+ FROM MTL_SECONDARY_INVENTORIES_FK_V@xxx sub,
+      gl_code_combinations_kfv@xxx gcc,
+      mtl_parameters@xxx msi,
+      hr_all_organization_units@xxx ou
+WHERE sub.ORGANIZATION_ID = ou.organization_id
+  and sub.OUTSIDE_PROCESSING_ACCOUNT = gcc.code_combination_id
+  AND ou.date_to IS NULL
+  and sub.DISABLE_DATE is null
+  AND gcc.enabled_flag = 'N'
+  AND sub.organization_id = msi.organization_id
+  union all
+  SELECT 'MATERIAL_OVERHEAD_ACCOUNT- MTL_SECONDARY_INVENTORIES' ccid_setup_table,
+      TO_CHAR (sub.SECONDARY_INVENTORY_NAME) NAME, msi.organization_id,
+      msi.organization_code, ou.NAME inventory_org,
+      gcc.padded_concatenated_segments code_combination_id
+ FROM MTL_SECONDARY_INVENTORIES_FK_V@xxx sub,
+      gl_code_combinations_kfv@xxx gcc,
+      mtl_parameters@xxx msi,
+      hr_all_organization_units@xxx ou
+WHERE sub.ORGANIZATION_ID = ou.organization_id
+  and sub.MATERIAL_OVERHEAD_ACCOUNT = gcc.code_combination_id
+  AND ou.date_to IS NULL
+  and sub.DISABLE_DATE is null
+  AND gcc.enabled_flag = 'N'
+  AND sub.organization_id = msi.organization_id
+union all
+  SELECT 'EXPENSE_ACCOUNT- MTL_SECONDARY_INVENTORIES' ccid_setup_table,
+      TO_CHAR (sub.SECONDARY_INVENTORY_NAME) NAME, msi.organization_id,
+      msi.organization_code, ou.NAME inventory_org,
+      gcc.padded_concatenated_segments code_combination_id
+ FROM MTL_SECONDARY_INVENTORIES_FK_V@xxx sub,
+      gl_code_combinations_kfv@xxx gcc,
+      mtl_parameters@xxx msi,
+      hr_all_organization_units@xxx ou
+WHERE sub.ORGANIZATION_ID = ou.organization_id
+  and sub.EXPENSE_ACCOUNT = gcc.code_combination_id
+  AND ou.date_to IS NULL
+  and sub.DISABLE_DATE is null
+  AND gcc.enabled_flag = 'N'
+  AND sub.organization_id = msi.organization_id  
+  union all
+     SELECT 'RESOURCE_ACCOUNT- MTL_SECONDARY_INVENTORIES' ccid_setup_table,
+      TO_CHAR (sub.SECONDARY_INVENTORY_NAME) NAME, msi.organization_id,
+      msi.organization_code, ou.NAME inventory_org,
+      gcc.padded_concatenated_segments code_combination_id
+ FROM MTL_SECONDARY_INVENTORIES_FK_V@xxx sub,
+      gl_code_combinations_kfv@xxx gcc,
+      mtl_parameters@xxx msi,
+      hr_all_organization_units@xxx ou
+WHERE sub.ORGANIZATION_ID = ou.organization_id
+  and sub.RESOURCE_ACCOUNT = gcc.code_combination_id
+  AND ou.date_to IS NULL
+  and sub.DISABLE_DATE is null
+  AND gcc.enabled_flag = 'N'
+  AND sub.organization_id = msi.organization_id","NULL","Original",,"NULL","Err:502","NULL","Err:502","NULL"
+74,"QDP_STATS_TRANSACTIONS_OLD","Transaction counts with union of all QDP_STATS_TRANS Materialized views","Transaction counts with union of all QDP_STATS_TRANS Materialized views",401,"Stats","select * from QDP_STATS_TRANS_2_YEARS
+union all
+select * from QDP_STATS_TRANS_1_YEAR
+union all
+select * from QDP_STATS_TRANS_CURR_YEAR","NULL","Original",,"NULL","Err:502","NULL","Err:502","NULL"
+75,"QDP_STATS_ORGANIZATIONS","Organization counts","Organization Statistics",401,"Stats","SELECT hou.NAME organization_name,mp.organization_code organization_code,hou.organization_id,
+           hou.date_from user_definition_enable_date, hou.date_to disable_date,
+  gsob.set_of_books_id set_of_books_id, gsob.NAME set_of_books_name, gsob.currency_code, 
+  mp.cost_organization_id, ou2.NAME cost_organization_name,
+       mp.master_organization_id, ou3.NAME master_organization_name,
+           hoi1.org_information2 inventory_enabled_flag,
+           DECODE (fpg.multi_org_flag,
+                  'Y', DECODE (hoi2.org_information_context,
+                                'Accounting Information', TO_NUMBER
+     (hoi2.org_information3),TO_NUMBER (NULL)),TO_NUMBER (NULL)) operating_unit,
+     ou1.NAME operation_unit_name,
+           DECODE (hoi2.org_information_context,
+                  'Accounting Information', TO_NUMBER (hoi2.org_information2),
+                  NULL
+                 ) legal_entity,
+                 DECODE (mp.negative_inv_receipt_code,
+               1, 'Yes',
+               2, 'No'
+              ) nagitive_quantity_allowed,
+        ou.address_line_1, ou.address_line_2, ou.address_line_3, ou.country,
+        ou.region_2 state, ou.postal_code, ou.town_or_city,
+        ou.organization_type, l.primary_cost_method,
+        DECODE (mp.stock_locator_control_code,
+               4, 'Determined At Subinventory',
+               1, 'None',
+               2, 'Prespecified',
+               3, 'Dynamic Entry'
+              ) locator_control,
+        mp.wms_enabled_flag, mp.starting_revision, l2.lot_number_generation,
+        NVL (TO_CHAR (mp.lot_number_length), 'Not Defined') lot_number_length,
+        DECODE (mp.lot_number_uniqueness,
+               1, 'None',
+               2, 'Across Items'
+              ) lot_number_uniqueness,
+        DECODE (mp.lot_number_zero_padding,
+               1, 'Yes',
+               2, 'No'
+              ) lot_number_zero_pad_suffix,
+       mp.auto_lot_alpha_prefix lot_prefix, l3.serial_number_generation,
+        DECODE (mp.serial_number_type,
+               1, 'Within Inventory Items and Models',
+               2, 'Within_organization',
+               3, 'Across Organizations',
+               4, 'Within Inventory Items'
+              ) serial_number_uniqueness,
+       mp.start_auto_serial_number, mp.auto_serial_alpha_prefix serial_prefix,
+        NVL (mp.default_atp_rule, 'Not Defined') default_atp_rule,
+        NVL (mp.default_picking_rule, 'Not Defined') defualt_picking_rule,
+       mp.default_subinv_order_value, mp.default_locator_order_value,
+        DECODE (mp.mo_pick_confirm_required,
+                1, 'Yes',
+               2, 'No'
+              ) pick_confirmation_required,
+       mp.wip_overpick_enabled, mp.ovpk_transfer_orders_enabled,
+        ou.location_code organization_location_code,
+        ou.date_from org_date_from, ou.date_to org_date_to,
+        ou.creation_date org_creation_date, ou.created_by, mp.CALENDAR_CODE INVENTORY_CALENDAR_CODE
+      FROM hr_organization_units@xxx hou,
+           hr_organization_information@xxx hoi1,
+           hr_organization_information@xxx hoi2,
+           mtl_parameters_view@xxx mp,
+           gl_sets_of_books@xxx gsob,
+          fnd_product_groups@xxx fpg,
+          hr_organization_units_v@xxx ou,
+         hr_organization_units_v@xxx ou1,
+       hr_organization_units_v@xxx ou2,
+       hr_organization_units_v@xxx ou3,
+       (SELECT lookup_code, meaning primary_cost_method
+           FROM mfg_lookups@xxx ll
+          WHERE lookup_type = 'MTL_PRIMARY_COST') l,
+        (SELECT lookup_code, meaning lot_number_generation
+           FROM mfg_lookups@xxx ll
+          WHERE lookup_type = 'MTL_LOT_GENERATION') l2,
+        (SELECT lookup_code, meaning serial_number_generation
+           FROM mfg_lookups@xxx ll
+          WHERE lookup_type = 'MTL_SERIAL_GENERATION') l3
+     WHERE mp.organization_id = ou.organization_id
+     and hou.organization_id = hoi1.organization_id
+       AND hou.organization_id = hoi2.organization_id
+       AND hou.organization_id = mp.organization_id
+       AND hoi2.org_information3 = ou1.organization_id
+    AND mp.cost_organization_id = ou2.organization_id
+    AND mp.master_organization_id = ou3.organization_id
+       AND hoi1.org_information1 = 'INV'
+       AND (hoi1.org_information_context || '') = 'CLASS'
+       AND (hoi2.org_information_context || '') = 'Accounting Information'
+      AND hoi2.org_information1 = TO_CHAR (gsob.set_of_books_id)
+      AND mp.primary_cost_method = l.lookup_code(+)
+    AND mp.lot_number_generation = l2.lookup_code(+)
+    AND mp.serial_number_generation = l3.lookup_code(+)","NULL","Original",,"NULL","Err:502","NULL","Err:502","NULL"
+76,"QDP_ITEM_NOT_INVOICEABLE","items oe transactable but not invoicable ","Items OE transactable but not Invoicable",401,"Health"," select cic.item_cost,MSI.PADDED_CONCATENATED_SEGMENTS Item, msi.INVENTORY_ITEM_ID, msi.ORGANIZATION_ID,
+msi.description item_description,mp.organization_code, ou.name Inventory_org,
+CUSTOMER_ORDER_ENABLED_FLAG,CUSTOMER_ORDER_FLAG, INVOICEABLE_ITEM_FLAG,ENABLED_FLAG,
+DECODE(MSI.BOM_ITEM_TYPE,1, 'Model', 2, 'Option class', 3, 'Planning', 4, 'Standard',5, 'Product family') BOM_ITEM_TYPE, 
+trunc(msi.creation_date) msi_creation_date , fu.user_name Created_by,
+msi.inventory_item_status_code item_status_code ,
+nvl(msi.planner_code,'NO PLANNER') msi_planner_code ,
+decode(msi.planning_make_buy_code ,1, 'Make' , 2 ,'Buy')Make_buy_code,
+msi.PRIMARY_UNIT_OF_MEASURE,msi.ITEM_TYPE,FLV1.MEANING, msi.INVENTORY_ITEM_FLAG, msi.STOCK_ENABLED_FLAG,
+msi.MTL_TRANSACTIONS_ENABLED_FLAG, decode(msi.MRP_PLANNING_CODE, 6,'Not Planned', 3, 'MRP Planning',
+4, 'MPS Planning', 7,'MRP/MPP Planned', 8, 'MPS/MPP Planned', 9, 'MPP Planned') Planning_code,
+demand1.demand
+from MTL_SYSTEM_ITEMS_KFV@XXX msi,
+mtl_parameters@XXX mp,
+fnd_user@XXX fu, 
+hr_all_organization_units@XXX ou,
+(select FLV.meaning, FLV.lookup_code from FND_LOOKUP_VALUES_VL@XXX FLV where FLV.lookup_type = 'ITEM_TYPE') FLV1,
+    (select sum(mdh.LINE_ITEM_QUANTITY )demand, mdh.INVENTORY_ITEM_ID, mdh.organization_id
+    from MTL_DEMAND@XXX mdh
+    group by mdh.INVENTORY_ITEM_ID, mdh.organization_id) demand1 ,
+    cst_item_costs@XXX cic 
+where msi.ORGANIZATION_ID = ou.ORGANIZATION_ID
+AND MSI.ITEM_TYPE = FLV1.LOOKUP_CODE (+)
+and msi.CREATED_BY = fu.USER_ID(+) 
+AND cic.cost_type_id = 1 
+and cic.organization_id = msi.organization_id 
+and CIC.INVENTORY_ITEM_ID = MSI.INVENTORY_ITEM_ID 
+and msi.organization_id = mp.organization_id  
+and msi.INVENTORY_ITEM_STATUS_CODE not in ( 'Inactive', 'Obsolete') 
+and mp.MASTER_ORGANIZATION_ID <> mp.ORGANIZATION_ID
+and msi.INVENTORY_ITEM_ID = demand1.INVENTORY_ITEM_ID (+)
+and msi.organization_id = demand1.organization_id  (+)
+and  msi.SO_TRANSACTIONS_FLAG = 'Y' 
+and CUSTOMER_ORDER_FLAG = 'Y'
+and cic.item_cost > 0
+and nvl(msi.INVOICEABLE_ITEM_FLAG,'N') = 'N' 
+and nvl(msi.SERV_BILLING_ENABLED_FLAG, 'N') = 'N'",64,"Original",,"NULL","Err:502","NULL","Err:502","NULL"
+77,"QDP_STATS_SUBINVENTORY","subinventory stats","Subinventory Statistics",401,"Stats"," select sub. SECONDARY_INVENTORY_NAME, sub.DESCRIPTION, mp.organization_code, ou.name Inventory_org,
+decode(sub.RESERVABLE_TYPE, 1, 'Yes',2,'No') allow_reservations, 
+decode(sub.INVENTORY_ATP_CODE,1,'Yes',2,'No')Include_in_ATP , 
+decode(sub.ASSET_INVENTORY,1,'Yes',2,'No') Asset_subinventory,
+decode(sub.AVAILABILITY_TYPE, 1,'Yes',2,'No') MRP_Nettable,
+decode(SUB.LOCATOR_TYPE,1,'None',2,'Prespecified',3,'Dynamic_entry',4,'Item_level_control') locator_control
+from MTL_SECONDARY_INVENTORIES_FK_V@XXX sub,
+mtl_parameters@XXX mp,
+hr_all_organization_units@XXX ou
+Where sub.ORGANIZATION_ID = ou.ORGANIZATION_ID
+and sub.organization_id = mp.organization_id
+and sub.DISABLE_DATE is null","NULL","Original",,"NULL","Err:502","NULL","Err:502","NULL"
+78,"QDP_ITEM_BUYER_NOT_ACTIVE","Buyer assigned to item not active or orphand","Buyer Assigned to an Item not Active",401,"Stale"," select pa.agent_name, ppx.FULL_NAME,  pa.agent_ID,
+MSI.PADDED_CONCATENATED_SEGMENTS item, msi.INVENTORY_ITEM_ID,
+msi.description item_description,msi.organization_id, mp.organization_code, ou.name Inventory_org,
+trunc(msi.creation_date) Creation_date, fu.user_name Created_by,
+msi.inventory_item_status_code ,
+nvl(msi.planner_code,'NO PLANNER') msi_planner_code ,
+decode(msi.planning_make_buy_code ,1, 'Make' , 2 ,'Buy')Make_buy_code,
+msi.PRIMARY_UNIT_OF_MEASURE,msi.ITEM_TYPE, FLV1.MEANING, msi.INVENTORY_ITEM_FLAG, msi.STOCK_ENABLED_FLAG,
+msi.MTL_TRANSACTIONS_ENABLED_FLAG, decode(msi.MRP_PLANNING_CODE, 6,'Not Planned', 3, 'MRP Planning',
+4, 'MPS Planning', 7,'MRP/MPP Planned', 8, 'MPS/MPP Planned', 9, 'MPP Planned') Planning_code,
+msi.PURCHASING_ENABLED_FLAG, msi.PURCHASING_ITEM_FLAG, demand1.demand
+    from MTL_SYSTEM_ITEMS_KFV@XXX msi, 
+    mtl_parameters@XXX mp,
+    fnd_user@XXX fu, 
+    hr_all_organization_units@XXX ou,
+      (select FLV.meaning, FLV.lookup_code from FND_LOOKUP_VALUES_VL@XXX FLV where FLV.lookup_type = 'ITEM_TYPE') FLV1,
+     (select sum(mdh.LINE_ITEM_QUANTITY )demand, mdh.INVENTORY_ITEM_ID, mdh.organization_id
+    from MTL_DEMAND@XXX mdh
+    group by mdh.INVENTORY_ITEM_ID, mdh.organization_id) demand1,
+    apps.PO_AGENTS_V@XXX pa ,
+    per_people_x@XXX ppx
+            where  msi.BUYER_ID = pa.agent_id and pa.agent_id = ppx.person_id (+) and 
+         ( pa.agent_id in (select  
+                                  pp.PERSON_ID From per_people_x@XXX pp,  per_periods_of_service@XXX ps
+                                    where  pp.person_id = ps.person_id 
+                                      and ps.actual_termination_date is not null)
+                      and pa.agent_ID not in (Select ps1.person_id from 
+                                        per_periods_of_service@XXX ps1 where  ps1.actual_termination_date is null ) or
+                 pa.END_DATE_ACTIVE is not null)     
+            and msi.ORGANIZATION_ID = ou.ORGANIZATION_ID
+             AND MSI.ITEM_TYPE = FLV1.LOOKUP_CODE (+)
+            and msi.CREATED_BY = fu.USER_ID (+)
+            and msi.INVENTORY_ITEM_ID = demand1.INVENTORY_ITEM_ID (+)
+            and msi.organization_id = demand1.organization_id (+)
+            and msi.organization_id = mp.organization_id  
+           and msi.MRP_PLANNING_CODE <> 6 
+            and msi.INVENTORY_ITEM_STATUS_CODE not in ( 'Inactive', 'Obsolete') ",64,"Original",,"NULL","Err:502","NULL","Err:502","NULL"
+79,"QDP_ITEM_ORPHANS","orphan organization items with no item in the master ","Orphan Organization Items",401,"Stale","select msi.INVENTORY_ITEM_ID,moa.master_organization_id, msi.organization_id
+   from MTL_SYSTEM_ITEMS_KFV@XXX msi, 
+   MTL_ORG_ASSIGN_V@XXX moa
+           where msi.ORGANIZATION_ID = moa.ORGANIZATION_ID
+           and msi.INVENTORY_ITEM_ID = moa.inventory_item_id
+           AND msi.inventory_item_id not in (select msi1.inventory_item_id from mtl_system_items_kfv@XXX msi1, mtl_org_assign_v@XXX moa1
+                               where msi1.organization_id = moa1.master_organization_id)",64,"Original",,"NULL","Err:502","NULL","Err:502","NULL"
+80,"QDP_ITEM_ENABLED_NO_TRANS365","enabled items not transacted last 365 days","Enabled Items not Transacted Last 365 Days",401,"Stale","  select MSI.PADDED_CONCATENATED_SEGMENTS Item, msi.INVENTORY_ITEM_ID, msi.ORGANIZATION_ID,
+msi.description item_description,mp.organization_code, ou.name Inventory_org,
+CUSTOMER_ORDER_ENABLED_FLAG,CUSTOMER_ORDER_FLAG, INVOICEABLE_ITEM_FLAG,ENABLED_FLAG,
+DECODE(MSI.BOM_ITEM_TYPE,1, 'Model', 2, 'Option class', 3, 'Planning', 4, 'Standard',5, 'Product family') BOM_ITEM_TYPE, 
+trunc(msi.creation_date), fu.user_name Created_by,
+msi.inventory_item_status_code ,
+nvl(msi.planner_code,'NO PLANNER') planner_code ,
+decode(msi.planning_make_buy_code ,1, 'Make' , 2 ,'Buy')Make_buy_code,
+msi.PRIMARY_UNIT_OF_MEASURE,msi.ITEM_TYPE,FLV1.MEANING, msi.INVENTORY_ITEM_FLAG, msi.STOCK_ENABLED_FLAG,
+msi.MTL_TRANSACTIONS_ENABLED_FLAG, decode(msi.MRP_PLANNING_CODE, 6,'Not Planned', 3, 'MRP Planning',
+4, 'MPS Planning', 7,'MRP/MPP Planned', 8, 'MPS/MPP Planned', 9, 'MPP Planned') Planning_code,
+demand1.demand
+from MTL_SYSTEM_ITEMS_KFV@XXX msi,
+mtl_parameters@XXX mp,
+fnd_user@XXX fu, 
+hr_all_organization_units@XXX ou,
+(select FLV.meaning, FLV.lookup_code from FND_LOOKUP_VALUES_VL@XXX FLV where FLV.lookup_type = 'ITEM_TYPE') FLV1,
+    (select sum(mdh.LINE_ITEM_QUANTITY )demand, mdh.INVENTORY_ITEM_ID, mdh.organization_id
+    from MTL_DEMAND@XXX mdh
+    group by mdh.INVENTORY_ITEM_ID, mdh.organization_id) demand1 
+where msi.ORGANIZATION_ID = ou.ORGANIZATION_ID
+AND MSI.ITEM_TYPE = FLV1.LOOKUP_CODE (+)
+and msi.CREATED_BY = fu.USER_ID(+)  
+and msi.organization_id = mp.organization_id  
+and msi.INVENTORY_ITEM_STATUS_CODE not in ( 'Inactive', 'Obsolete') 
+and mp.MASTER_ORGANIZATION_ID <> mp.ORGANIZATION_ID
+and TRUNC (msi.creation_date) <= TRUNC (SYSDATE - 60)
+and msi.inventory_item_id   not in (select inventory_item_id from mtl_material_transactions@XXX mmt
+                                where mmt.organization_id = msi.organization_id and 
+                                mmt.creation_date >= TRUNC (SYSDATE - 365))
+and msi.INVENTORY_ITEM_ID = demand1.INVENTORY_ITEM_ID (+)
+and msi.organization_id = demand1.organization_id  (+)
+and msi.stock_enabled_flag = 'Y' ","NULL","Original",,"NULL","Err:502","NULL","Err:502","NULL"
+81,"QDP_ITEM_DUPLICATES","duplicate items based on case sensitive entry","Duplicate Items",401,"Health","SELECT DISTINCT msi.inventory_item_id,
+               msi.padded_concatenated_segments DUPLICATE_ITEM,
+               msi.organization_id
+          FROM mtl_system_items_kfv@XXX msi,
+               (SELECT   UPPER (msi1.padded_concatenated_segments) duplicate,
+                         COUNT(*) , msi1.organization_id
+                    FROM mtl_system_items_kfv@XXX msi1
+                   WHERE msi1.inventory_item_status_code NOT IN
+                                                    ('Inactive', 'Obsolete')
+                GROUP BY UPPER (msi1.padded_concatenated_segments),
+                         msi1.organization_id
+                  HAVING COUNT(*)  > 1) dup
+         WHERE UPPER (msi.padded_concatenated_segments) = UPPER (dup.duplicate)
+           AND msi.organization_id = dup.organization_id
+           ORDER BY msi.padded_concatenated_segments",64,"Original",,"NULL","Err:502","NULL","Err:502","NULL"
+82,"QDP_ITEM_MAYBE_BAD","possibly bad items that need to be disabeled","Possibly Bad Items that are Active",401,"Health","select nvl(HR.FULL_NAME,'Person Not in HR')CREATED_BY_FULLNAME, fu.user_name Created_by_user,  MSI.PADDED_CONCATENATED_SEGMENTS Item, msi.INVENTORY_ITEM_ID, msi.ORGANIZATION_ID,
+msi.description item_description,mp.organization_code, ou.name Inventory_org,
+CUSTOMER_ORDER_ENABLED_FLAG,CUSTOMER_ORDER_FLAG, INVOICEABLE_ITEM_FLAG,ENABLED_FLAG,
+DECODE(MSI.BOM_ITEM_TYPE,1, 'Model', 2, 'Option class', 3, 'Planning', 4, 'Standard',5, 'Product family') BOM_ITEM_TYPE, 
+trunc(msi.creation_date) msi_creation_date, 
+msi.inventory_item_status_code ,
+nvl(msi.planner_code,'NO PLANNER') msi_planner_code ,
+decode(msi.planning_make_buy_code ,1, 'Make' , 2 ,'Buy')Make_buy_code,
+msi.PRIMARY_UNIT_OF_MEASURE,msi.ITEM_TYPE,FLV1.MEANING, msi.INVENTORY_ITEM_FLAG, msi.STOCK_ENABLED_FLAG,
+msi.MTL_TRANSACTIONS_ENABLED_FLAG, decode(msi.MRP_PLANNING_CODE, 6,'Not Planned', 3, 'MRP Planning',
+4, 'MPS Planning', 7,'MRP/MPP Planned', 8, 'MPS/MPP Planned', 9, 'MPP Planned') Planning_code,
+demand1.demand
+from MTL_SYSTEM_ITEMS_KFV@XXX msi,
+mtl_parameters@XXX mp,
+fnd_user@XXX fu, 
+per_people_x@XXX HR,
+hr_all_organization_units@XXX ou,
+(select FLV.meaning, FLV.lookup_code from FND_LOOKUP_VALUES_VL@XXX FLV where FLV.lookup_type = 'ITEM_TYPE') FLV1,
+    (select sum(mdh.LINE_ITEM_QUANTITY )demand, mdh.INVENTORY_ITEM_ID, mdh.organization_id
+    from MTL_DEMAND@XXX mdh
+    group by mdh.INVENTORY_ITEM_ID, mdh.organization_id) demand1 
+where msi.ORGANIZATION_ID = ou.ORGANIZATION_ID
+AND FU.EMPLOYEE_ID = HR.PERSON_ID (+)
+AND MSI.ITEM_TYPE = FLV1.LOOKUP_CODE (+)
+and msi.CREATED_BY = fu.USER_ID(+)  
+and msi.organization_id = mp.organization_id  
+and msi.INVENTORY_ITEM_STATUS_CODE not in ( 'Inactive', 'Obsolete') 
+and mp.MASTER_ORGANIZATION_ID <> mp.ORGANIZATION_ID
+and msi.INVENTORY_ITEM_ID = demand1.INVENTORY_ITEM_ID (+)
+and msi.organization_id = demand1.organization_id  (+)
+and ( UPPER(MSI.PADDED_CONCATENATED_SEGMENTS) LIKE '%TEST%' OR
+    MSI.PADDED_CONCATENATED_SEGMENTS like '%\%%' ESCAPE '\' OR 
+    UPPER(MSI.PADDED_CONCATENATED_SEGMENTS) LIKE '%' || upper(nvl(HR.FIRST_NAME,'SYSADMIN')) || '%' OR 
+    UPPER(MSI.PADDED_CONCATENATED_SEGMENTS) LIKE '%' || upper(nvl(HR.LAST_NAME,'SYSADMIN')) || '%'  ) ",64,"Original",,"NULL","Err:502","NULL","Err:502","NULL"
+83,"QDP_SUB_SETUP_ISSUES","Subinventories with questionable setups","Subinventories with Questionable Setups",401,"Health"," select sub. SECONDARY_INVENTORY_NAME, sub.DESCRIPTION, mp.organization_code, ou.name Inventory_org, mp.organization_id,
+decode(sub.ASSET_INVENTORY,1,'Yes',2,'No') Asset_subinventory,
+decode(sub.RESERVABLE_TYPE, 1, 'Yes',2,'No') allow_reservations, 
+decode(sub.INVENTORY_ATP_CODE,1,'Yes',2,'No')Include_in_ATP , 
+decode(sub.AVAILABILITY_TYPE, 1,'Yes',2,'No') MRP_Nettable,
+decode(SUB.LOCATOR_TYPE,1,'None',2,'Prespecified',3,'Dynamic_entry',4,'Item_level_control') locator_control
+from MTL_SECONDARY_INVENTORIES_FK_V@XXX sub,
+mtl_parameters@XXX mp,
+hr_all_organization_units@XXX ou
+Where sub.ORGANIZATION_ID = ou.ORGANIZATION_ID
+and sub.organization_id = mp.organization_id
+and sub.DISABLE_DATE is null
+and sub.ASSET_INVENTORY = 1
+and (sub.RESERVABLE_TYPE  <> sub.AVAILABILITY_TYPE 
+or sub.RESERVABLE_TYPE <> INVENTORY_ATP_CODE
+or INVENTORY_ATP_CODE <> sub.AVAILABILITY_TYPE )",77,"Original",,"NULL","Err:502","NULL","Err:502","NULL"
+84,"QDP_STATS_TRANS_2_YEARS","Transaction counts for entire year that is 2 years past from now","Transaction counts for entire year that is 2 years past from now",401,"Stats","select count(*) Current_Count, transaction_source_name,mtd.Organization_id ,mp.organization_code, ou.name Inventory_org,
+fu.user_name , to_date('01/'||to_CHAR(mtd.transaction_date,'mm/yyyy'),'dd/mm/yyyy') transaction_date
+from MTL_TRANSACTION_DETAILS_V@xxx mtd,
+mtl_parameters@xxx mp,
+hr_all_organization_units@xxx ou,
+fnd_user@xxx fu
+Where mtd.ORGANIZATION_ID = ou.ORGANIZATION_ID
+and mtd.organization_id = mp.organization_id 
+and trunc(mtd.transaction_date) >=  trunc(to_date('01/01/'||to_number(to_char(sysdate,'YYYY')-2),'mm/dd/yyyy')) 
+and trunc(mtd.transaction_date) <=  trunc(to_date('12/31/'||to_number(to_char(sysdate,'YYYY')-2),'mm/dd/yyyy'))
+and mtd.created_by = fu.user_id group by transaction_source_name, mtd.Organization_id, 
+mp.organization_code, ou.name, fu.user_name,to_date('01/'||to_CHAR(mtd.transaction_date,'mm/yyyy'),'dd/mm/yyyy')","NULL","Original",,"NULL","Err:502","NULL","Err:502","NULL"
+85,"QDP_STATS_TRANS_1_YEAR","Transaction counts for entire year that is 1 year past from now","Transaction counts for entire year that is 1 year past from now",401,"Stats","select count(*) Current_Count, transaction_source_name,mtd.Organization_id ,mp.organization_code, ou.name Inventory_org,
+fu.user_name , to_date('01/'||to_CHAR(mtd.transaction_date,'mm/yyyy'),'dd/mm/yyyy') transaction_date
+from MTL_TRANSACTION_DETAILS_V@xxx mtd,
+mtl_parameters@xxx mp,
+hr_all_organization_units@xxx ou,
+fnd_user@xxx fu
+Where mtd.ORGANIZATION_ID = ou.ORGANIZATION_ID
+and mtd.organization_id = mp.organization_id 
+and trunc(mtd.transaction_date) >=  trunc(to_date('01/01/'||to_number(to_char(sysdate,'YYYY')-1),'mm/dd/yyyy')) 
+and trunc(mtd.transaction_date) <=  trunc(to_date('12/31/'||to_number(to_char(sysdate,'YYYY')-1),'mm/dd/yyyy'))
+and mtd.created_by = fu.user_id group by transaction_source_name, mtd.Organization_id, 
+mp.organization_code, ou.name, fu.user_name,to_date('01/'||to_CHAR(mtd.transaction_date,'mm/yyyy'),'dd/mm/yyyy')","NULL","Original",,"NULL","Err:502","NULL","Err:502","NULL"
+86,"QDP_STATS_TRANS_CURR_YEAR","Transaction counts for current year starting Jan 1st.","Transaction counts for current year starting Jan 1st.",401,"Stats","select count(*) Current_Count, transaction_source_name,mtd.Organization_id ,mp.organization_code, ou.name Inventory_org,
+fu.user_name , to_date('01/'||to_CHAR(mtd.transaction_date,'mm/yyyy'),'dd/mm/yyyy') transaction_date
+from MTL_TRANSACTION_DETAILS_V@xxx mtd,
+mtl_parameters@xxx mp,
+hr_all_organization_units@xxx ou,
+fnd_user@xxx fu
+Where mtd.ORGANIZATION_ID = ou.ORGANIZATION_ID
+and mtd.organization_id = mp.organization_id 
+and trunc(mtd.transaction_date) >=  trunc(to_date('01/01/'||to_number(to_char(sysdate,'YYYY')),'mm/dd/yyyy')) 
+and trunc(mtd.transaction_date) <=  trunc(sysdate)
+and mtd.created_by = fu.user_id group by transaction_source_name, mtd.Organization_id, 
+mp.organization_code, ou.name, fu.user_name,to_date('01/'||to_CHAR(mtd.transaction_date,'mm/yyyy'),'dd/mm/yyyy')","NULL","Original",,"NULL","Err:502","NULL","Err:502","NULL"
+87,"QDP_MTL_TXN_COST_DET_INTERFAC","MTL_TXN_COST_DET_INTERFACE","Interface Issues on MTL_TXN_COST_DET_INTERFACE",401,"Interface","SELECT TRANSACTION_INTERFACE_ID
+,      CREATION_DATE
+,      CREATED_BY
+,      ORGANIZATION_ID
+,      ORGANIZATION_NAME
+,      ORGANIZATION_CODE
+,      COST_ELEMENT
+,      LEVEL_TYPE
+,      LEVEL_NAME
+,      TRANSACTION_COST
+,      NEW_AVERAGE_COST
+,      PERCENTAGE_CHANGE
+,      VALUE_CHANGE
+,      ERROR_CODE
+,      ERROR_EXPLANATION
+FROM INV.MTL_TXN_COST_DET_INTERFACE@XXX","NULL","Original",,"NULL","Err:502","NULL","Err:502","NULL"
+88,"QDP_MTL_INTERFACE_ERRORS","MTL_INTERFACE_ERRORS","Interface Issues on MTL_INTERFACE_ERRORS",401,"Interface","SELECT MTE.ORGANIZATION_ID
+,      MTE.TRANSACTION_ID
+,      MTE.TABLE_NAME
+,      MTE.MESSAGE_NAME
+,      MTE.COLUMN_NAME
+,      MTE.ERROR_MESSAGE,
+mp.organization_code, ou.name Inventory_org,
+mte.creation_date,
+ fu.user_name Created_by
+FROM MTL_INTERFACE_ERRORS@XXX mte,
+mtl_parameters@XXX mp,fnd_user@XXX fu,
+hr_all_organization_units@XXX ou
+Where mte.ORGANIZATION_ID = ou.ORGANIZATION_ID 
+and mte.ORGANIZATION_ID = mp.ORGANIZATION_ID 
+and mte.created_by = fu.user_id","NULL","Original",,"NULL","Err:502","NULL","Err:502","NULL"
+89,"QDP_MTL_ITEM_CATEGORIES_INTERF","MTL_ITEM_CATEGORIES_INTERF","Interface Issues on MTL_ITEM_CATEGORIES_INTERF",401,"Interface","select msi.TRANSACTION_TYPE,msi.ITEM_NUMBER,msi.ORGANIZATION_CODE,ou.name Inventory_org,msi.CATEGORY_NAME,
+msi.CATEGORY_SET_NAME,msi.PROCESS_FLAG,msi.ORGANIZATION_ID,msi.CATEGORY_ID,msi.CATEGORY_SET_ID,msi.INVENTORY_ITEM_ID,
+msi.CREATION_DATE
+from MTL_ITEM_CATEGORIES_INTERFACE@XXX msi,
+hr_all_organization_units@XXX ou
+Where msi.creation_date < sysdate
+and msi.ORGANIZATION_ID = ou.ORGANIZATION_ID","NULL","Original",,"NULL","Err:502","NULL","Err:502","NULL"
+90,"QDP_MTL_DEMAND_INTERFACE","MTL_DEMAND_INTERFACE","Interface Issues on MTL_DEMAND_INTERFACE",401,"Interface"," SELECT mte.DEMAND_SOURCE_TYPE
+,      mte.DEMAND_SOURCE_HEADER_ID
+,      mte.DEMAND_SOURCE_LINE
+,      mte.DEMAND_SOURCE_DELIVERY
+,      mte.LOCK_FLAG
+,      mte.ATP_CHECK
+,      mte.ACTION_CODE
+,      mte.TRANSACTION_MODE
+,      mte.PROCESS_FLAG
+,      mte.CREATION_DATE
+,      sysdate - mte.CREATION_DATE   DAYS_FROM_CREATION
+,      mte.ERROR_CODE
+,      mte.ERR_EXPLANATION
+,      mte.LINE_ITEM_QUANTITY
+,      mte.ORGANIZATION_ID
+,      mte.INVENTORY_ITEM_ID
+,      MSI.PADDED_CONCATENATED_SEGMENTS item,
+msi.description item_description,
+ mte.DEMAND_ID
+,      mte.DEMAND_SOURCE_NAME
+,      mte.DEMAND_TYPE
+, mp.organization_code, ou.name Inventory_org,
+ fu.user_name Created_by
+FROM INV.MTL_DEMAND_INTERFACE@XXX mte,
+MTL_SYSTEM_ITEMS_KFV@XXX msi,
+mtl_parameters@XXX mp,fnd_user@XXX fu,
+hr_all_organization_units@XXX ou
+Where mte.inventory_item_id = msi.inventory_item_id
+and mte.ORGANIZATION_ID = msi.ORGANIZATION_ID 
+and mte.ORGANIZATION_ID = ou.ORGANIZATION_ID 
+and mte.ORGANIZATION_ID = mp.ORGANIZATION_ID 
+and mte.created_by = fu.user_id and mte.creation_date < sysdate  ","NULL","Original",,"NULL","Err:502","NULL","Err:502","NULL"
+91,"QDP_MTL_ITEM_REVISIONS_INTERFA","MTL_ITEM_REVISIONS_INTERFACE","Interface Issues on MTL_ITEM_REVISIONS_INTERFACE",401,"Interface"," SELECT mte.CHANGE_NOTICE,
+IMPLEMENTATION_DATE, sysdate - mte.IMPLEMENTATION_DATE   DAYS_FROM_CREATION_IMP,
+EFFECTIVITY_DATE, sysdate - mte.EFFECTIVITY_DATE   DAYS_FROM_CREATION_EFF,
+ REVISION_LABEL,REVISION,TRANSACTION_TYPE,PROCESS_FLAG
+,      mte.CREATION_DATE
+,      sysdate - mte.CREATION_DATE   DAYS_FROM_CREATION
+,      mte.INVENTORY_ITEM_ID
+,      MSI.PADDED_CONCATENATED_SEGMENTS item,
+msi.description item_description
+, mp.organization_code, ou.name Inventory_org,
+ fu.user_name Created_by, mte.organization_id
+FROM MTL_ITEM_REVISIONS_INTERFACE@XXX mte,
+MTL_SYSTEM_ITEMS_KFV@XXX msi,
+mtl_parameters@XXX mp,fnd_user@XXX fu,
+hr_all_organization_units@XXX ou
+Where mte.inventory_item_id = msi.inventory_item_id
+and mte.ORGANIZATION_ID = msi.ORGANIZATION_ID 
+and mte.ORGANIZATION_ID = ou.ORGANIZATION_ID 
+and mte.ORGANIZATION_ID = mp.ORGANIZATION_ID 
+and mte.created_by = fu.user_id","NULL","Original",,"NULL","Err:502","NULL","Err:502","NULL"
+92,"QDP_MTL_ITEM_SUB_INVS_INTERFAC","MTL_ITEM_SUB_INVS_INTERFACE","Interface Issues on MTL_ITEM_SUB_INVS_INTERFACE",401,"Interface"," SELECT SECONDARY_INVENTORY, PROCESS_FLAG
+,      mte.CREATION_DATE
+,      sysdate - mte.CREATION_DATE   DAYS_FROM_CREATION
+,      mte.INVENTORY_ITEM_ID
+,      MSI.PADDED_CONCATENATED_SEGMENTS item,
+msi.description item_description
+, mp.organization_code, ou.name Inventory_org,
+ fu.user_name Created_by, mte.organization_id
+FROM MTL_ITEM_SUB_INVS_INTERFACE@XXX mte,
+MTL_SYSTEM_ITEMS_KFV@XXX msi,
+mtl_parameters@XXX mp,fnd_user@XXX fu,
+hr_all_organization_units@XXX ou
+Where mte.inventory_item_id = msi.inventory_item_id
+and mte.ORGANIZATION_ID = msi.ORGANIZATION_ID 
+and mte.ORGANIZATION_ID = ou.ORGANIZATION_ID 
+and mte.ORGANIZATION_ID = mp.ORGANIZATION_ID 
+and mte.created_by = fu.user_id and mte.creation_date < sysdate","NULL","Original",,"NULL","Err:502","NULL","Err:502","NULL"
+93,"QDP_MTL_RESERVATIONS_INTERFACE","MTL_RESERVATIONS_INTERFACE","Interface Issues on MTL_RESERVATIONS_INTERFACE",401,"Interface","SELECT REQUIREMENT_DATE, RESERVATION_QUANTITY,ERROR_CODE, ERROR_EXPLANATION, 
+SUBINVENTORY_CODE,ROW_STATUS_CODE,
+RESERVATION_INTERFACE_ID
+,      mte.CREATION_DATE
+,      sysdate - mte.CREATION_DATE   DAYS_FROM_CREATION
+,      mte.INVENTORY_ITEM_ID
+,      MSI.PADDED_CONCATENATED_SEGMENTS item,
+msi.description item_description
+, mp.organization_code, ou.name Inventory_org,
+ fu.user_name Created_by, mp.organization_id
+FROM MTL_RESERVATIONS_INTERFACE@XXX mte,
+MTL_SYSTEM_ITEMS_KFV@XXX msi,
+mtl_parameters@XXX mp,fnd_user@XXX fu,
+hr_all_organization_units@XXX ou
+Where mte.inventory_item_id = msi.inventory_item_id
+and mte.ORGANIZATION_ID = msi.ORGANIZATION_ID 
+and mte.ORGANIZATION_ID = ou.ORGANIZATION_ID 
+and mte.ORGANIZATION_ID = mp.ORGANIZATION_ID 
+and mte.created_by = fu.user_id and mte.creation_date < sysdate","NULL","Original",,"NULL","Err:502","NULL","Err:502","NULL"
+94,"QDP_MTL_SERIAL_NUMBERS_INTERFA","MTL_SERIAL_NUMBERS_INTERFACE","Interface Issues on MTL_SERIAL_NUMBERS_INTERFACE",401,"Interface","SELECT  mte.source_code, FM_SERIAL_NUMBER,TO_SERIAL_NUMBER,  mte.ERROR_CODE, mte.ORIGINATION_DATE, 
+ mte.STATUS_NAME, mte.PROCESS_FLAG,
+mte.TRANSACTION_INTERFACE_ID
+,      mte.CREATION_DATE
+,      sysdate - mte.CREATION_DATE   DAYS_FROM_CREATION,
+ fu.user_name Created_by
+FROM MTL_SERIAL_NUMBERS_INTERFACE@XXX mte,
+MTL_TRANSACTIONS_INTERFACE@XXX mti ,
+fnd_user@XXX fu
+Where mte.TRANSACTION_INTERFACE_ID  = mti.TRANSACTION_INTERFACE_ID (+)
+and mte.created_by = fu.user_id (+) and mte.creation_date < sysdate","NULL","Original",,"NULL","Err:502","NULL","Err:502","NULL"
+95,"QDP_MTL_SYSTEM_ITEMS_INTERFACE","MTL_SYSTEM_ITEMS_INTERFACE","Interface Issues on MTL_SYSTEM_ITEMS_INTERFACE",401,"Interface"," select msi.INVENTORY_ITEM_ID,msi.SEGMENT1, msi.DESCRIPTION, msi.ORGANIZATION_ID,
+msi.CREATION_DATE, mp.organization_code, ou.name Inventory_org
+from MTL_SYSTEM_ITEMS_INTERFACE@XXX msi,
+mtl_parameters@XXX mp, 
+hr_all_organization_units@XXX ou
+Where msi.ORGANIZATION_ID = ou.ORGANIZATION_ID
+and msi.ORGANIZATION_ID = mp.ORGANIZATION_ID
+and msi.creation_date < sysdate","NULL","Original",,"NULL","Err:502","NULL","Err:502","NULL"
+96,"QDP_MTL_TRANSACTION_LOTS_INTER","MTL_TRANSACTION_LOTS_INTERFACE","Interface Issues on MTL_TRANSACTION_LOTS_INTERFACE",401,"Interface"," select  msi.SUPPLIER_LOT_NUMBER,msi.VENDOR_NAME,msi.DESCRIPTION,msi.PROCESS_FLAG, msi.ERROR_CODE,
+msi.TRANSACTION_QUANTITY,msi.LOT_NUMBER,msi.CREATION_DATE,msi.SOURCE_CODE,msi.TRANSACTION_INTERFACE_ID, 
+mti.organization_id, mp.organization_code, ou.name Inventory_org,
+ fu.user_name Created_by
+from MTL_TRANSACTION_LOTS_INTERFACE@XXX msi,
+MTL_TRANSACTIONS_INTERFACE@XXX mti,
+mtl_parameters@XXX mp,
+fnd_user@XXX fu,
+hr_all_organization_units@XXX ou
+where msi.TRANSACTION_INTERFACE_ID = mti.TRANSACTION_INTERFACE_ID 
+and mti.ORGANIZATION_ID = ou.ORGANIZATION_ID 
+and mti.ORGANIZATION_ID = mp.ORGANIZATION_ID 
+and msi.created_by = fu.user_id and msi.creation_date < sysdate","NULL","Original",,"NULL","Err:502","NULL","Err:502","NULL"
+97,"QDP_MTL_TRANSACTIONS_INTERFACE","MTL_TRANSACTIONS_INTERFACE","Interface Issues on MTL_TRANSACTIONS_INTERFACE",401,"Interface"," select msi.ERROR_EXPLANATION,msi.ERROR_CODE,msi.TRANSACTION_COST,msi.TRANSACTION_SOURCE_NAME,
+msi.SUBINVENTORY_CODE,msi.TRANSACTION_QUANTITY,msi.INVENTORY_ITEM_ID,msi.CREATION_DATE,
+msi.TRANSACTION_MODE,msi.PROCESS_FLAG,msi.SOURCE_CODE,msi.TRANSACTION_HEADER_ID,msi.TRANSACTION_INTERFACE_ID,
+mp.organization_code, ou.name Inventory_org,msi.ORGANIZATION_ID,
+ fu.user_name Created_by
+From MTL_TRANSACTIONS_INTERFACE@XXX msi,
+mtl_parameters@XXX mp,
+fnd_user@XXX fu,
+hr_all_organization_units@XXX ou,
+MTL_SYSTEM_ITEMS_KFV@XXX MSI2
+Where msi.creation_date < sysdate 
+and msi.ORGANIZATION_ID = ou.ORGANIZATION_ID 
+and msi.ORGANIZATION_ID = mp.ORGANIZATION_ID 
+and msi.created_by = fu.user_id
+and msi.inventory_item_id = msi2.inventory_item_id
+and msi.organization_id = msi2.organization_id
+","NULL","Original",,"NULL","Err:502","NULL","Err:502","NULL"
+98,"QDP_ITEMS_NOTIN_DEFAULT_LOCATI","items not in the default stock location","items not in the default stock location",401,"Health"," Select distinct moi.PADDED_CONCATENATED_SEGMENTS, moi.SUBINVENTORY_CODE, moi.locator_id,
+mil2.segment1 Onhand_Location_code, md.segment1 Defualt_Location_code, moi.ORGANIZATION_ID, moi.INVENTORY_ITEM_ID,  moi.TOTAL_QOH,
+ moi.ITEM_DESCRIPTION, moi.PRIMARY_UOM_CODE, moi.ORGANIZATION_CODE, moi.ORGANIZATION_NAME,
+ decode(mp.NEGATIVE_INV_RECEIPT_CODE, 1, 'Yes', 2,'No') Organization_allows_negatives
+from MTL_ONHAND_locator_V@XXX moi,
+  mtl_parameters@XXX mp,
+  mtl_item_loc_defaults@XXX mil,
+  mtl_item_locations@XXX mil2,
+  mtl_item_locations@XXX md
+where mil.INVENTORY_ITEM_ID = moi.INVENTORY_ITEM_ID
+and mil.ORGANIZATION_ID = moi.ORGANIZATION_ID
+and moi.locator_id = mil2.inventory_location_id
+and moi.ORGANIZATION_ID = mil2.organization_id
+and md.segment2 is null
+and mil.locator_id = md.inventory_location_id
+and mil.ORGANIZATION_ID = md.organization_id
+and moi.locator_id <> md.inventory_location_id
+and moi.TOTAL_QOH > 0
+and MOI.ORGANIZATION_ID = mp.organization_id","NULL","Original",,"NULL","Err:502","NULL","Err:502","NULL"
+99,"QDP_TOP_TRANSACTION_ACCOUNTS","Material transaction accounts that you do not have have an account alias setup for that you may want","Material transaction accounts that you do not have have an account alias setup for that you may want",401,"Stats","select count(*) Curr_Count, to_CHAR(mtd.transaction_date,'YYYY')transaction_date,
+ mmt.TRANSACTION_SOURCE_NAME,mmt.DISTRIBUTION_ACCOUNT_ID,
+ GCC.CONCATENATED_SEGMENTS, mtd.ORGANIZATION_ID
+from MTL_TRANSACTION_DETAILS_V@XXX mtd,
+    MTL_MATERIAL_TRANSACTIONS@XXX mmt,
+     mtl_parameters@XXX mp,
+     hr_all_organization_units@XXX ou,
+     fnd_user@XXX fu,
+     gl_code_combinations_kfv@XXX gcc
+Where mtd.ORGANIZATION_ID = ou.ORGANIZATION_ID
+and mtd.transaction_id = mmt.transaction_id
+and mmt.distribution_account_id = gcc.code_combination_id 
+      and mtd.organization_id = mp.organization_id 
+      -- and mtd.transaction_date > sysdate -365
+        and mtd.transaction_source_name = 'Account'
+        and gcc.code_combination_id not in (select mgd.distribution_account from mtl_generic_dispositions@XXX mgd
+                                Where mgd.organization_id = mtd.organization_id)
+        and mtd.created_by = fu.user_id
+ group by mtd.transaction_source_name, to_CHAR(mtd.transaction_date,'YYYY'),
+ mmt.TRANSACTION_SOURCE_NAME,mmt.DISTRIBUTION_ACCOUNT_ID,
+ gcc.CONCATENATED_SEGMENTS,mtd.ORGANIZATION_ID","NULL","Original",,"NULL","Err:502","NULL","Err:502","NULL"
+100,"QDP_INV_INTERFACE_COUNTS","INV Interface Counts","Inventory Interface Counts",401,"Interface"," select 'MTL_INTERFACE_ERRORS' interface_table, Count (*) Curr_Count
+From MTL_INTERFACE_ERRORS@XXX
+where creation_date < sysdate
+union all
+select 'MTL_ITEM_CATEGORIES_INTERFACE' interface_table, Count (*) Curr_Count
+From MTL_ITEM_CATEGORIES_INTERFACE@XXX
+where creation_date < sysdate
+Union all
+select 'MTL_DEMAND_INTERFACE' interface_table, Count (*) Curr_Count
+From MTL_DEMAND_INTERFACE@XXX
+where creation_date < sysdate
+union all
+select 'MTL_ITEM_REVISIONS_INTERFACE' interface_table, Count (*) Curr_Count
+From MTL_ITEM_REVISIONS_INTERFACE@XXX
+where creation_date < sysdate
+union all
+select 'MTL_ITEM_SUB_INVS_INTERFACE' interface_table, Count (*) Curr_Count
+From MTL_ITEM_SUB_INVS_INTERFACE@XXX
+where creation_date < sysdate
+union all
+select 'MTL_RESERVATIONS_INTERFACE' interface_table, Count (*) Curr_Count
+From MTL_RESERVATIONS_INTERFACE@XXX
+where creation_date < sysdate
+union all
+select 'MTL_SERIAL_NUMBERS_INTERFACE' interface_table, Count (*) Curr_Count
+From MTL_SERIAL_NUMBERS_INTERFACE@XXX
+where creation_date < sysdate
+Union All
+select 'MTL_SYSTEM_ITEMS_INTERFACE' interface_table, Count (*) Curr_Count
+From MTL_SYSTEM_ITEMS_INTERFACE@XXX
+where creation_date < sysdate
+Union All
+select 'MTL_TRANSACTION_LOTS_INTERFACE' interface_table, Count (*) Curr_Count
+From MTL_TRANSACTION_LOTS_INTERFACE@XXX
+where creation_date < sysdate
+Union All
+select 'MTL_TRANSACTIONS_INTERFACE' interface_table, Count (*) Curr_Count
+From MTL_TRANSACTIONS_INTERFACE@XXX
+where creation_date < sysdate
+Union All
+select 'MTL_TXN_COST_DET_INTERFACE' interface_table, Count (*) Curr_Count
+From MTL_TXN_COST_DET_INTERFACE@XXX
+where creation_date < sysdate","NULL","Original",,"NULL","Err:502","NULL","Err:502"," "
+107,"QDP_STATS_TRANSACTIONS","NULL","NULL",401,"Stats","select count(*) Current_Count, transaction_source_name,mtd.Organization_id ,mp.organization_code, ou.name Inventory_org,
+fu.user_name , to_date('01/'||to_CHAR(mtd.transaction_date,'mm/yyyy'),'dd/mm/yyyy') transaction_date
+from MTL_TRANSACTION_DETAILS_V@xxx mtd,
+mtl_parameters@xxx mp,
+hr_all_organization_units@xxx ou,
+fnd_user@xxx fu
+Where mtd.ORGANIZATION_ID = ou.ORGANIZATION_ID
+and mtd.organization_id = mp.organization_id 
+and mtd.created_by = fu.user_id group by transaction_source_name, mtd.Organization_id, 
+mp.organization_code, ou.name, fu.user_name,to_date('01/'||to_CHAR(mtd.transaction_date,'mm/yyyy'),'dd/mm/yyyy')","NULL","Original",,"NULL","Err:502","NULL","Err:502","NULL"
+187,"QDP_SERIAL_TRANS_ORPHANS","NULL","Orphan Serial Transactions",401,"Health","SELECT  mte.source_code, FM_SERIAL_NUMBER From_serial_number,TO_SERIAL_NUMBER,  mte.ERROR_CODE, mte.ORIGINATION_DATE, mte.STATUS_NAME, mte.PROCESS_FLAG,
+mte.TRANSACTION_INTERFACE_ID
+, mte.CREATION_DATE
+,      sysdate - mte.CREATION_DATE   DAYS_FROM_CREATION,
+ mte.Created_by
+FROM MTL_SERIAL_NUMBERS_INTERFACE@XXX mte
+Where mte.TRANSACTION_INTERFACE_ID not in (select mti.TRANSACTION_INTERFACE_ID  from MTL_TRANSACTIONS_INTERFACE@XXX mti)
+and trunc(mte.CREATION_DATE) <> trunc(sysdate)","NULL","Original",,"NULL","Err:502","NULL","Err:502","NULL"
+229,"QDP_STATS_ONHAND_ITEMS","NULL","NULL",401,"Stats","Select Sum(moq.TRANSACTION_QUANTITY) Transaction_Quantity, SUBINVENTORY_CODE, ORGANIZATION_ID, INVENTORY_ITEM_ID
+from mtl_onhand_quantities_detail@XXX moq
+group by SUBINVENTORY_CODE, ORGANIZATION_ID, INVENTORY_ITEM_ID","NULL","Original",,"NULL","Err:502","NULL","Err:502","NULL"
+230,"QDP_INV_FEATURES","Inventory Features","Inventory Features",401,"Feature","select  o.organization_id, 'Item Relationships' Feature_function, decode(max(RELATED_ITEM_ID), null,0,1)Implemented
+from mtl_parameters@XXX o,MTL_RELATED_ITEMS@XXX i
+where o.organization_id = i.organization_id (+)
+group by o.organization_id
+union All
+select  o.organization_id, 'Cycle Counts' Feature_function, decode(max(CYCLE_COUNT_HEADER_ID), null,0,1)Implemented
+from mtl_parameters@XXX o,MTL_CYCLE_COUNT_HEADERS@XXX i
+where o.organization_id = i.organization_id (+)
+group by o.organization_id
+union All
+select  o.organization_id, 'Consignment Inventory Transactions' Feature_function, decode(max(i.Organization_ID), null,0,1)Implemented
+from mtl_parameters@XXX o, MTL_CONSUMPTION_DEFINITION_V@XXX i
+where o.organization_id = i.organization_id (+)
+group by o.organization_id
+union All
+select  o.organization_id, 'Manufacture Items' Feature_function, decode(max(MANUFACTURER_ID), null,0,1)Implemented
+from mtl_parameters@XXX o,MTL_MFG_PART_NUMBERS@XXX i
+where o.organization_id = i.organization_id (+)
+group by o.organization_id
+union All
+select  o.organization_id, 'Physical Inventories' Feature_function, decode(max(PHYSICAL_INVENTORY_ID), null,0,1)Implemented
+from mtl_parameters@XXX o,MTL_PHYSICAL_INVENTORIES@XXX i
+where o.organization_id = i.organization_id (+)
+group by o.organization_id
+union All
+select  o.organization_id, 'Material Shortage Checker' Feature_function, decode(max(i.ORGANIZATION_ID), null,0,1)Implemented
+from mtl_parameters@XXX o,MTL_SHORT_CHK_PARAM@XXX i
+where o.organization_id = i.organization_id (+)
+group by o.organization_id
+union all
+Select null Organization_id, 'ABC Codes' Feature_function, decode(max(ABC_CLASS_ID), null,0,1)Implemented
+from MTL_ABC_ASSIGNMENTS@XXX
+union all
+Select null Organization_id, 'ATP Rules' Feature_function, decode(max(RULE_ID), null,0,1)Implemented
+from MTL_ATP_RULES@XXX
+union all
+Select null Organization_id, 'Item Cross Reference Types' Feature_function, decode(max(CREATED_BY), null,0,1)Implemented
+from MTL_CROSS_REFERENCE_TYPES@XXX
+union all
+Select null Organization_id, 'Customer Items' Feature_function, decode(max(CUSTOMER_ITEM_ID), null,0,1)Implemented
+from MTL_CUSTOMER_ITEMS@XXX
+union all
+Select null Organization_id, 'Picking Rules' Feature_function, decode(max(PICKING_RULE_ID), null,0,1)Implemented
+from MTL_PICKING_RULES@XXX","NULL","Original",,"NULL","Err:502","NULL","Err:502","NULL"
+231,"QDP_STATS_CALENDERS","All Calendars","All Calendars",401,"Stats","select CALENDAR_CODE,DESCRIPTION, CREATION_DATE, DAYS_ON, DAYS_OFF, CALENDAR_START_DATE, CALENDAR_END_DATE
+ from BOM_CALENDARS@XXX","NULL","Original",,"NULL","Err:502","NULL","Err:502","NULL"
+233,"QDP_ITEMS_ONHAND","NULL","NULL",401,"Stats","Select moi.ORGANIZATION_ID,  moi.INVENTORY_ITEM_ID
+from MTL_ONHAND_ITEMS_V@XXX moi","NULL","Original",,"NULL","Err:502","NULL","Err:502","NULL"
+56,"QDP_FIXEDLOT_VS_GROSS_DIE","Item Fixed lot multiplier <> Gross die per waffer","Item Fixed lot multiplier <> Gross die per waffer",410,"N"," select MSI.PADDED_CONCATENATED_SEGMENTS item, msi.INVENTORY_ITEM_ID,
+msi.description item_description,msi.organization_id, mp.organization_code, ou.name Inventory_org,
+trunc(msi.creation_date)Creation_date, fu.user_name Created_by,
+msi.inventory_item_status_code ,
+nvl(planner_code,'NO PLANNER') planner_code ,
+decode(msi.planning_make_buy_code ,1, 'Make' , 2 ,'Buy')Make_buy_code,
+msi.PRIMARY_UNIT_OF_MEASURE,msi.ITEM_TYPE, FLV1.MEANING, msi.INVENTORY_ITEM_FLAG, msi.STOCK_ENABLED_FLAG,
+msi.MTL_TRANSACTIONS_ENABLED_FLAG, decode(msi.MRP_PLANNING_CODE, 6,'Not Planned', 3, 'MRP Planning',
+4, 'MPS Planning', 7,'MRP/MPP Planned', 8, 'MPS/MPP Planned', 9, 'MPP Planned') Planning_code,
+ demand1.demand, MSI.fixed_lot_multiplier, round (1/c.component_quantity)
+    from MTL_SYSTEM_ITEMS_KFV@XXX msi,
+         mtl_parameters@XXX mp,
+         fnd_user@XXX fu, 
+         bom_bill_of_materials@XXX b, 
+         bom_inventory_components@XXX c, 
+         hr_all_organization_units@XXX ou,
+         (select FLV.meaning, FLV.lookup_code from FND_LOOKUP_VALUES_VL@XXX FLV where FLV.lookup_type = 'ITEM_TYPE') FLV1,
+    (select sum(mdh.LINE_ITEM_QUANTITY )demand, mdh.INVENTORY_ITEM_ID, mdh.organization_id
+    from MTL_DEMAND@XXX mdh
+    group by mdh.INVENTORY_ITEM_ID, mdh.organization_id) demand1 
+            where msi.ORGANIZATION_ID = ou.ORGANIZATION_ID
+            and msi.CREATED_BY = fu.USER_ID
+            and msi.INVENTORY_ITEM_ID = demand1.INVENTORY_ITEM_ID (+)
+            and msi.organization_id = demand1.organization_id  (+)
+            and msi.organization_id = mp.organization_id  
+            and msi.MRP_PLANNING_CODE <> 6
+            and planning_make_buy_code = 1
+            and c.component_quantity <> 1 
+            AND MSI.inventory_item_id = b.assembly_item_id 
+            and b.bill_sequence_id = c.bill_sequence_id
+            AND round (1/c.component_quantity) <> MSI.fixed_lot_multiplier 
+            AND MSI.ITEM_TYPE = FLV1.LOOKUP_CODE (+)
+            and msi.INVENTORY_ITEM_STATUS_CODE not in ( 'Inactive', 'Obsolete') 
+            and mp.MASTER_ORGANIZATION_ID <> mp.ORGANIZATION_ID
+       ","NULL","Original",,"NULL","Err:502","NULL","Err:502","NULL"
+507,"WIP_OSFM_SUB_NOTIN_SECTOR_EXT","Shop floor Subinventory not in Sector Extensions.  The following subinventories are not defined in the sector extensions which means that lot transactions will not be allowed in these subinventories","Shop floor Subinventory not in Sector Extensions.  ",410,"Health","select s.secondary_inventory_name Subinventory_name, ood.ORGANIZATION_NAME, ood.ORGANIZATION_CODE, ood.ORGANIZATION_ID
+from mtl_secondary_inventories@XXX s,org_organization_definitions@XXX ood,
+(select distinct ORGANIZATION_ID from wsm_subinventory_extensions@XXX) Y
+where s.disable_date is null and 
+s.organization_id = ood.organization_id and 
+ood.organization_id = y.organization_id
+and s.secondary_inventory_name not in 
+(select x.secondary_inventory_name 
+from wsm_subinventory_extensions@XXX x
+where x.organization_id = ood.organization_id) ",77,"Original",,"NULL","Err:502","NULL","Err:502","NULL"
+1,"QDP_AVG_LINES_PER_ORDER","Average Number of Lines per Sales Order","Average Number of Lines per Sales Order",660,"N",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+2,"QDP_ITEM_ACTIVE_LINES","Item Active Lines","Items on Active orders",660,"N",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+3,"QDP_AVG_ORDERS_BOOKED","NULL","NULL",660,"N",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+4,"QDP_ACTIVE_ORDER_LINES","100","Active Sales order lines",660,"N",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+5,"QDP_AVG_LINES_BOOKED","Update","Average Sales Order lines booked",660,"N",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+6,"QDP_CUST_ACTIVE_ORDERS","NULL","Customers on Active Orders",660,"N",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+7,"QDP_LINES_AT_ZERO","NULL","Sales Order lines at Zero Price",660,"N",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+8,"QDP_SALES_CREDIT_NOT_CREATED","NULL","Sales Credit not created on sales order",660,"N",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+9,"QDP_REP_INACTIVE_ON_BACKLOG","NULL","Inactive Sales Rep on Active sales order",660,"N",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+10,"QDP_ACTIVE_ORDER_HEADERS","Hello","NULL",660,"N",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+11,"QDP_INACTIVE_CUST_AT_ORDER","NULL","NULL",660,"N",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+12,"QDP_LINES_NO_COST","NULL","NULL",660,"N",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+13,"QDP_OE_ITEM_NOT_INVOICEABLE","NULL","NULL",660,"N",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+14,"QDP_ORD_UNDEF_ITEM_IN_ORG","NULL","NULL",660,"N",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+15,"QDP_ORDER_NOT_CLOSED","NULL","NULL",660,"N",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+16,"QDP_BOOKED_HEADER_NO_LINES","NULL","NULL",660,"N",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+17,"QDP_HEADER_INACTIVE_ADDRESS","NULL","NULL",660,"N",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+18,"QDP_LINES_INACTIVE_ADDRESS","NULL","NULL",660,"N",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+19,"QDP_ORPHAN_RECS","NULL","NULL",660,"N",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+20,"QDP_ORDER_IMPORT_FAIL","NULL","NULL",660,"N",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+21,"QDP_CUST_NOT_ON_ORDERS","NULL","NULL",660,"N",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+22,"QDP_OM_PROGRAM_NOT_RUNNING","NULL","NULL",660,"N",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+23,"QDP_SETUPS_TO_CONSIDER","NULL","NULL",660,"N",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+24,"QDP_BOOKED_ORDER_UNSCHEDULED","NULL","NULL",660,"N",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+25,"QDP_LATE_ORDER_LINES","NULL","Late Order Lines",660,"N",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+101,"QDP_ENT_NOT_BOOKED_DAYS_OLD","NULL","NULL",660,"N",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+102,"QDP_OM_DATA_HEALTH","NULL","NULL",660,"N",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+103,"QDP_OM_DATA_INTERFACE","NULL","NULL",660,"N",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+104,"QDP_OM_DATA_ORPHAN","NULL","NULL",660,"N",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+105,"QDP_OM_DATA_STALE","NULL","NULL",660,"N",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+106,"QDP_OM_DATA_STATS","NULL","NULL",660,"N",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+701,"OM_ALL_ORDER_LINES","All Order Lines ","All Order Lines ",660,"Stats",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+702,"OM_ALL_ORDER_HEADERS","All Order Headers","All Order Headers",660,"Stats","SELECT soH.cust_po_number CUSTOMER_PO,soh.header_id,
+         soh.ORG_ID Operating_unit_id,soh.SHIP_FROM_ORG_ID ORGANIZATION_ID,
+           soh.order_number , nvl(sol.Line_count_per_order,0)Line_count_per_order,
+          sold_to.customer_name sold_to_customer,
+          sold_to.customer_number sold_to_customer_number,decode(sold_to.status,'I','Inactive','A','Active')Sold_TO_customer_STATUS,
+          rh.customer_name bill_to_customer, rh.customer_number bill_to_customer_number, decode(rh.status,'I','Inactive','A','Active')BILL_TO_CUSTOMER_STATUS,
+          decode(ram.status,'I','Inactive','A','Active')BILL_TO_ADDRESS_STATUS,
+          ram.address1 bill_to_address1,
+          ram.address2 bill_to_address2, ram.address3 bill_to_address3,
+          ram.address4 bill_to_address4, ram.city bill_to_city,
+          ram.state bill_to_state, ram.postal_code bill_to_postal_code,
+          ram.country bill_to_country, rau.site_use_id bill_to_site_use_id,
+          RH2.customer_name ship_to_customer, decode(rh2.status,'I','Inactive','A','Active')SHIP_TO_customer_STATUS,
+          decode(ram2.status,'I','Inactive','A','Active')SHIP_TO_ADDRESS_STATUS,
+          raM2.address1 ship_to_address1,
+          raM2.address2 ship_to_address2, raM2.address3 ship_to_address3,
+          raM2.address4 ship_to_address4, raM2.city ship_to_city,
+          raM2.state ship_to_state, raM2.postal_code ship_to_postal_code,
+          raM2.country ship_to_country, RSU.site_use_id ship_to_site_use_id,
+          fnd.user_name Created_by_name, soh.created_by created_by_id, fnd.email_address created_by_email,
+          soh.creation_date, soh.last_update_date,soh.transactional_curr_code,
+          soh.flow_status_code, 
+       ott1.order_type, soh.VERSION_NUMBER,soh.EXPIRATION_DATE,soh.ORIG_SYS_DOCUMENT_REF,soh.ORDERED_DATE,
+       soh.REQUEST_DATE,soh.PRICING_DATE,soh.SHIPMENT_PRIORITY_CODE,soh.DEMAND_CLASS_CODE,soh.PRICE_LIST_ID,
+       pl.Price_list_name, pl.Price_list_DESC,
+       soh.TAX_EXEMPT_FLAG,soh.TAX_EXEMPT_NUMBER,soh.TAX_EXEMPT_REASON_CODE,soh.CONVERSION_RATE,
+       soh.CONVERSION_TYPE_CODE,soh.CONVERSION_RATE_DATE,soh.PARTIAL_SHIPMENTS_ALLOWED,soh.SHIP_TOLERANCE_ABOVE,
+       soh.SHIP_TOLERANCE_BELOW,soh.SHIPPING_METHOD_CODE,soh.FREIGHT_CARRIER_CODE,soh.FOB_POINT_CODE,
+       soh.FREIGHT_TERMS_CODE,
+       decode(soh.CANCELLED_FLAG,'Y','Yes','N','No')CANCELLED_FLAG,
+       decode(soh.OPEN_FLAG,'Y','Yes','N','No') OPEN_FLAG,decode(soh.BOOKED_FLAG,'Y','Yes','N','No')BOOKED_FLAG ,
+       soh.SALESREP_ID, sr1.Salesrep_name,sr1.Salerep_receivables_status, sr1.Salerep_overall_status,
+       sr1.salesrep_Emp_status, sr1.Salesrep_term_date,
+       sr1.Salsrep_AR_end_date,sr1.SALESREP_NUMBER, 
+       sr1.Salesrep_email, soh.RETURN_REASON_CODE,
+       soh.ORDER_DATE_TYPE_CODE,soh.EARLIEST_SCHEDULE_LIMIT,soh.LATEST_SCHEDULE_LIMIT,soh.PAYMENT_TYPE_CODE,
+       soh.PAYMENT_AMOUNT,soh.SALES_CHANNEL_CODE,soh.ORDER_CATEGORY_CODE,soh.DROP_SHIP_FLAG,
+       soh.BOOKED_DATE,soh.LOCK_CONTROL,soh.BLANKET_NUMBER, soh.FULFILLMENT_SET_NAME,
+       soh.LINE_SET_NAME,soh.TRANSACTION_PHASE_CODE,soh.QUOTE_NUMBER,soh.QUOTE_DATE,soh.USER_STATUS_CODE,
+       soh.ORDER_FIRMED_DATE, pt.Payment_type,
+       ott1.CREDIT_CHECK_ot_PACKING, ott1.CREDIT_CHECK_ot_PICKING, ott1.CREDIT_CHECK_ot_ENTRY, ott1.CREDIT_CHECK_ot_SHIPPING,
+        pt.CREDIT_CHECK_Payment_type, decode(rh.credit_checking, 'N','No','Y','Yes') credit_checking_billto_cust, 
+        decode(ram.credit_checking, 'N','No','Y','Yes') credit_checking_billto_site
+     FROM oe_order_headers_all@xxx soh,
+          (SELECT cOUNT(*)Line_count_per_order, so.HEADER_ID FROM oe_order_lines_all@xxx so
+          group by so.header_id)SOL,
+          ra_hcustomers@xxx RH2, 
+          ra_hcustomers@xxx sold_to,
+          ra_site_uses_morg@xxx rau,
+          ( select  pro.credit_checking, ram.customer_id ,ram.address_id , site.cust_acct_SITE_ID, pro.SITE_Use_id,
+          ram.status,ram.address1 , ram.address2 , ram.address3 ,ram.address4,ram.city,ram.state,ram.postal_code,ram.country 
+          from ra_addresses_morg@xxx ram,ra_hcustomers@xxx rh,hz_cust_site_uses_all@xxx site, ar_customer_profiles_v@xxx pro
+          where  ram.customer_id = rh.customer_id and ram.address_id = site.cust_acct_SITE_ID and site.site_use_id is not null
+           and site.site_use_id = pro.SITE_Use_id (+)) ram,
+         ( select distinct  hp1.credit_checking, hp1.party_id,rh.customer_name , rh.customer_number, rh.status, rh.customer_id
+         from ra_hcustomers@xxx rh,(Select distinct hp.site_use_id,hp.party_id, hp.credit_checking from  hz_customer_profiles@xxx hp where hp.site_use_id IS NULL)hp1
+          where  hp1.party_id(+) = rh.party_id) rh,
+          ra_site_uses_morg@xxx RSU,
+          ra_addresses_morg@xxx raM2,
+           fnd_user@xxx fnd,
+           (select distinct sr.name Salesrep_name,decode(nvl(sr.STATUS, 'A'),'A','Active for Receivables','I','Inactive for Receivables')Salerep_receivables_status ,
+                sr.END_DATE_ACTIVE Salsrep_AR_end_date,sr.SALESREP_NUMBER, 
+                case when ps.person_id is null then 'Not Assined to Employee' when ps.ACTUAL_TERMINATION_DATE is null then 'Active Employee' 
+                when ps.ACTUAL_TERMINATION_DATE > sysdate then 'Active Employee'
+                else 'Terminated Employee' end salesrep_Emp_status,
+                case when sr.STATUS = 'I' or ps.ACTUAL_TERMINATION_DATE <= sysdate then 'Inactive' else 'Active' end Salerep_overall_status, 
+                ps.ACTUAL_TERMINATION_DATE Salesrep_term_date,
+                sr.EMAIL_ADDRESS Salesrep_email, sr.salesrep_id, sr.ORG_ID
+                From jtf_rs_salesreps@xxx sr, PER_PERIODS_OF_SERVICE_V2@xxx ps
+                where sr.PERSON_ID = ps.PERSON_ID (+)) sr1,
+          (select LIST_HEADER_ID , NAME Price_list_name , DESCRIPTION Price_list_DESC 
+                from qp_list_headers_tl@xxx where LANGUAGE = 'US')pl,
+          (SELECT lookup_code,MEANING TAX_EXEMPT_FLAG FROM fnd_lookups@xxx LL WHERE lookup_type = 'OKL_TAX_EXEMPT' ) L,
+         (select ot1.transaction_type_id,ot1.description order_type , 
+ case when ot.SHIPPING_CREDIT_CHECK_RULE_ID is null then 'No' else 'Yes' end CREDIT_CHECK_ot_SHIPPING,
+ case when ot.ENTRY_CREDIT_CHECK_RULE_ID is null then 'No' else 'Yes' end CREDIT_CHECK_ot_ENTRY,
+case when ot.PICKING_CREDIT_CHECK_RULE_ID is null then 'No' else 'Yes' end CREDIT_CHECK_ot_PICKING,
+case when ot.PACKING_CREDIT_CHECK_RULE_ID is null then 'No' else 'Yes' end CREDIT_CHECK_ot_PACKING
+from oe_transaction_types_tl@xxx ot1,oe_transaction_types_all@xxx ot
+where ot1.LANGUAGE = 'US' 
+and ot1.TRANSACTION_TYPE_ID = ot.TRANSACTION_TYPE_ID (+))ott1,
+(SELECT rt.TERM_ID, rt.NAME Payment_type, decode(rt.CREDIT_CHECK_FLAG,'N','No','Y','Yes')CREDIT_CHECK_Payment_type
+FROM RA_TERMS_VL@XXX rt) pt
+ WHERE soh.ship_to_org_id = RSU.site_use_id(+)
+      AND RSU.address_id = raM2.address_id(+)
+      AND raM2.customer_id = RH2.customer_id(+)
+      AND soh.invoice_to_org_id = rau.site_use_id(+)
+      AND rau.address_id = ram.address_id(+)
+      and RAU.site_use_id = RAM.site_use_id (+)
+      AND ram.customer_id = rh.customer_id(+)
+      AND sol.header_id(+) = soh.header_id
+      AND soh.sold_to_org_id = sold_to.customer_id(+)
+      and soh.PAYMENT_TERM_ID = pt.term_id(+)
+      AND soh.created_by = fnd.user_id (+)
+      AND  l.lookup_code(+) = soh.TAX_EXEMPT_FLAG
+      AND sr1.salesrep_id (+) = soh.salesrep_id
+      AND sr1.org_id(+) = soh.org_id
+      and pl.LIST_HEADER_ID (+) = soh.PRICE_LIST_ID
+      AND soh.order_type_id = ott1.transaction_type_id (+)","NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+703,"OM_SALES_CREDIT_NOT_CREATED","Sales Credit Not Created","Sales Credit not Created on Sales Order",660,"Health"," SELECT ooha.order_number, ooha.header_id, 
+ooha.ORG_ID Operating_unit_id,ooha.SHIP_FROM_ORG_ID Inventory_org_id
+  FROM oe_order_headers_all@xxx ooha
+ WHERE NVL (booked_flag, 'N') <> 'N' AND
+  ooha.flow_status_code NOT IN ('CLOSED', 'CANCELLED')
+   AND ooha.header_id not IN (SELECT b.header_id  
+                                FROM oe_sales_credits@xxx b
+                               WHERE ooha.header_id = b.header_id)","NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+704,"OM_NONINVOICABLE_ORDER_LINES","Active orders lines with Item that is not invoicable","Active Orders Lines with Item that is not Invoicable",660,"Health",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+705,"OM_LINE_ITEM_NOTIN_ORG","Active orders with Item that are not defined in the inv org","Active Orders with Item not Defined in the Inv Org.",660,"Health",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+706,"OM_ORDERS_BOOKED_CLOSED","Booked orders that should have already closed","Booked Orders that Should have Already Closed",660,"Health",,733,"Original",,"NULL","NULL","NULL","NULL","NULL"
+707,"OM_NO_ORDER_ACTIVITY_CUSTOMER","Customer not on sales orders last 365 days","Customer not on sales orders last 365 days",660,"Stale",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+708,"OM_SO_LINE_DETAILS_INTERFACE","SO_LINE_DETAILS_INTERFACE","Interface Issues on SO_LINE_DETAILS_INTERFACE",660,"Interface",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+709,"OM_OE_EXPOSURE_INTERFACE","OE_EXPOSURE_INTERFACE","Interface Issues on OE_EXPOSURE_INTERFACE",660,"Interface",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+710,"OM_SO_HEADER_ATTRIBUTES_INTERF","SO_HEADER_ATTRIBUTES_INTERFACE","Interface Issues on SO_HEADER_ATTRIBUTES_INTERFACE",660,"Interface",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+711,"OM_SO_HEADERS_INTERFACE_ALL","SO_HEADERS_INTERFACE_ALL","Interface Issues on SO_HEADERS_INTERFACE_ALL",660,"Interface",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+712,"OM_SO_LINE_ATTRIBUTES_INTERFAC","SO_LINE_ATTRIBUTES_INTERFACE","Interface Issues on SO_LINE_ATTRIBUTES_INTERFACE",660,"Interface",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+714,"OM_SO_LINES_INTERFACE_ALL"," SO_LINES_INTERFACE_ALL","Interface Issues on SO_LINES_INTERFACE_ALL",660,"Interface",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+715,"OM_SO_SALES_CREDITS_INTERFACE","OM_SO_SALES_CREDITS_INTERFACE","Interface Issues on on OM_SO_SALES_CREDITS_INTERFACE",660,"Interface",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+716,"SO_PRICE_ADJUSTMENTS_INTERFACE","SO_PRICE_ADJUSTMENTS_INTERFACE","SO_PRICE_ADJUSTMENTS_INTERFACE",660,"NULL",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+717,"OM_SO_SERVICE_DETAILS_INTER","SO_SERVICE_DETAILS_INTERFACE","Interface Issues on SO_SERVICE_DETAILS_INTERFACE",660,"Interface",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+718,"OM_OE_UPGRADE_ERRORS","OE_UPGRADE_ERRORS","Interface Issues on OE_UPGRADE_ERRORS",660,"Health",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+719,"OM_OE_HEADERS_IFACE_ALL","OE_HEADERS_IFACE_ALL","Interface Issues on OE_HEADERS_IFACE_ALL",660,"Interface"," select ORDER_SOURCE_ID,ORDER_SOURCE,ORG_ID,HEADER_ID,ORDER_NUMBER,ORDERED_DATE,ORDER_TYPE,
+PRICE_LIST,TRANSACTIONAL_CURR_CODE,SALESREP,SHIP_FROM_ORG_ID,CUSTOMER_NAME,CUSTOMER_NUMBER,
+SHIP_TO_CUSTOMER,SHIP_TO_CUSTOMER_NUMBER,BOOKED_FLAG,CLOSED_FLAG,CANCELLED_FLAG,REQUEST_ID,
+ERROR_FLAG,STATUS_FLAG,READY_FLAG,INTERFACE_STATUS
+from OE_HEADERS_IFACE_ALL@XXX
+where trunc(creation_date) < trunc(sysdate)","NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+720,"OM_OE_ACTIONS_IFACE_ALL","OE_ACTIONS_IFACE_ALL","Interface Issues on OE_ACTIONS_IFACE_ALL",660,"Interface"," select ORDER_SOURCE_ID,ORG_ID,HOLD_TYPE_CODE,RELEASE_REASON_CODE,
+REQUEST_ID,ERROR_FLAG,STATUS_FLAG,INTERFACE_STATUS,FULFILLMENT_SET_NAME
+from OE_ACTIONS_IFACE_ALL@xxx","NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+721,"OM_OE_CONC_REQUEST_IFACE","OE_CONC_REQUEST_IFACE","Interface Issues on OE_CONC_REQUEST_IFACE",660,"Interface"," select LINE_ID,HEADER_ID,REQUEST_ID
+from OE_CONC_REQUEST_IFACE@XXX","NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+722,"OM_OE_CREDITS_IFACE_ALL","OE_CREDITS_IFACE_ALL","Interface Issues on OE_CREDITS_IFACE_ALL",660,"Interface"," select ORDER_SOURCE_ID,CHANGE_REQUEST_CODE,ORG_ID,SALESREP,SALES_CREDIT_TYPE,
+QUOTA_FLAG,PERCENT,CREATION_DATE,REQUEST_ID,ERROR_FLAG,STATUS_FLAG,INTERFACE_STATUS,
+CHANGE_REASON
+from OE_CREDITS_IFACE_ALL@XXX
+where trunc(creation_date) < trunc(sysdate)","NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+723,"OM_OE_CUSTOMER_INFO_IFACE_ALL","OE_CUSTOMER_INFO_IFACE_ALL","Interface Issues on OE_CUSTOMER_INFO_IFACE_ALL",660,"Interface"," select CURRENT_CUSTOMER_NUMBER,CURRENT_CUSTOMER_ID,CUSTOMER_TYPE,
+CUSTOMER_INFO_TYPE_CODE,ORGANIZATION_NAME,PERSON_FIRST_NAME,PERSON_LAST_NAME,
+PERSON_TITLE,CUSTOMER_NUMBER,EMAIL_ADDRESS,PARTY_NUMBER,NEW_PARTY_NUMBER,
+NEW_ACCOUNT_NUMBER,CREATION_DATE,REQUEST_ID,ERROR_FLAG,REJECTED_FLAG,
+ORG_ID
+from OE_CUSTOMER_INFO_IFACE_ALL@xxx
+where trunc(creation_date) < trunc(sysdate)","NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+724,"OM_OE_LINES_IFACE_ALL","OE_LINES_IFACE_ALL","Interface Issues on OE_LINES_IFACE_ALL",660,"Interface"," select ORDER_SOURCE_ID,CHANGE_SEQUENCE,CHANGE_REQUEST_CODE,ORG_ID,LINE_NUMBER,
+SHIPMENT_NUMBER,LINE_ID,SPLIT_FROM_LINE_ID,LINE_TYPE,INVENTORY_ITEM_ID,INVENTORY_ITEM,
+PROMISE_DATE,SCHEDULE_DATE,DELIVERY_LEAD_TIME,ORDERED_QUANTITY,SHIPPING_QUANTITY,
+SHIPPED_QUANTITY,FULFILLED_QUANTITY,CANCELLED_QUANTITY,PRICING_QUANTITY,SHIP_FROM_ORG_ID,
+SHIP_FROM_ORG,SALESREP,REQUEST_ID,ERROR_FLAG,STATUS_FLAG,INTERFACE_STATUS,CHANGE_REASON
+from OE_LINES_IFACE_ALL@XXX
+where trunc(creation_date) < trunc(sysdate)","NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+725,"OM_OE_LOTSERIALS_IFACE_ALL","OE_LOTSERIALS_IFACE_ALL","Interface Issues on OE_LOTSERIALS_IFACE_ALL",660,"Interface"," select ORDER_SOURCE_ID,ORG_ID,LOT_NUMBER,FROM_SERIAL_NUMBER,TO_SERIAL_NUMBER,
+QUANTITY,CREATION_DATE,REQUEST_ID,ERROR_FLAG,STATUS_FLAG,INTERFACE_STATUS,
+QUANTITY2,SUBLOT_NUMBER
+from OE_LOTSERIALS_IFACE_ALL@XXX
+where trunc(creation_date) < trunc(sysdate)","NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+726,"OM_OE_PAYMENTS_IFACE_ALL"," OE_PAYMENTS_IFACE_ALL"," Interface Issues on OE_PAYMENTS_IFACE_ALL",660,"Interface"," select ORDER_SOURCE_ID,REQUEST_ID,CHANGE_REQUEST_CODE,ORG_ID,PAYMENT_TYPE_CODE,
+COMMITMENT,PAYMENT_METHOD,PREPAID_AMOUNT,PAYMENT_AMOUNT,CREATION_DATE,STATUS_FLAG,
+INTERFACE_STATUS,ERROR_FLAG,HEADER_ID,LINE_ID
+from OE_PAYMENTS_IFACE_ALL@XXX
+where trunc(creation_date) < trunc(sysdate)","NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+727,"OM_OE_PRICE_ADJS_IFACE_ALL","OE_PRICE_ADJS_IFACE_ALL","Interface Issues on OE_PRICE_ADJS_IFACE_ALL",660,"Interface"," select ORDER_SOURCE_ID,ORG_ID,CREATION_DATE,REQUEST_ID,
+AUTOMATIC_FLAG,LIST_NAME,LIST_LINE_TYPE_CODE,MODIFIER_MECHANISM_TYPE_CODE,
+MODIFIED_FROM,MODIFIED_TO,UPDATED_FLAG,UPDATE_ALLOWED,APPLIED_FLAG,
+DISCOUNT_NAME,PERCENT,ERROR_FLAG,STATUS_FLAG,INTERFACE_STATUS,
+ADJUSTED_AMOUNT,MODIFIER_NAME
+from OE_PRICE_ADJS_IFACE_ALL@XXX
+where trunc(creation_date) < trunc(sysdate)","NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+728,"OM_OE_PRICE_ATTS_IFACE_ALL","OE_PRICE_ATTS_IFACE_ALL","Interface Issues on OE_PRICE_ATTS_IFACE_ALL",660,"Interface"," select ORDER_SOURCE_ID,ORG_ID,CREATION_DATE,REQUEST_ID,PRICING_CONTEXT,ERROR_FLAG,
+STATUS_FLAG,INTERFACE_STATUS,OVERRIDE_FLAG
+from OE_PRICE_ATTS_IFACE_ALL@XXX
+where trunc(creation_date) < trunc(sysdate)","NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+729,"OM_OE_RESERVTNS_IFACE_ALL","OE_RESERVTNS_IFACE_ALL","Interface Issues on OE_RESERVTNS_IFACE_ALL",660,"Interface"," select ORG_ID,ORDER_SOURCE_ID, INVENTORY_ITEM_ID,LOT_NUMBER, SUBINVENTORY_CODE,
+QUANTITY,REQUEST_ID,ERROR_FLAG, INTERFACE_STATUS
+from OE_RESERVTNS_IFACE_ALL@xxx","NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+730,"OM_OE_UPGRADE_WSH_IFACE","OE_UPGRADE_WSH_IFACE","Interface Issues on OE_UPGRADE_WSH_IFACE",660,"Interface"," select LINE_DETAIL_ID,PICKING_LINE_ID,CREATION_DATE,LINE_ID,INVENTORY_ITEM_ID,
+SHIPPABLE_FLAG,TRANSACTABLE_FLAG,RELEASED_FLAG,QUANTITY,WAREHOUSE_ID,SCHEDULE_DATE,
+SCHEDULE_STATUS_CODE,SHIPPED_QUANTITY,SHIP_METHOD_CODE,DELIVERY,RECEIPT_STATUS_CODE,
+SUBINVENTORY
+from OE_UPGRADE_WSH_IFACE@xxx
+where trunc(creation_date) < trunc(sysdate)","NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+731,"OM_INTERFACE_COUNT_STAT","Order Management  Interface Table Check","Interface Issues on Order Management  Interface Table Check",660,"Stats",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+732,"OM_FEATURES","OM Features and Functions to Consider for Implementation","OM Features and Functions to Consider for Implementation",660,"Feature",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+733,"OM_OPEN_ORDER_HEADER","All Open order Headers","All Open Order Headers",660,"Stats",,702,"Dependent",,702,"Flow_Status_Code not in ('CANCELLED', 'CLOSED')","Flow_Status_Code not in ('CANCELLED', 'CLOSED')","NULL","NULL"
+734,"OM_CONC_PGM_ERROR","Order Processing Concurrent Programs with Errors or Warnings","Order Processing Concurrent Programs with Errors or Warnings",660,"Interface",,190,"Dependent",,190,"Status in ('Error', 'Warning') and Program_Application_Id in (671,300,660,697,880)","Status in ('Error', 'Warning') and Program_Application_Id in (671,300,660,697,880)","Program_Application_Id in (671,300,660,697,880)","Program_Application_Id in (671,300,660,697,880)"
+735,"OM_ORDER_HEADER_NO_LINES","Order headers with no lines assigned","Order headers with no lines assigned",660,"Stale",,733,"Dependent",,702,"Flow_Status_Code not in ('CANCELLED', 'CLOSED') and Line_Count_Per_Order = 0","Flow_Status_Code not in ('CANCELLED', 'CLOSED') and Line_Count_Per_Order = 0","NULL","NULL"
+736,"OM_ORDER_HEADER_ENTERED","Orders Entered but not Booked","Orders Entered but not Booked",660,"Stale",,702,"Dependent",,702,"Flow_Status_Code = 'ENTERED' ","Flow_Status_Code = 'ENTERED' ","NULL","NULL"
+737,"OM_ORDER_TYPES","All Active Order Types","All Active Order Types",660,"NULL",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+738,"OM_SALESREP_ALL","All Sales Reps","All Sales Reps",660,"NULL",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+739,"OM_PAYMENT_TERMS","All Payment Terms","All Payment Terms",660,"NULL",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+740,"OM_PAYMENT_TERMS_LINES","All patment term lines","All patment term lines",660,"NULL",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+741,"OM_SO_CREDIT_CUR_CUST","Sales orders bill to customer credit currency issues","Sales orders bill to customer credit currency issues",660,"NULL",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+501,"WIP_AVG_COMP_VS_LEADTIME","OSFM: Avg Job Cycle & Lead Time Comparison","OSFM: Avg Job Cycle & Lead Tim",706,"Stats",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+502,"WIP_Components_not_issued","Job Completed and required components still not issued","Job Completed and required components still not issued",706,"Health",,509,"Original",,"NULL","NULL","NULL","job_status Not in  ('Closed', 'Cancelled')","job_status Not in  ('Closed', 'Cancelled')"
+504,"WIP_NO_MOVEMENT_30DAYS","Open Jobs with no Movement for 30 Days or more","Open Jobs with no Movement for 30 days or more",706,"Stale",,509,"Dependent",,509,"Job_Status not in ('Closed', 'Cancelled', 'Complete - No Charges', 'Complete', 'Failed Close', 'Pending Close', 'Unreleased')
+and Last_Op_Seq_Move <=  (sysdate -30)","Job_Status not in ('Closed', 'Cancelled', 'Complete - No Charges', 'Complete', 'Failed Close', 'Pending Close', 'Unreleased')
+and Last_Op_Seq_Move <=  (sysdate -30)","NULL","NULL"
+505,"WIP_NO_DEFAULT_SUBINVENTORY","Open Jobs with no completion Subinventory Defined","Open Jobs with no completion Subinventory Defined",706,"Health",,529,"Original",,"NULL","NULL","NULL","NULL","NULL"
+506,"WIP_COMPLETION_SUB_INACTIVE","Open Jobs with inactive completion Subinventory assigned","Open Jobs with inactive completion Subinventory assigned",706,"Health",,509,"Original",,"NULL","NULL","NULL","job_status Not in  ('Closed', 'Cancelled')","job_status Not in  ('Closed', 'Cancelled')"
+508,"WIP_OVERDUE_JOBS","Overdue Jobs","Overdue Jobs",706,"Stale",,509,"Original",,"NULL","NULL","NULL","NULL","NULL"
+509,"WIP_STATS_JOBS","Statistics on jobs: All jobs regaurgless of age if job is in a open status and it is is closed only ","Statistics on jobs: All jobs r",706,"Stats",,"NULL","Original",,"NULL","NULL","NULL","job_status Not in  ('Closed', 'Cancelled')","job_status Not in  ('Closed', 'Cancelled')"
+510,"WIP_STATS_MOVE_TRANSACTIONS","number of wip moves per month, quarter and year","number of wip moves per month,",706,"Stats",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+511,"WIP_MOVE_TXN_INTERFACE","Wip move transation interface from wip_move_txn_interface ","Wip move transation interface ",706,"Interface",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+512,"WIP_INTERFACE_ORPHAN_ERRORS","Orphans in WIP_TXN_INTERFACE_ERRORS","Orphans in WIP_TXN_INTERFACE_E",706,"Interface",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+513,"WIP_JOB_DTLS_INTERFACE","WIP_JOB_DTLS_INTERFACE","Interface Issues on WIP_JOB_DTLS_INTERFACE",706,"Interface",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+514,"WIP_JOB_SCHEDULE_INTERFACE","WIP_JOB_SCHEDULE_INTERFACE","Interface Issues on WIP_JOB_SCHEDULE_INTERFACE",706,"Interface",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+515,"WIP_SCHEDULING_INTERFACE","WIP_SCHEDULING_INTERFACE","Interface Issues on WIP_SCHEDULING_INTERFACE",706,"Interface",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+516,"WIP_INVALID_CCID","WIP  invalid code combination ID","WIP  invalid code combination ",706,"Health",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+517,"WIP_STATS_AVG_OP_STEPS","Average Operation steps per Job","Average Operation steps per Job",706,"Stats",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+518,"WIP_STATS_AVG_ITEMS_PER_JOB","Average items issued per job","Average items issued per job",706,"Stats",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+519,"WIP_OSFM_OLD_NETWORK_ROUTING","OSFM Network routing on open Jobs are different that active network routing","OSFM Network routing on job outdated",706,"Health",,"NULL","Original",,"NULL","NULL","NULL","Entity_Type = 'Lot based job'","Entity_Type = 'Lot based job'"
+520,"WIP_OSFM_INTERFACE_PURGE_CHECK","Check to see if interface tables are being purges at the correct timing","Checks interface tables for purge timing check",706,"Interface",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+521,"WIP_WSM_LOT_JOB_INTERFACE","WSM_LOT_JOB_INTERFACE Interface table for the Import of Lot based Jobs in OSFM","Interface Issues on WSM_LOT_JOB_INTERFACE ",706,"Interface",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+522,"WIP_WSM_LOT_MOVE_TXN_INTERFACE","WSM_LOT_MOVE_TXN_INTERFACE Interface table for the Import of Lot based Jobs Shopfloor Move 
+Transact","Interface Issues on WSM_LOT_MOVE_TXN_INTERFACE ",706,"Interface",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+523,"WIP_WSM_SPLIT_MERGE_TRX_INTERF","   WSM_SPLIT_MERGE_TXN_INTERFACE interface table for Lot based WIP Lot Transactions.   
+","Interface Issues on WSM_SPLIT_MERGE_TXN_INTERFACE",706,"Interface",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+524,"WIP_WSM_LOT_SPLIT_INTERFACE"," WSM_LOT_SPLIT_MERGES_INTERFACE Interface table for the Import of Lot based Jobs Shopfloor Move Tran","Interface Issues on WSM_LOT_SPLIT_MERGES_INTERFACE",706,"Interface",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+527,"WIP_JOBS_ONHOLD","Jobs on hold","Jobs Onhold",706,"Stats",,509,"Dependent",,509,"JOB_STATUS = ('On Hold')","JOB_STATUS = ('On Hold')","job_status Not in  ('Closed', 'Cancelled')","job_status Not in  ('Closed', 'Cancelled')"
+528,"WIP_JOB_FAILED","Jobs that have failed","Jobs that have failed",706,"Health",,509,"Dependent",,509,"JOB_STATUS like ('%Failed%')","JOB_STATUS like ('%Failed%')","job_status Not in  ('Closed', 'Cancelled')","job_status Not in  ('Closed', 'Cancelled')"
+529,"WIP_JOB_OPEN","Jobs that are open and not closed","Jobs that are open and not closed. This includes any job sta",706,"Stats",,509,"Dependent",,509,"job_status Not in  ('Closed', 'Cancelled')
+
+
+ ","job_status Not in  ('Closed', 'Cancelled')
+
+
+ ","NULL","NULL"
+530,"WIP_JOB_NO_SUB","Jobs with no defualt subinventory defined","Jobs with no defualt subinventory defined",706,"Health",,509,"Dependent",,509,"completion_subinventory = 'Not Defined' and job_status Not in  ('Closed', 'Cancelled')","completion_subinventory = 'Not Defined' and job_status Not in  ('Closed', 'Cancelled')","NULL","NULL"
+531,"WIP_CONC_PGM_ERROR","WIP Concurrent Programs with Error or warning","WIP Concurrent Programs with Error or warning",706,"Health",,190,"Dependent",,190,"Status in ('Error', 'Warning') and Program_Application_Id in (706,410)","Status in ('Error', 'Warning') and Program_Application_Id in (706,410)","Program_Application_Id in (706,410)","Program_Application_Id in (706,410)"
+532,"WIP_CONC_PGM_HOLD","WIP Concurrent Programs with a Hold applied ","WIP Concurrent Programs with a Hold applied ",706,"Stale",,190,"Dependent",,190,"Hold_Flag = 'Y' and Program_Application_Id in (706,410)","Hold_Flag = 'Y' and Program_Application_Id in (706,410)","NULL","NULL"
+533,"WIP_OVERDUE_JOBS_DEP","Jobs that are overdue","Jobs that are overdue",706,"Stale",,509,"Dependent",,509,"trunc(scheduled_completion_date) < trunc(sysdate-1) and job_status in ( 'On Hold','Unreleased', 'Released')","trunc(scheduled_completion_date) < trunc(sysdate-1) and job_status in ( 'On Hold','Unreleased', 'Released')","job_status Not in  ('Closed', 'Cancelled')","job_status Not in  ('Closed', 'Cancelled')"
+540,"WIP_MRP_JOB_QTY_DIFFERENT","WIP Job Quantity not same as MRP Quantity","Jobs where Mrp Quantity does not Equal Job Quantity",706,"Health",,509,"Dependent",,509,"MRP_QTY <> JOB_QUANTITY","MRP_QTY <> JOB_QUANTITY","job_status Not in  ('Closed', 'Cancelled')","job_status Not in  ('Closed', 'Cancelled')"
+541,"WIP_TXN_INTERFACE_ERRORS","Records in the WIP_TXN_INTERFACE_ERRORS table","Interface Issues on WIP_TXN_INTERFACE_ERRORS",706,"Interface",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+542,"WIP_COST_TXN_INTERFACE","RECORDS IN THE  WIP_COST_TXN_INTERFACE","Interface Issues on WIP_COST_TXN_INTERFACE",706,"Interface",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+543,"WIP_INTERFACE_COUNT_STAT","COUNT OF ALL INTERFACE TABLES","Count of all Interface tables in WIP",706,"Interface",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+544,"WIP_CANCELLED_WITH_VALUE","Cancelled Jobs with Value still on the Job","Cancelled Jobs with Value still on the Job",706,"Health",,509,"Original",,"NULL","NULL","NULL","job_status = 'Cancelled'","job_status = 'Cancelled'"
+546,"WIP_CONC_PGM_LONG_RUN","Top 5 Longest running WIP Programs over 60 seconds","Top 5 Longest running WIP Programs over 60 seconds",706,"Health",,190,"Dependent",,190,"Status in ('Normal', 'Warning') and Program_Application_Id in (706,410) and (Actual_Completion_Date- Actual_Start_Date)*24*60*60  >= 60","Status in ('Normal', 'Warning') and Program_Application_Id in (706,410) and (Actual_Completion_Date- Actual_Start_Date)*24*60*60  >= 60","Status in ('Normal', 'Warning') and Program_Application_Id in (706,410) ","Status in ('Normal', 'Warning') and Program_Application_Id in (706,410) "
+547,"WIP_DEBUG_PROFILES","WIP Debug Profiles turned on","WIP Debug Profiles turned on",706,"Stale",,234,"Dependent",,234,"Application_Id in (706,410) and Profile_Option_Value ='Yes'","Application_Id in (706,410) and Profile_Option_Value ='Yes'","Application_Id in (706,410)","Application_Id in (706,410)"
+548,"WIP_CONC_PGM_DEBUG","WIP Concurrent Programs with Trace debug turned on","WIP Concurrent Programs with Trace debug turned on",706,"Stale",,191,"Dependent",,191,"Application_Id in (706,410) and Enabled_Flag = 'Y' AND Enable_Trace = 'Y'and Status in ('Installed', 'Shared Install')","Application_Id in (706,410) and Enabled_Flag = 'Y' AND Enable_Trace = 'Y'and Status in ('Installed', 'Shared Install')","Application_Id in (706,410) and Enabled_Flag = 'Y'","Application_Id in (706,410) and Enabled_Flag = 'Y'"
+549,"WIP_COMP_JOBS_VALUE_BALANCE","Complete Jobs with Job value balance","Complete Jobs with Job value balance",706,"Stats",,"NULL","Original",,"NULL","NULL","NULL","NULL","NULL"
+550,"WIP_WORKFLOW_ERRORS","All Workflow Errors in WIP","All Workflow Errors in WIP",706,"Health",,235,"Dependent",,235,"SUBCATEGORY = 'WIP'","SUBCATEGORY = 'WIP'","NULL","NULL"
