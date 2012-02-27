@@ -1,8 +1,19 @@
 from utils import session, expose, render_template, Response, url_for
 from models import Category, SubCategory, Scenario
 from models import User, AppFamilyPermission, AppPermission
-from authenticate_user import authenticateuser, verifyloggedin, authorizeuseroncategory, authorizeuseronsubcategory, login, logout, register, setpermissions, setpermissions2, setpermissions3
-from uploader import get_all_scenarios, get_scenario_query, upload_query_result_structure, upload_query_result_data, upload_query_result_count
+from authenticate_user import authenticateuser
+from authenticate_user import verifyloggedin
+from authenticate_user import authorizeuseroncategory
+from authenticate_user import authorizeuseronsubcategory
+from authenticate_user import login, logout
+from authenticate_user import register
+from authenticate_user import setpermissions
+from authenticate_user import setpermissions2
+from authenticate_user import setpermissions3
+from uploader import get_all_scenarios, get_scenario_query
+from uploader import  upload_query_result_structure
+from uploader import upload_query_result_data
+from uploader import upload_query_result_count
 
 from sqlalchemy import func,over
 from sqlalchemy.sql import text
@@ -32,9 +43,23 @@ def overview(request):
    user = request.client_user_object
    user_id = user.user_id
    args = json.dumps(request.args)
-   categories = session.query(Category).join(AppFamilyPermission, Category.category_id == AppFamilyPermission.category_id).filter(AppFamilyPermission.user_id == user_id).order_by(Category.category_display_order.asc())
-   sub_categories = session.query(SubCategory).join(AppPermission, SubCategory.subcategory_id == AppPermission.subcategory_id).filter(AppPermission.user_id == user_id)
-   return render_template('overview.html', categories=categories, sub_categories=sub_categories, args=args)
+   categories = (session.query(Category)
+                .join(AppFamilyPermission,
+                    Category.category_id
+                    == AppFamilyPermission.category_id)
+                .filter(AppFamilyPermission.user_id == user_id)
+                .order_by(Category.category_display_order.asc()))
+   sub_categories = (session.query(SubCategory)
+                    .join(AppPermission,
+                        SubCategory.subcategory_id
+                        == AppPermission.subcategory_id)
+                    .filter(AppPermission.user_id == user_id))
+   return render_template(
+           'overview.html',
+           categories=categories,
+           sub_categories=sub_categories,
+           user=user,
+           args=args)
 
 @authenticateuser
 @verifyloggedin
@@ -46,10 +71,27 @@ def category(request, c_name):
    user = request.client_user_object
    user_id = user.user_id
    args = json.dumps(request.args)
-   categories = session.query(Category).join(AppFamilyPermission, Category.category_id == AppFamilyPermission.category_id).filter(AppFamilyPermission.user_id == user_id).order_by(Category.category_display_order.asc())
-   sub_categories = session.query(SubCategory).join(AppPermission, SubCategory.subcategory_id == AppPermission.subcategory_id).filter(AppPermission.user_id == user_id)
-   breadcrumbs = session.query(Category).filter(Category.category_name==c_name).all()[0]
-   return render_template('category.html', categories=categories, sub_categories=sub_categories, breadcrumbs=breadcrumbs, category_name=c_name, args=args)
+   categories = (session.query(Category)
+                .join(AppFamilyPermission,
+                    Category.category_id
+                    == AppFamilyPermission.category_id)
+                .filter(AppFamilyPermission.user_id == user_id)
+                .order_by(Category.category_display_order.asc()))
+   sub_categories = (session.query(SubCategory)
+                    .join(AppPermission,
+                        SubCategory.subcategory_id
+                        == AppPermission.subcategory_id)
+                    .filter(AppPermission.user_id == user_id))
+   breadcrumbs = (session.query(Category)
+                    .filter(Category.category_name==c_name).all()[0])
+   return render_template(
+           'category.html',
+           categories=categories,
+           sub_categories=sub_categories,
+           breadcrumbs=breadcrumbs,
+           category_name=c_name,
+           user=user,
+           args=args)
 
 @authenticateuser
 @verifyloggedin
@@ -60,10 +102,31 @@ def sub_category(request, c_name, sc_name):
    user = request.client_user_object
    user_id = user.user_id
    args = json.dumps(request.args)
-   categories = session.query(Category).join(AppFamilyPermission, Category.category_id == AppFamilyPermission.category_id).filter(AppFamilyPermission.user_id == user_id).order_by(Category.category_display_order.asc())
-   sub_categories = session.query(SubCategory).join(AppPermission, SubCategory.subcategory_id == AppPermission.subcategory_id).filter(AppPermission.user_id == user_id)
-   breadcrumbs = session.query(Category, SubCategory).join(SubCategory, Category.category_id == SubCategory.category_id).filter(Category.category_name==c_name).filter(SubCategory.subcategory_name==sc_name).all()[0]
-   return render_template('sub_category.html', categories=categories, sub_categories=sub_categories, breadcrumbs=breadcrumbs, subcategory_name=sc_name, args=args)
+   categories = (session.query(Category)
+                .join(AppFamilyPermission,
+                    Category.category_id
+                    == AppFamilyPermission.category_id)
+                .filter(AppFamilyPermission.user_id == user_id)
+                .order_by(Category.category_display_order.asc()))
+   sub_categories = (session.query(SubCategory)
+                    .join(AppPermission,
+                        SubCategory.subcategory_id
+                        == AppPermission.subcategory_id)
+                    .filter(AppPermission.user_id == user_id))
+   breadcrumbs = (session.query(Category, SubCategory)
+                    .join(SubCategory, Category.category_id
+                        == SubCategory.category_id)
+                    .filter(Category.category_name==c_name)
+                    .filter(SubCategory.subcategory_name==sc_name)
+                    .all()[0])
+   return render_template(
+           'sub_category.html',
+           categories=categories,
+           sub_categories=sub_categories,
+           breadcrumbs=breadcrumbs,
+           subcategory_name=sc_name,
+           user=user,
+           args=args)
 
 @authenticateuser
 @verifyloggedin
@@ -76,29 +139,65 @@ def scenario(request, c_name, sc_name, s_name):
    org = request.client_organization_object
    org_namespace_name = org.organization_namespace_name
    args = json.dumps(request.args)
-   categories = session.query(Category).join(AppFamilyPermission, Category.category_id == AppFamilyPermission.category_id).filter(AppFamilyPermission.user_id == user_id).order_by(Category.category_display_order.asc())
-   sub_categories = session.query(SubCategory).join(AppPermission, SubCategory.subcategory_id == AppPermission.subcategory_id).filter(AppPermission.user_id == user_id)
-   breadcrumbs = session.query(Category, SubCategory, Scenario).join(SubCategory, Category.category_id == SubCategory.category_id).join(Scenario, SubCategory.subcategory_id == Scenario.subcategory_id).filter(Category.category_name==c_name).filter(SubCategory.subcategory_name==sc_name).filter(Scenario.scn_name==s_name).all()[0]
-   scenario = session.query(Scenario).filter(Scenario.scn_name==s_name).all()[0]
+   categories = (session.query(Category)
+                .join(AppFamilyPermission,
+                    Category.category_id
+                    == AppFamilyPermission.category_id)
+                .filter(AppFamilyPermission.user_id == user_id)
+                .order_by(Category.category_display_order.asc()))
+   sub_categories = (session.query(SubCategory)
+                    .join(AppPermission,
+                        SubCategory.subcategory_id
+                            == AppPermission.subcategory_id)
+                    .filter(AppPermission.user_id == user_id))
+   breadcrumbs = (session.query(Category, SubCategory, Scenario)
+                    .join(SubCategory, Category.category_id
+                        == SubCategory.category_id)
+                    .join(Scenario, SubCategory.subcategory_id
+                        == Scenario.subcategory_id)
+                    .filter(Category.category_name==c_name)
+                    .filter(SubCategory.subcategory_name==sc_name)
+                    .filter(Scenario.scn_name==s_name).all()[0])
+   scenario = (session.query(Scenario)
+                .filter(Scenario.scn_name==s_name)
+                .all()[0])
    scn_short_des = scenario.scn_short_description
    scenario_id = scenario.scn_id
    s_name_lower = s_name.lower()
    groupby = request.args.get('groupby')
    if groupby:
-       clicks_count_query = """select insert_clicks({s_id},'{name}');""".format(s_id = scenario_id,name = groupby)
+       clicks_count_query = ("""select insert_clicks({s_id},'{name}');"""
+                            .format(s_id = scenario_id,name = groupby))
        count_query = text(clicks_count_query)
        insert = session.execute(count_query).fetchall()
        session.commit()
        
-   query1 = """select frequent_column_name from scenario_clicks_count where scn_id = {s_id} order by frequency_number desc limit 5;""".format(s_id = scenario_id)
+   query1 = ("""select frequent_column_name from scenario_clicks_count
+                where scn_id = {s_id} order by frequency_number
+                desc limit 5;""".format(s_id = scenario_id))
    s1 = text(query1)
    scenario_data_column_names_ordered1 = session.execute(s1).fetchall()
-   query2 = """ select column_name from INFORMATION_SCHEMA.COLUMNS where column_name not in (select frequent_column_name from scenario_clicks_count where scn_id = {s_id} order by 
-frequency_number desc limit 5) and table_name = '{scen_name_lower}' and table_schema = '{namespace_name}' order by 
-column_name;""".format(namespace_name=org_namespace_name, scen_name_lower=s_name_lower.lower(),s_id = scenario_id)
+   query2 = (""" select column_name from INFORMATION_SCHEMA.COLUMNS
+            where column_name not in (
+                    select frequent_column_name from scenario_clicks_count
+                        where scn_id = {s_id} order by frequency_number desc limit 5)
+                    and table_name = '{scen_name_lower}'
+                    and table_schema = '{namespace_name}' order by column_name;"""
+            .format(namespace_name=org_namespace_name,
+                    scen_name_lower=s_name_lower.lower(),s_id = scenario_id))
    s2 = text(query2)
    scenario_data_column_names_ordered2 = session.execute(s2).fetchall()
-   return render_template('scenario.html', categories=categories, sub_categories=sub_categories, breadcrumbs=breadcrumbs, scn_des = scn_short_des,scenario_name=s_name, scenario_data_column_names1 = scenario_data_column_names_ordered1,scenario_data_column_names2 = scenario_data_column_names_ordered2, args=args)
+   return render_template(
+           'scenario.html',
+           categories=categories,
+           sub_categories=sub_categories,
+           breadcrumbs=breadcrumbs,
+           scn_des=scn_short_des,
+           scenario_name=s_name,
+           scenario_data_column_names1=scenario_data_column_names_ordered1,
+           scenario_data_column_names2=scenario_data_column_names_ordered2,
+           user=user,
+           args=args)
 
 @authenticateuser
 @verifyloggedin
