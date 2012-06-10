@@ -1,0 +1,10 @@
+iqp.sublime-workspace
+iqp.sublime-project
+.idea/
+*.ini
+*.egg-info
+*.pyc
+*.pyo
+*.py#
+*~
+*.csv
