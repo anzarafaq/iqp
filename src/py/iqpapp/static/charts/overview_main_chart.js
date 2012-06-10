@@ -85,7 +85,7 @@ function createOverviewMainChart(args, container) {
             enabled: false
         },
         title: {
-            text: 'Application Family '+yaxisname
+            text: 'Application Family '+ (yaxisname || "")
             //text: 'Application Family Issues'
             },
         xAxis: {
