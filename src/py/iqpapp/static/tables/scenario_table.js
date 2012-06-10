@@ -102,12 +102,12 @@ function createScenarioTableHeaders(name, args, container) {
 	}
 
 
-function createScenarioTable(name, args, container,headers) 
+function createScenarioTable(name, args, container,headers)
 {
-				window.scenarioName = name //we need this global object for exporting
+				window.scenarioName = name; //we need this global object for exporting
 				//window.tableUrl is bar clicks
 				window.tableUrl = flextable.url = groupBy?'/scenario_table_data_source/'+name+"/?&headers="+columnNames+'&groupBy='+groupBy+'&match=like':'/scenario_table_data_source/'+name+"/?&headers="+columnNames+'&match=like';
 				$("#scenario_tables").flexigrid(
 					flextable
-					);	
+				);
 }
