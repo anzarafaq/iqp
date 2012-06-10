@@ -219,14 +219,14 @@ function drawTable(sortby) //initially data comes from category main chart ajax 
                     '<td>' + val[2]+'</td>'+
                     '</tr>');
     });
-    jQuery("#application-table").find("tbody").append(rows.join('')).parent().flexigrid( flextable );
+    jQuery("#application-table").find("tbody").append(rows.join('')).parent().flexigrid(flextable);
     jQuery(".hDivBox").find("table").find("thead").find("tr").find("th").eq(2).addClass("sorted").find('div').addClass('sdescs');
-    //Asked to remove this
-    /*var rows = jQuery("#application-table").find("tbody").find("tr");
-    jQuery.each(rows,function(index,value)
-    {
-        jQuery(rows[index]).find('td').eq(2).addClass('sorted');
-    });*/
+    jQuery('tr').click(function(data){
+        var application = data.currentTarget.cells[0].textContent;
+        console.log(window.location);
+        var newUrl = "http://"+ window.location.host + window.location.pathname + application + "/" + window.location.search;
+        window.location.replace(newUrl);
+    });
 }
 
 function setSortDirNull(index)
