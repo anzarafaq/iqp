@@ -183,6 +183,11 @@ function customSortDesc(a,b) {
 function drawTable(sortby) //initially data comes from category main chart ajax source, use the same one to create table
 {
     var data = window.tableData;
+    var total_count = 0;
+    for(d in data){
+        total_count = total_count+data[d][1];
+    }
+
     window.customTableSortBy = sortby;
     data.sort(customSortAsc)
     var rows = [];
@@ -210,7 +215,7 @@ function drawTable(sortby) //initially data comes from category main chart ajax 
         resizable: false,
         width: 668,
         height: 'auto',
-        title : "<h4 style = 'text-align:center;color :#111; margin: 0px'> " + window.tableTitle + " Summary" + "</h4>"
+        title : "<h4 style = 'text-align:center;color :#111; margin: 0px'> " + window.tableTitle + "Scenarios (Total: " + total_count + ")" +"</h4>"
     };
     jQuery(data).each(function(key,val)
     {
