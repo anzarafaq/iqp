@@ -28,7 +28,7 @@ def verifyloggedin(fn):
       c = request.client_session
       user = request.client_user_object
       if not user:
-         return redirect(url_for('welcome'))
+         return redirect(url_for('login'))
       else:
          result = fn(*args, **kwargs)
          return result
@@ -39,7 +39,7 @@ def authorizeuseroncategory(fn):
       request = args[0]
       user = request.client_user_object
       if not user:
-         return redirect(url_for('welcome'))
+         return redirect(url_for('login'))
       else:
          user_id = user.user_id
          category_name = kwargs['c_name']
@@ -62,7 +62,7 @@ def authorizeuseronsubcategory(fn):
       request = args[0]
       user = request.client_user_object
       if not user:
-         return redirect(url_for('welcome'))
+         return redirect(url_for('login'))
       else:
          user_id = user.user_id
          subcategory_name = kwargs['sc_name']
@@ -106,7 +106,7 @@ def logout(request):
    c = request.client_session
    if "user_id" in c:
       del c["user_id"]
-   return redirect(url_for('welcome'))
+   return redirect(url_for('login'))
 
 @authenticateuser
 @expose('/register/')
