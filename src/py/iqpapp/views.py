@@ -32,6 +32,8 @@ from SubCategoryDataTableProcessing import *
 from ScenarioHeadersDataTableProcessing import *
 
 
+_CSV_FILE_PATH = "/tmp/sample.csv" # TODO: Use a generated path based on logged in user to avoid contention
+
 @authenticateuser
 @expose('/welcome/')
 def welcome(request):
@@ -744,7 +746,7 @@ def export(request):
    d.add("Content-Type","application/octet-stream")
    d.add('Content-Disposition', 'attachment;filename=iqpgenerated.csv')
    headers = ["Application","No of Scenarios","No of Issues"]
-   ofile  = open('/home/ubuntu/iqp/sample.csv', "wb")
+   ofile  = open(_CSV_FILE_PATH, "wb")
    
    #write column names first
    writer = csv.writer(ofile, delimiter=',',quotechar='"', quoting=csv.QUOTE_ALL)
@@ -753,7 +755,7 @@ def export(request):
    #write table data
    for eachRow in tableData:
       writer.writerow(eachRow)
-   return Response(open('/home/ubuntu/iqp/sample.csv', 'r'),headers = d)
+   return Response(open(_CSV_FILE_PATH, 'r'),headers = d)
 
 
 @authenticateuser
@@ -773,7 +775,7 @@ def exportSubcategoryTable(request,sc_name):
     d.add("Content-Type","application/octet-stream")
     d.add('Content-Disposition', 'attachment;filename=iqpgenerated.csv')
     headers = ["Scenario","Current Count","Total Count","Percentage of Total","Trend","Last Refreshed"]
-    ofile  = open('/home/ubuntu/iqp/sample.csv', "wb")
+    ofile  = open(_CSV_FILE_PATH, "wb")
     
     #write column names first
     writer = csv.writer(ofile, delimiter=',',quotechar='"', quoting=csv.QUOTE_ALL)
@@ -827,7 +829,7 @@ def exportSubcategoryTable(request,sc_name):
     for eachRow in data:
        writer.writerow(eachRow)
     return Response(
-       open('/home/ubuntu/iqp/sample.csv', 'r'),
+       open(_CSV_FILE_PATH, 'r'),
        headers = d)
 
 
@@ -859,7 +861,7 @@ def exportScenarioTable(request,s_name):
     headers = str(request.args["headers"]).split(",")
     tableName = s_name
     
-    ofile  = open('/home/ubuntu/iqp/sample.csv', "wb")
+    ofile  = open(_CSV_FILE_PATH, "wb")
     #write column names first
     writer = csv.writer(ofile, delimiter=',',quotechar='"', quoting=csv.QUOTE_ALL)
     writer.writerow(headers)
@@ -871,7 +873,7 @@ def exportScenarioTable(request,s_name):
     for item in rs:
        lis = [str(item[eachColumn]) for eachColumn in headers]
        writer.writerow(lis)
-    return Response(open('/home/ubuntu/iqp/sample.csv', 'r'),headers = d)
+    return Response(open(_CSV_FILE_PATH, 'r'),headers = d)
 
 
 @authenticateuser
