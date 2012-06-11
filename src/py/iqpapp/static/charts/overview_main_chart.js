@@ -89,8 +89,16 @@ function createOverviewMainChart(args, container) {
             //text: 'Application Family Issues'
             },
         xAxis: {
-        categories: []
-            },
+            categories: [],
+            enabled: true,
+            labels: {
+                formatter: function() {
+                    // currently this does not create the href links. problem with highcharts version?
+                    var retval = "<a href='/" + this.value + "/?chartType=column'>" + this.value + "</a>";
+                    return  retval;
+                }
+            }
+        },
         tooltip: {
         formatter: function() {
             tempobj = this;
